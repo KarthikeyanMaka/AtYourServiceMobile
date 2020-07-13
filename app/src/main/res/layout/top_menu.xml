@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/Menu">
+
+    <TableRow
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_routes"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-1dp"
+            android:layout_weight="0.1"
+            android:text="@string/app_Home"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/btn_places"
+            android:layout_width="1dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-1dp"
+            android:layout_weight="0.1"
+            android:background="@color/colorAccent"
+            android:text="@string/app_Health"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/btn_events"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-1dp"
+            android:layout_weight="0.1"
+            android:text="@string/app_Emer"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/btn_about"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-1dp"
+            android:layout_weight="0.1"
+            android:clickable="true"
+            android:text="@string/app_Local"
+            android:textSize="8sp" />
+    </TableRow>
+
+</FrameLayout>
