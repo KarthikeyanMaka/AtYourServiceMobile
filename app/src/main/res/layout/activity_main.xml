@@ -68,6 +68,16 @@
                 android:layout_marginTop="55dp"
                 tools:visibility="visible" />
 
+            <Button
+                android:id="@+id/btnDiet"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:onClick="PlayNexDietVideo"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/app_playnxtbtn"
+                />
+
 
         </LinearLayout>
 
@@ -102,6 +112,16 @@
                 android:layout_height="340dp"
                 android:layout_marginTop="55dp"
                 tools:visibility="visible" />
+            <Button
+                android:id="@+id/btnImm"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:onClick="PlayNexImmVideo"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/app_playnxtbtn"
+                android:visibility="visible"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -135,6 +155,16 @@
                 android:layout_height="340dp"
                 android:layout_marginTop="55dp"
                 android:visibility="visible" />
+            <Button
+                android:id="@+id/btnRem"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:onClick="PlayNexRemVideo"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/app_playnxtbtn"
+                android:visibility="visible"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -162,16 +192,6 @@
                 android:textAlignment="center"
                 android:textColor="#fff" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="-52dp"
-                android:background="#333"
-                android:padding="5dp"
-                android:text="@string/app_Med"
-                android:textAlignment="center"
-                android:textColor="#fff" />
 
             <WebView
                 android:id="@+id/mWebView4"
@@ -179,6 +199,16 @@
                 android:layout_height="340dp"
                 android:layout_marginTop="55dp"
                 tools:visibility="visible" />
+            <Button
+                android:id="@+id/btnExp"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:onClick="PlayNexExpVideo"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/app_playnxtbtn"
+                android:visibility="visible"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -197,12 +227,34 @@
             android:weightSum="3"
             tools:context=".MainActivity">
 
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="-52dp"
+                android:background="#333"
+                android:padding="5dp"
+                android:text="@string/app_Med"
+                android:textAlignment="center"
+                android:textColor="#fff" />
+
             <WebView
                 android:id="@+id/mWebView5"
                 android:layout_width="match_parent"
                 android:layout_height="340dp"
                 android:layout_marginTop="55dp"
                 tools:visibility="visible" />
+            <Button
+                android:id="@+id/btnMed"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:onClick="PlayNexMedVideo"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="@string/app_playnxtbtn"
+                android:visibility="visible"
+                />
         </LinearLayout>
 
     </LinearLayout>

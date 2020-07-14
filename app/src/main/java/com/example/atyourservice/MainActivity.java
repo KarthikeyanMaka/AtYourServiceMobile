@@ -20,6 +20,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -35,7 +36,17 @@ import java.util.concurrent.ExecutionException;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    private String [] dietVideoIds= new String[5];
+    private String [] immVideoIds= new String[5];
+    private String [] remVideoIds= new String[5];
+    private String [] expVideoIds= new String[5];
+    private String [] medVideoIds= new String[5];
+    private int lstDietId=0;
+    private int lstImmId=0;
+    private int lstRemId=0;
+    private int lstExpId=0;
+    private int lstMedId=0;
+    private TextView txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
         //get the spinner from the xml.
         final Spinner dropdown = findViewById(R.id.spinner1);
+
+
 
         String[] items = new String[]{"தமிழ்", "हिन्दी", "English","ಕನ್ನಡ","తెలుగు","മലയാളം"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
@@ -81,7 +94,64 @@ public class MainActivity extends AppCompatActivity {
         });
 
         }
-        public void CreateLinkPlay(String language){
+        public void PlayNexDietVideo(View view)
+        {
+            final WebView view1=(WebView) findViewById(R.id.mWebView1);
+
+            if (lstDietId > (dietVideoIds.length - 1))
+                lstDietId = 0;
+            else
+                lstDietId = lstDietId + 1;
+
+            PlayVideos(view1,dietVideoIds,lstDietId);
+        }
+        public void PlayNexImmVideo(View view)
+        {
+            final WebView view1=(WebView) findViewById(R.id.mWebView2);
+
+            if (lstImmId > (immVideoIds.length - 1))
+                lstImmId = 0;
+            else
+                lstImmId = lstImmId + 1;
+
+            PlayVideos(view1,immVideoIds,lstImmId);
+        }
+        public void PlayNexRemVideo(View view)
+        {
+            final WebView view1=(WebView) findViewById(R.id.mWebView3);
+
+            if (lstRemId> (remVideoIds.length - 1))
+                lstRemId = 0;
+            else
+                lstRemId= lstRemId + 1;
+
+            PlayVideos(view1,remVideoIds,lstRemId);
+        }
+        public void PlayNexExpVideo(View view)
+        {
+            final WebView view1=(WebView) findViewById(R.id.mWebView4);
+
+            if (lstExpId> (expVideoIds.length - 1))
+                lstExpId = 0;
+            else
+                lstExpId= lstExpId + 1;
+
+            PlayVideos(view1,expVideoIds,lstExpId);
+        }
+        public void PlayNexMedVideo(View view)
+        {
+            final WebView view1=(WebView) findViewById(R.id.mWebView5);
+
+            if (lstMedId> (medVideoIds.length - 1))
+                lstMedId = 0;
+            else
+                lstMedId= lstMedId + 1;
+
+            PlayVideos(view1,medVideoIds,lstMedId);
+        }
+
+
+    public void CreateLinkPlay(String language){
             String urllng = "Tamil";
 
             switch (language) {
@@ -119,15 +189,15 @@ public class MainActivity extends AppCompatActivity {
             String ExpVideos="https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllYoutubeID/Covid%20Experience/"+urllng+"/Views/5";
             String Meditation="https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllYoutubeID/meditation/"+urllng+"/Views/5";
 
-            LoadVideo(DietPlan,view1);
-            LoadVideo(ImmBoosURL,view2);
-            LoadVideo(HomeMadeRemedies,view3);
-            LoadVideo(ExpVideos,view4);
-            LoadVideo(Meditation,view5);
+            dietVideoIds=LoadVideo(DietPlan,view1);
+            immVideoIds=LoadVideo(ImmBoosURL,view2);
+            remVideoIds=LoadVideo(HomeMadeRemedies,view3);
+            expVideoIds=LoadVideo(ExpVideos,view4);
+            medVideoIds=LoadVideo(Meditation,view5);
 
         }
 
-        public void LoadVideo (String purl,WebView view){
+        public String[] LoadVideo (String purl,WebView view){
 
             String result="";
 
@@ -152,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
             else {
                 view.setVisibility(View.GONE);
             }
-
+            return IDArray;
         }
 
 
@@ -173,7 +243,7 @@ public class MainActivity extends AppCompatActivity {
             view.getSettings().setLoadWithOverviewMode(true);
             view.getSettings().setUseWideViewPort(true);
             view.getSettings().setBuiltInZoomControls(true);
-            view.loadUrl("https://www.youtube.com/embed/"+videoId[0].toString()+"?autoplay=1&vq=small");
+            view.loadUrl("https://www.youtube.com/embed/"+videoId[order].toString()+"?autoplay=1&vq=small");
             view.setWebChromeClient(new WebChromeClient());
 
         }
