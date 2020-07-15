@@ -1,6 +1,10 @@
 package com.example.atyourservice;
 
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.net.Uri;
+import android.util.DisplayMetrics;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.MediaController;
@@ -47,10 +51,13 @@ public class MainActivity extends AppCompatActivity {
     private int lstExpId=0;
     private int lstMedId=0;
     private TextView txt;
-
+    String CurrentLanguage= "en", currentLang;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
 
         //get the spinner from the xml.
@@ -69,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         scrollView.setVerticalScrollbarPosition(ScrollView.SCROLLBAR_POSITION_RIGHT);
         scrollView.setVerticalScrollBarEnabled(true);
 
-        CreateLinkPlay("தமிழ்");
+        //CreateLinkPlay("தமிழ்");
 
        /*
         mWebViewClient = new myWebViewClient();
@@ -93,7 +100,24 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+//        Setlocale("ta");
+
         }
+        public void Setlocale(String localName){
+         if(!localName.equals(CurrentLanguage)){
+             Locale appLocale = new Locale(localName);
+             Resources res =getResources();
+             DisplayMetrics dm= res.getDisplayMetrics();
+             Configuration conf = res.getConfiguration();
+             conf.locale=appLocale;
+             res.updateConfiguration(conf, dm);
+             finish();
+             startActivity(getIntent());
+             CurrentLanguage=localName;
+
+         }
+        }
+
         public void PlayNexDietVideo(View view)
         {
             final WebView view1=(WebView) findViewById(R.id.mWebView1);
@@ -153,28 +177,37 @@ public class MainActivity extends AppCompatActivity {
 
     public void CreateLinkPlay(String language){
             String urllng = "Tamil";
+            String localeName ="en";
 
             switch (language) {
                 case "தமிழ்":
                     urllng = "Tamil";
+                    localeName ="ta";
                     break;
                 case "English":
                     urllng = "English";
+                    localeName ="en";
                     break;
                 case "తెలుగు":
                     urllng = "Telugu";
+                    localeName ="tel";
                     break;
                 case "ಕನ್ನಡ":
                     urllng = "Kannada";
+                    localeName ="kan";
                     break;
                 case "മലയാളം":
                     urllng = "Malayalam";
+                    localeName ="mal";
                     break;
                 case "हिन्दी":
                     urllng = "Hindi";
+                    localeName ="hi";
                     break;
 
             }
+
+            Setlocale(localeName);
 
             final WebView view1=(WebView) findViewById(R.id.mWebView1);
             final WebView view2=(WebView) findViewById(R.id.mWebView2);

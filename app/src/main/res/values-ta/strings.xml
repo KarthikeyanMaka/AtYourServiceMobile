@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ஸ்மார்ட் சேவை</string>
+    <string name="app_Diet">உணவு பத்தியம் திட்டம்</string>
+    <string name="app_Imm">நோய் எதிர்ப்பு சக்தி பூஸ்டர்</string>
+    <string name="app_Med">தியான வீடியோக்கள்</string>
+    <string name="app_Cov">கோவிட் -19 அனுபவம்</string>
+    <string name="app_HomeRe">வீட்டு வைத்தியம்</string>
+    <string name="app_Home">முதல் பக்கம்</string>
+    <string name="app_Health">ஆரோக்கியம்</string>
+    <string name="app_Emer">அவசர சேவைகள்</string>
+    <string name="app_Local">உள்ளூர் சமூகம்</string>
+    <string name="home_second">Home Second</string>
+    <string name="language">மொழி</string>
+    <string name="app_playnxtbtn">அடுத்தது</string>
+</resources>
