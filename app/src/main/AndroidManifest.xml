@@ -12,6 +12,7 @@
         android:theme="@style/AppTheme"
         android:hardwareAccelerated="true"
         android:networkSecurityConfig="@xml/network_secutiry_config"
+        android:configChanges="locale|orientation"
         tools:ignore="UnusedAttribute">
         <activity android:name=".MainActivity">
             <intent-filter>

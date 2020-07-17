@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.net.Uri;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -51,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
     private int lstExpId=0;
     private int lstMedId=0;
     private TextView txt;
+    private boolean userInteract;
     String CurrentLanguage= "en", currentLang;
+    Spinner dropdown;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -61,13 +64,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //get the spinner from the xml.
-        final Spinner dropdown = findViewById(R.id.spinner1);
+        dropdown = findViewById(R.id.spinner1);
 
-
-
-        String[] items = new String[]{"தமிழ்", "हिन्दी", "English","ಕನ್ನಡ","తెలుగు","മലയാളം"};
+        String[] items = new String[]{"","தமிழ்", "हिन्दी", "English","ಕನ್ನಡ","తెలుగు","മലയാളം"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
+
 
 
 
@@ -76,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
         scrollView.setVerticalScrollbarPosition(ScrollView.SCROLLBAR_POSITION_RIGHT);
         scrollView.setVerticalScrollBarEnabled(true);
 
-        //CreateLinkPlay("தமிழ்");
+        Locale Current = getResources().getConfiguration().locale;
+        CreateLinkPlay(Current.getLanguage());
 
        /*
         mWebViewClient = new myWebViewClient();
@@ -90,8 +93,43 @@ public class MainActivity extends AppCompatActivity {
         dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                CreateLinkPlay(parentView.getItemAtPosition(position).toString());
+                    if(parentView.getItemAtPosition(position).toString() != "") {
+                        String urllng = "Tamil";
+                        String localeName ="en";
+
+                        switch (parentView.getItemAtPosition(position).toString()) {
+                            case "தமிழ்":
+                                urllng = "Tamil";
+                                localeName ="ta";
+                                break;
+                            case "English":
+                                urllng = "English";
+                                localeName ="en";
+                                break;
+                            case "తెలుగు":
+                                urllng = "Telugu";
+                                localeName ="tel";
+                                break;
+                            case "ಕನ್ನಡ":
+                                urllng = "Kannada";
+                                localeName ="kan";
+                                break;
+                            case "മലയാളം":
+                                urllng = "Malayalam";
+                                localeName ="mal";
+                                break;
+                            case "हिन्दी":
+                                urllng = "Hindi";
+                                localeName ="hi";
+                                break;
+
+                        }
+
+                        Setlocale(localeName);
+
+                    }
             }
+
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
@@ -100,29 +138,44 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-//        Setlocale("ta");
+
 
         }
         public void Setlocale(String localName){
-         if(!localName.equals(CurrentLanguage)){
-             Locale appLocale = new Locale(localName);
-             Resources res =getResources();
-             DisplayMetrics dm= res.getDisplayMetrics();
-             Configuration conf = res.getConfiguration();
+        Locale Current = getResources().getConfiguration().locale;
+        Locale appLocale = new Locale(localName);
+
+            if(Current !=appLocale){
+
+             Configuration conf = new Configuration();
              conf.locale=appLocale;
-             res.updateConfiguration(conf, dm);
+
+             getBaseContext().getResources().updateConfiguration(conf,getBaseContext().getResources().getDisplayMetrics());
+
+             Intent refresh = new Intent(this , MainActivity.class);
              finish();
-             startActivity(getIntent());
-             CurrentLanguage=localName;
+             startActivity(refresh);
+
 
          }
+        }
+        @Override
+        public void onUserInteraction(){
+            super.onUserInteraction();
+            userInteract= true;
+        }
+        @Override
+        public void onSaveInstanceState(Bundle savedInstanceState){
+            super.onSaveInstanceState(savedInstanceState);
+
+            savedInstanceState.putString("CurrentLanguage",CurrentLanguage);
         }
 
         public void PlayNexDietVideo(View view)
         {
             final WebView view1=(WebView) findViewById(R.id.mWebView1);
 
-            if (lstDietId > (dietVideoIds.length - 1))
+            if (lstDietId > (dietVideoIds.length - 1) || dietVideoIds[lstDietId].length()==0)
                 lstDietId = 0;
             else
                 lstDietId = lstDietId + 1;
@@ -133,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
         {
             final WebView view1=(WebView) findViewById(R.id.mWebView2);
 
-            if (lstImmId > (immVideoIds.length - 1))
+            if (lstImmId > (immVideoIds.length - 1) || immVideoIds[lstImmId].length()==0)
                 lstImmId = 0;
             else
                 lstImmId = lstImmId + 1;
@@ -144,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
         {
             final WebView view1=(WebView) findViewById(R.id.mWebView3);
 
-            if (lstRemId> (remVideoIds.length - 1))
+            if (lstRemId> (remVideoIds.length - 1)  || remVideoIds[lstRemId].length()==0 )
                 lstRemId = 0;
             else
                 lstRemId= lstRemId + 1;
@@ -155,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
         {
             final WebView view1=(WebView) findViewById(R.id.mWebView4);
 
-            if (lstExpId> (expVideoIds.length - 1))
+            if (lstExpId> (expVideoIds.length - 1) || expVideoIds[lstExpId].length()==0 )
                 lstExpId = 0;
             else
                 lstExpId= lstExpId + 1;
@@ -166,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
         {
             final WebView view1=(WebView) findViewById(R.id.mWebView5);
 
-            if (lstMedId> (medVideoIds.length - 1))
+            if (lstMedId> (medVideoIds.length - 1) || medVideoIds[lstMedId].length()==0)
                 lstMedId = 0;
             else
                 lstMedId= lstMedId + 1;
@@ -175,39 +228,30 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-    public void CreateLinkPlay(String language){
-            String urllng = "Tamil";
-            String localeName ="en";
+    public void CreateLinkPlay(String urllng){
+        switch (urllng) {
+            case "ta":
+                urllng = "Tamil";
+                break;
+            case "en":
+                urllng = "English";
+                break;
+            case "tel":
+                urllng = "Telugu";
+                break;
+            case "kan":
+                urllng = "Kannada";
+                break;
+            case "mal":
+                urllng = "Malayalam";
+                break;
+            case "hi":
+                urllng = "Hindi";
+                break;
+            default:
+                urllng="Tamil";
 
-            switch (language) {
-                case "தமிழ்":
-                    urllng = "Tamil";
-                    localeName ="ta";
-                    break;
-                case "English":
-                    urllng = "English";
-                    localeName ="en";
-                    break;
-                case "తెలుగు":
-                    urllng = "Telugu";
-                    localeName ="tel";
-                    break;
-                case "ಕನ್ನಡ":
-                    urllng = "Kannada";
-                    localeName ="kan";
-                    break;
-                case "മലയാളം":
-                    urllng = "Malayalam";
-                    localeName ="mal";
-                    break;
-                case "हिन्दी":
-                    urllng = "Hindi";
-                    localeName ="hi";
-                    break;
-
-            }
-
-            Setlocale(localeName);
+        }
 
             final WebView view1=(WebView) findViewById(R.id.mWebView1);
             final WebView view2=(WebView) findViewById(R.id.mWebView2);
@@ -227,6 +271,8 @@ public class MainActivity extends AppCompatActivity {
             remVideoIds=LoadVideo(HomeMadeRemedies,view3);
             expVideoIds=LoadVideo(ExpVideos,view4);
             medVideoIds=LoadVideo(Meditation,view5);
+
+
 
         }
 

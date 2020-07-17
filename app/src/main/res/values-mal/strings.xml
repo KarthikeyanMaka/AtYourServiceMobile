@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Smart Serve</string>
-    <string name="app_Diet">Diet Plan</string>
-    <string name="app_Imm">Immunity Booster</string>
-    <string name="app_Med">Meditation Videos</string>
-    <string name="app_Cov">Covid-19 Experience</string>
-    <string name="app_HomeRe">Home Remedies</string>
-    <string name="app_Home">Home</string>
-    <string name="app_Health">Health Safety</string>
-    <string name="app_Emer">Emergency Serv</string>
-    <string name="app_Local">Local Community</string>
-    <string name="home_second">Home Second</string>
+    <string name="app_name">സ്മാർട്ട് സെർവ്</string>
+    <string name="app_Diet">ഡയറ്റ് പ്ലാൻ</string>
+    <string name="app_Imm">ഇമ്മ്യൂണിറ്റി ബൂസ്റ്റർ</string>
+    <string name="app_Med">ധ്യാന വീഡിയോകൾ</string>
+    <string name="app_Cov">കോവിഡ് -19 അനുഭവം</string>
+    <string name="app_HomeRe">വീട്ടുവൈദ്യങ്ങൾ</string>
+    <string name="app_Home">വീട്</string>
+    <string name="app_Health">ആരോഗ്യ സുരക്ഷ</string>
+        <string name="app_Emer">അടിയന്തര സേവനം</string>
+    <string name="app_Local">പ്രാദേശിക കമ്മ്യൂണിറ്റി</string>
+    <string name="home_second">ഹോം സെക്കൻഡ്</string>
     <string name="language">language</string>
+    <string name="app_playnxtbtn">അടുത്തത്</string>
 </resources>
