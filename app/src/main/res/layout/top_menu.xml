@@ -17,7 +17,8 @@
             android:layout_marginRight="-1dp"
             android:layout_weight="0.1"
             android:text="@string/app_Home"
-            android:textSize="8sp" />
+            android:textSize="8sp"
+            android:onClick="GotoHome"/>
 
         <Button
             android:id="@+id/btn_places"
@@ -28,7 +29,8 @@
             android:layout_weight="0.1"
             android:background="@color/colorAccent"
             android:text="@string/app_Health"
-            android:textSize="8sp" />
+            android:textSize="8sp"
+            android:onClick="GotoHealth"/>
 
         <Button
             android:id="@+id/btn_events"
@@ -38,7 +40,8 @@
             android:layout_marginRight="-1dp"
             android:layout_weight="0.1"
             android:text="@string/app_Emer"
-            android:textSize="8sp" />
+            android:textSize="8sp"
+            android:onClick="GotoEmer"/>/>
 
         <Button
             android:id="@+id/btn_about"
@@ -49,7 +52,8 @@
             android:layout_weight="0.1"
             android:clickable="true"
             android:text="@string/app_Local"
-            android:textSize="8sp" />
+            android:textSize="8sp"
+            android:onClick="GotoLocal"/>/>
     </TableRow>
 
 </FrameLayout>
