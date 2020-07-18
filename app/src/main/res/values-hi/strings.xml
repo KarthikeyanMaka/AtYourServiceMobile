@@ -14,4 +14,5 @@
     <string name="language">language</string>
     <string name="app_playnxtbtn">आगे</string>
     <string name="app_heplline">हेल्पलाइन</string>
+    <string name="app_statelist">राज्य चुनें</string>
 </resources>

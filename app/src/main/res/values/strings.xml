@@ -13,4 +13,5 @@
     <string name="language">language</string>
     <string name="app_playnxtbtn">Play Next</string>
     <string name="app_heplline">HelpLine</string>
+    <string name="app_statelist">Choose State</string>
 </resources>

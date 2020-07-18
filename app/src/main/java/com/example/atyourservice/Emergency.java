@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 
@@ -22,6 +23,7 @@ public class Emergency extends AppCompatActivity {
     String CurrentLanguage= "en", currentLang;
     Spinner dropdown;
     final Context objContext = this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +55,19 @@ public class Emergency extends AppCompatActivity {
 
                 }
             });
-
+            ImageView img = (ImageView) findViewById(R.id.imghelpline);
+            img.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    try {
+                        Intent intent = new Intent(Emergency.this, HelpLine.class);
+                        startActivity(intent);
+                    }
+                    catch (Exception ex)
+                    {
+                        ErrorHandling.ErrorDialog(ex.getMessage().toString(), Emergency.this);
+                    }
+                }
+            });
         }
         catch (Exception ex)
         {
@@ -76,12 +90,9 @@ public class Emergency extends AppCompatActivity {
             finish();
             startActivity(refresh);
         }
+
     }
-    public void ShowHelplinenumbers(View v)
-    {
-        Intent intent = new Intent(this, HelpLine.class);
-        startActivity(intent);
-    }
+
     public void GotoHome(View v)
     {
         Intent intent = new Intent(this, HomeActivity.class);
