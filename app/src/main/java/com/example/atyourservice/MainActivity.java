@@ -3,11 +3,13 @@ package com.example.atyourservice;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.MediaController;
 import android.widget.Spinner;
 import android.app.Activity;
@@ -60,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
+        try {
+
+
+
 
         setContentView(R.layout.activity_main);
 
@@ -71,24 +77,12 @@ public class MainActivity extends AppCompatActivity {
         dropdown.setAdapter(adapter);
 
 
-
-
-
         final ScrollView scrollView=(ScrollView) findViewById(R.id.Scroll1);
         scrollView.setVerticalScrollbarPosition(ScrollView.SCROLLBAR_POSITION_RIGHT);
         scrollView.setVerticalScrollBarEnabled(true);
 
         Locale Current = getResources().getConfiguration().locale;
         CreateLinkPlay(Current.getLanguage());
-
-       /*
-        mWebViewClient = new myWebViewClient();
-        view1.setWebViewClient(mWebViewClient);
-
-        mWebChromeClient = new myWebChromeClient();
-        view1.setWebChromeClient(mWebChromeClient);
-*/
-
 
         dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -137,10 +131,13 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-
-
-
         }
+        catch (Exception ex)
+        {
+            ErrorHandling.ErrorDialog(ex.getMessage().toString(),this);
+        }
+
+    }
         public void Setlocale(String localName){
         Locale Current = getResources().getConfiguration().locale;
         Locale appLocale = new Locale(localName);

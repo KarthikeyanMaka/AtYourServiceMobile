@@ -37,6 +37,22 @@
 
         <include layout="@layout/top_menu" />
 
+        <TableRow
+            android:id="@+id/tblimages"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:paddingTop="-5dp">
+
+            <ImageView
+                android:id="@+id/imghelpline"
+                android:layout_width="117dp"
+                android:layout_height="91dp"
+                android:contentDescription="@string/app_heplline"
+                android:src="@drawable/helpline"
+                android:onClick="ShowHelplinenumbers"/>
+        </TableRow>
+
+
     </LinearLayout>
 
 </ScrollView>

@@ -10,7 +10,7 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/btn_routes"
+            android:id="@+id/btn_home"
             android:layout_width="1dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-3dp"
@@ -18,22 +18,23 @@
             android:layout_weight="0.1"
             android:text="@string/app_Home"
             android:textSize="8sp"
+            android:background="@drawable/mybutton"
             android:onClick="GotoHome"/>
 
         <Button
-            android:id="@+id/btn_places"
+            android:id="@+id/btn_Health"
             android:layout_width="1dp"
-            android:layout_height="38dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="-3dp"
             android:layout_marginRight="-1dp"
             android:layout_weight="0.1"
-            android:background="@color/colorAccent"
+            android:background="@drawable/mybutton"
+            android:onClick="GotoHealth"
             android:text="@string/app_Health"
-            android:textSize="8sp"
-            android:onClick="GotoHealth"/>
+            android:textSize="8sp" />
 
         <Button
-            android:id="@+id/btn_events"
+            android:id="@+id/btn_Emer"
             android:layout_width="1dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-3dp"
@@ -41,10 +42,12 @@
             android:layout_weight="0.1"
             android:text="@string/app_Emer"
             android:textSize="8sp"
-            android:onClick="GotoEmer"/>/>
+            android:onClick="GotoEmer"
+            android:background="@drawable/mybutton"
+            />
 
         <Button
-            android:id="@+id/btn_about"
+            android:id="@+id/btn_local"
             android:layout_width="1dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="-3dp"
@@ -53,7 +56,8 @@
             android:clickable="true"
             android:text="@string/app_Local"
             android:textSize="8sp"
-            android:onClick="GotoLocal"/>/>
+            android:background="@drawable/mybutton"
+            android:onClick="GotoLocal"/>
     </TableRow>
 
 </FrameLayout>

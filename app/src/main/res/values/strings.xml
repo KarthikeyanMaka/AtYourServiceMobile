@@ -11,12 +11,6 @@
     <string name="app_Local">Local Community</string>
     <string name="home_second">Home Second</string>
     <string name="language">language</string>
-    <string name="english">English</string>
-    <string name="hindi">हिन्दी</string>
-    <string name="tamil">தமிழ்</string>
-    <string name="telugu">తెలుగు</string>
-    <string name="kannada">ಕನ್ನಡ</string>
-    <string name="malayalam">മലയാളം</string>
-    <string name="bengali">বাংলা</string>
     <string name="app_playnxtbtn">Play Next</string>
+    <string name="app_heplline">HelpLine</string>
 </resources>
