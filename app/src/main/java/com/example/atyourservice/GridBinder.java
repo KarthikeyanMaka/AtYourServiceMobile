@@ -25,7 +25,7 @@ import java.util.ArrayList;
 
 
 public class GridBinder {
-    public static void BindHelplineGrid (Context c, String jsonData, GridView gv) throws JSONException {
+    public static void BindHelplineGrid (Context c, String jsonData, GridView gv,boolean isCentral) throws JSONException {
         try {
             JSONArray ja = new JSONArray(jsonData);
             JSONObject jo;
@@ -39,10 +39,20 @@ public class GridBinder {
             for (int i=0;i<ja.length();i++)
             {
                 jo=ja.getJSONObject(i);
+                String helpline;
+                String helpemail;
+                String tollfree;
 
-                String helpline=jo.getString("helpline_number");
-                String helpemail=jo.getString("helpline_email");
-                String tollfree=jo.getString("toll_free");
+                if(isCentral) {
+                    helpline = jo.getString("globalhelpline_number");
+                    helpemail = "";
+                    tollfree = jo.getString("toll_free");
+                }
+                else{
+                    helpline = jo.getString("helpline_number");
+                    helpemail = jo.getString("helpline_email");
+                    tollfree = jo.getString("toll_free");
+                }
 
                 objhelplst.helpline_email= helpemail;
                 objhelplst.helpline_number=helpline;
@@ -52,7 +62,8 @@ public class GridBinder {
 
             }
             ErrorHandling.AlertMessage(jsonlist.get(0).helpline_email.toString(),c);
-            GridAdapter objHelpView = new GridAdapter(c,jsonlist);
+
+            GridAdapter objHelpView = new GridAdapter(c,jsonlist,isCentral);
 
 
             gv.setAdapter(objHelpView);

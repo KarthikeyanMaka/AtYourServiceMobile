@@ -16,10 +16,12 @@ public class GridAdapter extends BaseAdapter{
 
     Context c;
     ArrayList<StateHelplinelist> helplinelists;
+    boolean isCentral;
 
-    public GridAdapter(Context c, ArrayList<StateHelplinelist> phelplinelists) {
+    public GridAdapter(Context c, ArrayList<StateHelplinelist> phelplinelists, boolean pisCentral) {
         this.c = c;
         this.helplinelists = phelplinelists;
+        this.isCentral=pisCentral;
     }
 
     @Override
@@ -43,9 +45,15 @@ public class GridAdapter extends BaseAdapter{
         {
             view=LayoutInflater.from(c).inflate(R.layout.grid_adapter,viewGroup,false);
         }
+
         TextView helplineNum= (TextView) view.findViewById(R.id.txthelpPhon);
         TextView helplineEmail= (TextView) view.findViewById(R.id.txthelpemailId);
         TextView helpTollFree= (TextView) view.findViewById(R.id.txtTollfree);
+
+        if(isCentral)
+        {
+            helplineEmail.setVisibility(View.INVISIBLE);
+        }
 
         StateHelplinelist lstHelp= (StateHelplinelist) this.getItem(i);
 

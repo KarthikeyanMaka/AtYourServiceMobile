@@ -18,4 +18,5 @@
     <string name="app_helpnotext">സംസ്ഥാന സഹായ നമ്പർ</string>
     <string name="app_helpemailtxt">സംസ്ഥാന ഹെൽപ്പ്ലൈൻ ഇമെയിൽ</string>
     <string name="app_helptollfree">ടോൾ ഫ്രീ നമ്പർ ഹെൽപ്പ്ലൈൻ</string>
+    <string name="app_helpCent">കേന്ദ്ര സഹായ നമ്പർ</string>
 </resources>

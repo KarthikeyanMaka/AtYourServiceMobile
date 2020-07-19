@@ -23,6 +23,7 @@ public class HelpLine extends AppCompatActivity {
         try {
 
         String JsonData ="[{\"helpline_number\":\"044-29510500\",\"state_or_UT\":\"Tamil Nadu\",\"helpline_email\":\"ncov2019@gov.in\",\"globalhelpline_number\":\"+91-11-23978046\",\"source\":\"https://www.mohfw.gov.in/pdf/coronvavirushelplinenumber.pdf\",\"toll_free\":\"1075\"}]";
+        String CentralJsonData ="{\"helpline_number\":\"\",\"state_or_UT\":\"Central\",\"helpline_email\":\"ncov2019@gov.in\",\"globalhelpline_number\":\"+91-11-23978046\",\"source\":\"\",\"toll_free\":\"1075\"}";
 
         //Language dropdown configuration
         dropdown =(Spinner)findViewById(R.id.spinner1);
@@ -44,12 +45,13 @@ public class HelpLine extends AppCompatActivity {
             });
 
 
-        //Default Grid config
+        //State Helpline config
         GridView objGrid = (GridView) findViewById(R.id.gvhelp);
-        GridBinder.BindHelplineGrid(this,JsonData,objGrid);
+        GridBinder.BindHelplineGrid(this,JsonData,objGrid,false);
 
-
-
+        //CentralHelpline Config
+        GridView objCentGrid = (GridView) findViewById(R.id.gvCenthelp);
+        GridBinder.BindHelplineGrid(this,CentralJsonData,objCentGrid,true);
 
         }
 //        catch (JSONException e) {

@@ -17,4 +17,5 @@
     <string name="app_helpnotext">State Helpline number</string>
     <string name="app_helpemailtxt">State Helpline email</string>
     <string name="app_helptollfree">Toll Free</string>
+    <string name="app_helpCent">Central Helpline number</string>
 </resources>

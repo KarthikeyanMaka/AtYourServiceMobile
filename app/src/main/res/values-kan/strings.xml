@@ -18,4 +18,5 @@
     <string name="app_helpnotext">ರಾಜ್ಯ ಸಹಾಯ ಸಂಖ್ಯೆ</string>
     <string name="app_helpemailtxt">ರಾಜ್ಯ ಸಹಾಯವಾಣಿ ಇಮೇಲ್</string>
     <string name="app_helptollfree">ಸಹಾಯವಾಣಿ ಟೋಲ್ ಫ್ರೀ ಸಂಖ್ಯೆ</string>
+    <string name="app_helpCent">ಕೇಂದ್ರ ಸಹಾಯ ಸಂಖ್ಯೆ</string>
 </resources>

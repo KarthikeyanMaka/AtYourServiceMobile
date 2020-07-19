@@ -18,4 +18,5 @@
     <string name="app_helpnotext">மாநில உதவி எண்</string>
     <string name="app_helpemailtxt">மாநில ஹெல்ப்லைன் மின்னஞ்சல்</string>
     <string name="app_helptollfree">ஹெல்ப்லைன் கட்டணமில்லா எண்</string>
+    <string name="app_helpCent">மத்திய உதவி எண்</string>
 </resources>

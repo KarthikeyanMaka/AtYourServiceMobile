@@ -94,21 +94,65 @@
                 android:text="@string/app_helptollfree"
                 android:textColor="@color/design_default_color_primary_dark" />
         </TableRow>
-        <TableRow android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+
+        <TableRow
+            android:layout_width="401dp"
+            android:layout_height="101dp"
             android:layout_marginTop="80dp"
             android:orientation="horizontal">
-        <GridView
-            android:id="@+id/gvhelp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:numColumns="1"
-            android:stretchMode="columnWidth"
-            android:background="@color/grey"
-            android:gravity="center"
-            />
+
+            <GridView
+                android:id="@+id/gvhelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:background="@color/grey"
+                android:gravity="center"
+                android:numColumns="1"
+                android:stretchMode="columnWidth" />
+
         </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginTop="200dp">
+
+        <TextView
+            android:id="@+id/lblhelpCentrl"
+            style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+            android:layout_width="139dp"
+            android:layout_height="49dp"
+            android:text="@string/app_helpCent"
+            android:textColor="@color/design_default_color_primary_dark" />
+
+        <TextView
+            android:id="@+id/lblhelpTollCentrl"
+            style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+            android:layout_width="130dp"
+            android:layout_height="51dp"
+            android:text="@string/app_helptollfree"
+            android:textColor="@color/design_default_color_primary_dark" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="392dp"
+            android:layout_height="117dp"
+            android:layout_marginTop="280dp"
+            android:orientation="horizontal">
+
+            <GridView
+                android:id="@+id/gvCenthelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:background="@color/grey"
+                android:gravity="center"
+                android:numColumns="1"
+                android:stretchMode="columnWidth" />
+        </TableRow>
+
     </RelativeLayout>
 </LinearLayout>
 

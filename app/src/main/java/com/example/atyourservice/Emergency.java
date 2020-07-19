@@ -93,6 +93,7 @@ public class Emergency extends AppCompatActivity {
 
     }
 
+
     public void GotoHome(View v)
     {
         Intent intent = new Intent(this, HomeActivity.class);
