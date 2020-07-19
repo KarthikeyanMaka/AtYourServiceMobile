@@ -15,4 +15,7 @@
     <string name="app_playnxtbtn">அடுத்தது</string>
     <string name="app_heplline">ஹெல்ப்லைன்</string>
     <string name="app_statelist">மாநிலத்தைத் தேர்வுசெய்க</string>
+    <string name="app_helpnotext">மாநில உதவி எண்</string>
+    <string name="app_helpemailtxt">மாநில ஹெல்ப்லைன் மின்னஞ்சல்</string>
+    <string name="app_helptollfree">ஹெல்ப்லைன் கட்டணமில்லா எண்</string>
 </resources>

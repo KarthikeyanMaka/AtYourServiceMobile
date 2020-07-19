@@ -15,4 +15,7 @@
     <string name="app_playnxtbtn">తరువాత</string>
     <string name="app_heplline">హెల్ప్లైన్</string>
     <string name="app_statelist">రాష్ట్రాన్ని ఎంచుకోండి</string>
+    <string name="app_helpnotext">రాష్ట్ర సహాయం నంr</string>
+    <string name="app_helpemailtxt">రాష్ట్ర హెల్ప్‌లైన్ ఇమెయిల్</string>
+    <string name="app_helptollfree">హెల్ప్‌లైన్ టోల్ ఫ్రీ నంబర్</string>
 </resources>

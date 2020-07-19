@@ -15,4 +15,7 @@
     <string name="app_playnxtbtn">അടുത്തത്</string>
     <string name="app_heplline">ഹെൽപ്പ് ലൈൻ</string>
     <string name="app_statelist">സംസ്ഥാനം തിരഞ്ഞെടുക്കുക</string>
+    <string name="app_helpnotext">സംസ്ഥാന സഹായ നമ്പർ</string>
+    <string name="app_helpemailtxt">സംസ്ഥാന ഹെൽപ്പ്ലൈൻ ഇമെയിൽ</string>
+    <string name="app_helptollfree">ടോൾ ഫ്രീ നമ്പർ ഹെൽപ്പ്ലൈൻ</string>
 </resources>

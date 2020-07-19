@@ -15,4 +15,7 @@
     <string name="app_playnxtbtn">आगे</string>
     <string name="app_heplline">हेल्पलाइन</string>
     <string name="app_statelist">राज्य चुनें</string>
+    <string name="app_helpnotext">राज्य सहायता सं।</string>
+    <string name="app_helpemailtxt">राज्य हेल्पलाइन ईमेल</string>
+    <string name="app_helptollfree">हेल्पलाइन टोल फ्री नंबरT</string>
 </resources>

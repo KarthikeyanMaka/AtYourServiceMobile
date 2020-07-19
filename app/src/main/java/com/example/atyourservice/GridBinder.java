@@ -1,15 +1,20 @@
 package com.example.atyourservice;
 
 import android.content.Context;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
 
 import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.ListAdapter;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.xml.sax.ErrorHandler;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -26,7 +31,9 @@ public class GridBinder {
             JSONObject jo;
             StateHelplinelist objhelplst = new StateHelplinelist();
             
-            ArrayAdapter<StateHelplinelist> jsonlist= new ArrayAdapter<StateHelplinelist>(c,R.layout.activity_help_line);
+            ArrayList<StateHelplinelist> jsonlist= new ArrayList<StateHelplinelist>();
+
+
             jsonlist.clear();
 
             for (int i=0;i<ja.length();i++)
@@ -44,7 +51,12 @@ public class GridBinder {
                 jsonlist.add(objhelplst);
 
             }
-            gv.setAdapter(jsonlist);
+            ErrorHandling.AlertMessage(jsonlist.get(0).helpline_number.toString(),c);
+            GridAdapter objHelpView = new GridAdapter(c,jsonlist);
+
+
+            gv.setAdapter(objHelpView);
+
 
         }
         catch (Exception ex)
