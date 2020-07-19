@@ -51,7 +51,7 @@ public class GridBinder {
                 jsonlist.add(objhelplst);
 
             }
-            ErrorHandling.AlertMessage(jsonlist.get(0).helpline_number.toString(),c);
+            ErrorHandling.AlertMessage(jsonlist.get(0).helpline_email.toString(),c);
             GridAdapter objHelpView = new GridAdapter(c,jsonlist);
 
 

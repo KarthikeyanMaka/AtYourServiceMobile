@@ -1,51 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
 
-    android:layout_margin="10dp"
-    card_view_cardCornerRadius="5dp"
-    card_view_cardElevation="5dp"
-    android:layout_height="200dp">
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/txthelpPhon"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:background="@drawable/textborder"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/txthelpPhon"
-            android:padding="10dp"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            android:lines="3"
-            android:layout_alignParentLeft="true"
+    <TextView
+        android:id="@+id/txthelpemailId"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:background="@drawable/textborder"/>
 
-            />
+    <TextView
+        android:id="@+id/txtTollfree"
+        android:layout_width="106dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:background="@drawable/textborder"/>
+</TableRow>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            android:lines="3"
-            android:layout_alignParentLeft="false"
-            android:id="@+id/txthelpemailId"
-            />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            android:lines="3"
-            android:id="@+id/txtTollfree"
-            android:layout_alignParentLeft="false"/>
-
-    </LinearLayout>
-
-</androidx.cardview.widget.CardView>

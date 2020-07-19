@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="fill_parent"
+      android:layout_width="match_parent"
+     android:orientation="vertical">
+    <LinearLayout
         android:id="@+id/Linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,57 +59,58 @@
                 android:background="@android:drawable/btn_dropdown"
                 android:spinnerMode="dropdown" />
         </TableRow>
-
+</LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
+
         >
-        <TableRow android:layout_width="match_parent"
-            android:layout_height="39dp">
-            <TextView android:id="@+id/lblhelpline"
-                android:layout_height="wrap_content"
-                android:layout_width="130dp"
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="53dp">
+
+            <TextView
+                android:id="@+id/lblhelpline"
+                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                android:layout_width="139dp"
+                android:layout_height="49dp"
                 android:text="@string/app_helpnotext"
+                android:textColor="@color/design_default_color_primary_dark" />
+
+            <TextView
+                android:id="@+id/lblhelpemail"
                 style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-                android:textColor="@color/design_default_color_primary_dark"/>
-            <TextView android:id="@+id/lblhelpemail"
-                android:layout_height="wrap_content"
                 android:layout_width="130dp"
+                android:layout_height="51dp"
                 android:text="@string/app_helpemailtxt"
-                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-                android:textColor="@color/design_default_color_primary_dark"/>
+                android:textColor="@color/design_default_color_primary_dark" />
 
             <TextView
                 android:id="@+id/lblhelpToll"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="@string/app_helptollfree"
                 style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-                android:textColor="@color/design_default_color_primary_dark"/>
+                android:layout_width="136dp"
+                android:layout_height="51dp"
+                android:text="@string/app_helptollfree"
+                android:textColor="@color/design_default_color_primary_dark" />
         </TableRow>
         <TableRow android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp">
+            android:layout_marginTop="80dp"
+            android:orientation="horizontal">
         <GridView
             android:id="@+id/gvhelp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:numColumns="3"
-            android:layout_margin="10dp"
-            android:background="@color/grey"
-            android:columnWidth="90dp"
-            android:gravity="center"
-            android:horizontalSpacing="10dp"
+            android:layout_marginStart="4dp"
+            android:numColumns="1"
             android:stretchMode="columnWidth"
-            android:verticalSpacing="10dp"/>
+            android:background="@color/grey"
+            android:gravity="center"
+            />
         </TableRow>
     </RelativeLayout>
+</LinearLayout>
 
-    </LinearLayout>
 
 
