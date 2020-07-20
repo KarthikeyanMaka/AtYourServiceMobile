@@ -36,7 +36,7 @@
 
         <TableRow
             android:id="@+id/tblData"
-            android:layout_width="224dp"
+            android:layout_width="358dp"
             android:layout_height="61dp"
             android:paddingTop="-5dp">
 
@@ -51,7 +51,7 @@
 
             <Spinner
                 android:id="@+id/dpState"
-                android:layout_width="34dp"
+                android:layout_width="143dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="25dp"
@@ -68,31 +68,33 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="53dp">
+            android:layout_height="76dp">
 
             <TextView
                 android:id="@+id/lblhelpline"
                 style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
                 android:layout_width="139dp"
-                android:layout_height="49dp"
+                android:layout_height="match_parent"
                 android:text="@string/app_helpnotext"
-                android:textColor="@color/design_default_color_primary_dark" />
-
-            <TextView
-                android:id="@+id/lblhelpemail"
-                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-                android:layout_width="130dp"
-                android:layout_height="51dp"
-                android:text="@string/app_helpemailtxt"
                 android:textColor="@color/design_default_color_primary_dark" />
 
             <TextView
                 android:id="@+id/lblhelpToll"
                 style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-                android:layout_width="136dp"
-                android:layout_height="51dp"
+                android:layout_width="117dp"
+                android:layout_height="match_parent"
                 android:text="@string/app_helptollfree"
                 android:textColor="@color/design_default_color_primary_dark" />
+
+            <TextView
+                android:id="@+id/lblhelpemail"
+                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/app_helpemailtxt"
+                android:textColor="@color/design_default_color_primary_dark" />
+
+
         </TableRow>
 
         <TableRow
@@ -138,7 +140,7 @@
 
         <TableRow
             android:layout_width="392dp"
-            android:layout_height="117dp"
+            android:layout_height="185dp"
             android:layout_marginTop="280dp"
             android:orientation="horizontal">
 

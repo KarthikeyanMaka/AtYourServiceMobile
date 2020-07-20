@@ -5,10 +5,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.ListAdapter;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.json.JSONArray;
@@ -22,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class GridBinder {
@@ -61,7 +64,7 @@ public class GridBinder {
                 jsonlist.add(objhelplst);
 
             }
-            ErrorHandling.AlertMessage(jsonlist.get(0).helpline_email.toString(),c);
+
 
             GridAdapter objHelpView = new GridAdapter(c,jsonlist,isCentral);
 
@@ -69,9 +72,35 @@ public class GridBinder {
             gv.setAdapter(objHelpView);
 
 
-        }
+            }
         catch (Exception ex)
         {
+            throw ex;
+        }
+    }
+    public static void BindStateDropDown (Context c, String jsonData, Spinner gv) throws JSONException {
+        try {
+
+            JSONArray ja = new JSONArray(jsonData);
+            JSONObject jo;
+
+            List<String> stateCodelist =new ArrayList<String>();
+            stateCodelist.add("");
+
+            for (int i=0;i<ja.length();i++) {
+                jo = ja.getJSONObject(i);
+
+                stateCodelist.add(jo.getString("stateCode") +","+jo.getString("stateName"));
+
+            }
+
+            String[] stateArray = stateCodelist.toArray(new String[stateCodelist.size()]);
+
+            ArrayAdapter<String> jsonlist= new ArrayAdapter<String>(c,R.layout.support_simple_spinner_dropdown_item,stateArray);
+
+            gv.setAdapter(jsonlist);
+
+        } catch (Exception ex) {
             throw ex;
         }
     }

@@ -40,16 +40,16 @@
         <TableRow
             android:id="@+id/tblimages"
             android:layout_width="match_parent"
-            android:layout_height="112dp"
+            android:layout_height="210dp"
             android:paddingTop="-5dp">
 
             <ImageView
                 android:id="@+id/imghelpline"
-                android:layout_width="117dp"
-                android:layout_height="91dp"
+                android:layout_width="194dp"
+                android:layout_height="match_parent"
                 android:contentDescription="@string/app_heplline"
-                android:src="@drawable/helpline"
-                android:onClick="ShowHelplinenumbers"/>
+                android:onClick="ShowHelplinenumbers"
+                android:src="@drawable/helpline" />
         </TableRow>
 
 

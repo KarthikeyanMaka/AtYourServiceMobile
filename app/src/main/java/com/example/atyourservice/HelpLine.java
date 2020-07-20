@@ -1,7 +1,9 @@
 package com.example.atyourservice;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.savedstate.SavedStateRegistryOwner;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -13,17 +15,46 @@ import android.widget.Spinner;
 import org.json.JSONException;
 
 import java.util.Locale;
+import java.util.concurrent.ExecutionException;
 
 public class HelpLine extends AppCompatActivity {
     Spinner dropdown;
+    Spinner stateDrop;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_line);
         try {
 
-        String JsonData ="[{\"helpline_number\":\"044-29510500\",\"state_or_UT\":\"Tamil Nadu\",\"helpline_email\":\"ncov2019@gov.in\",\"globalhelpline_number\":\"+91-11-23978046\",\"source\":\"https://www.mohfw.gov.in/pdf/coronvavirushelplinenumber.pdf\",\"toll_free\":\"1075\"}]";
-        String CentralJsonData ="{\"helpline_number\":\"\",\"state_or_UT\":\"Central\",\"helpline_email\":\"ncov2019@gov.in\",\"globalhelpline_number\":\"+91-11-23978046\",\"source\":\"\",\"toll_free\":\"1075\"}";
+            //CentralHelpline Config
+            String CentralJsonData ="["+ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetCentralHelpline")+"]";
+            GridView objCentGrid = (GridView) findViewById(R.id.gvCenthelp);
+            GridBinder.BindHelplineGrid(this,CentralJsonData,objCentGrid,true);
+
+            //State Drop Down Configuration
+            String StateList= ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllState");
+            stateDrop =(Spinner)findViewById(R.id.dpState);
+            GridBinder.BindStateDropDown(this, StateList,stateDrop);
+
+            if(savedInstanceState !=null){
+                stateDrop.setSelection(savedInstanceState.getInt("StateSpinner",0));
+            }
+
+
+        stateDrop.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int postion, long id) {
+
+                if (adapterView.getItemAtPosition(postion).toString() != "") {
+                    LoadStateHelplineGrid(adapterView.getItemAtPosition(postion).toString());
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
 
         //Language dropdown configuration
         dropdown =(Spinner)findViewById(R.id.spinner1);
@@ -45,13 +76,7 @@ public class HelpLine extends AppCompatActivity {
             });
 
 
-        //State Helpline config
-        GridView objGrid = (GridView) findViewById(R.id.gvhelp);
-        GridBinder.BindHelplineGrid(this,JsonData,objGrid,false);
 
-        //CentralHelpline Config
-        GridView objCentGrid = (GridView) findViewById(R.id.gvCenthelp);
-        GridBinder.BindHelplineGrid(this,CentralJsonData,objCentGrid,true);
 
         }
 //        catch (JSONException e) {
@@ -61,8 +86,16 @@ public class HelpLine extends AppCompatActivity {
             ErrorHandling.ErrorDialog(ex.getMessage().toString(),this);
         }
 
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState){
+        outState.putInt("StateSpinner",stateDrop.getSelectedItemPosition());
+        super.onSaveInstanceState(outState);
 
     }
+
+
     public void Setlocale(String localName){
         Locale Current = getResources().getConfiguration().locale;
         Locale appLocale = new Locale(localName);
@@ -79,5 +112,43 @@ public class HelpLine extends AppCompatActivity {
             startActivity(refresh);
         }
 
+    }
+    public String ServerRequest(String URL)
+    {
+        String result="";
+
+        JsonAsyncTask getRequest = new JsonAsyncTask();
+        try {
+            result = getRequest.execute(URL).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+    public String ConstructHelplineURL(String URL, String StateCodeName)
+    {
+        String result = "";
+
+        String StateCode = StateCodeName.split(",")[0].toString();
+
+        URL=URL.replace("<StateCode>",StateCode);
+        result =ServerRequest(URL);
+        return result;
+    }
+    public void LoadStateHelplineGrid(String StateCodeName)
+    {
+        String JsonData = ConstructHelplineURL("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetHelplinebyState/<StateCode>"
+                , StateCodeName);
+
+        //State Helpline config
+        GridView objGrid = (GridView) findViewById(R.id.gvhelp);
+        try {
+            GridBinder.BindHelplineGrid(getApplicationContext(), JsonData, objGrid, false);
+        } catch (JSONException e) {
+            ErrorHandling.ErrorDialog(e.getMessage().toString(), getApplicationContext());
+        }
     }
 }
