@@ -44,7 +44,6 @@ public class HelpLine extends AppCompatActivity {
         stateDrop.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int postion, long id) {
-
                 if (adapterView.getItemAtPosition(postion).toString() != "") {
                     LoadStateHelplineGrid(adapterView.getItemAtPosition(postion).toString());
                 }
@@ -144,7 +143,7 @@ public class HelpLine extends AppCompatActivity {
                 , StateCodeName);
 
         //State Helpline config
-        GridView objGrid = (GridView) findViewById(R.id.gvhelp);
+        GridView objGrid = (GridView) findViewById(R.id.gvhosp);
         try {
             GridBinder.BindHelplineGrid(getApplicationContext(), JsonData, objGrid, false);
         } catch (JSONException e) {

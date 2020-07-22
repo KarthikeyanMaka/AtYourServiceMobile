@@ -39,8 +39,8 @@
 
         <TableRow
             android:id="@+id/tblimages"
-            android:layout_width="match_parent"
-            android:layout_height="210dp"
+            android:layout_width="400dp"
+            android:layout_height="227dp"
             android:paddingTop="-5dp">
 
             <ImageView
@@ -50,6 +50,15 @@
                 android:contentDescription="@string/app_heplline"
                 android:onClick="ShowHelplinenumbers"
                 android:src="@drawable/helpline" />
+
+            <ImageView
+                android:id="@+id/imgCovidHosp"
+                android:layout_width="208dp"
+                android:layout_height="227dp"
+                android:contentDescription="@string/app_heplline"
+                android:onClick="ShowCovidHospitals"
+                android:src="@drawable/hospitalcovid" />
+
         </TableRow>
 
 

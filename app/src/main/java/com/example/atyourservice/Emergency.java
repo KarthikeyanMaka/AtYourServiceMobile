@@ -68,6 +68,21 @@ public class Emergency extends AppCompatActivity {
                     }
                 }
             });
+
+            ImageView img2 = (ImageView) findViewById(R.id.imgCovidHosp);
+            img.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    try {
+                        Intent intent = new Intent(Emergency.this, CovidHospitals.class);
+                        startActivity(intent);
+                    }
+                    catch (Exception ex)
+                    {
+                        ErrorHandling.ErrorDialog(ex.getMessage().toString(), Emergency.this);
+                    }
+                }
+            });
+
         }
         catch (Exception ex)
         {
