@@ -18,8 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="UnusedAttribute">
-        <activity android:name=".CovidHospitals"></activity>
-        <activity android:name=".HelpLine" />
+
+        <activity android:name=".HelpLine"></activity>
         <activity android:name=".Local" />
         <activity android:name=".Emergency" />
         <activity android:name=".HomeActivity" />
