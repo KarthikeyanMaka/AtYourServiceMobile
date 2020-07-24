@@ -28,7 +28,7 @@ public class Emergency extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emergency);
-        try{
+        try {
 
             //Language dropdown configuration
             dropdown = findViewById(R.id.spinner1);
@@ -36,10 +36,9 @@ public class Emergency extends AppCompatActivity {
 
 
             //Adding scroll bars
-            final ScrollView scrollView=(ScrollView) findViewById(R.id.Scroll1);
+            final ScrollView scrollView = (ScrollView) findViewById(R.id.Scroll1);
             scrollView.setVerticalScrollbarPosition(ScrollView.SCROLLBAR_POSITION_RIGHT);
             scrollView.setVerticalScrollBarEnabled(true);
-
 
 
             dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -61,13 +60,24 @@ public class Emergency extends AppCompatActivity {
                     try {
                         Intent intent = new Intent(Emergency.this, HelpLine.class);
                         startActivity(intent);
-                    }
-                    catch (Exception ex)
-                    {
+                    } catch (Exception ex) {
                         ErrorHandling.ErrorDialog(ex.getMessage().toString(), Emergency.this);
                     }
                 }
             });
+
+            ImageView imghos = (ImageView) findViewById(R.id.imagehospView);
+            imghos.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent hosintent = new Intent(Emergency.this, CovidHospitals.class);
+                    startActivity(hosintent);
+
+                }
+            });
+
+
+
         }
         catch (Exception ex)
         {

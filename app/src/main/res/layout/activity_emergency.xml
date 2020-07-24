@@ -50,6 +50,13 @@
                 android:contentDescription="@string/app_heplline"
                 android:onClick="ShowHelplinenumbers"
                 android:src="@drawable/helpline" />
+
+            <ImageView
+                android:id="@+id/imagehospView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_covidhosp"
+                app:srcCompat="@drawable/hospitalcovid" />
         </TableRow>
 
 
