@@ -19,4 +19,10 @@
     <string name="app_helpemailtxt">ರಾಜ್ಯ ಸಹಾಯವಾಣಿ ಇಮೇಲ್</string>
     <string name="app_helptollfree">ಸಹಾಯವಾಣಿ ಟೋಲ್ ಫ್ರೀ ಸಂಖ್ಯೆ</string>
     <string name="app_helpCent">ಕೇಂದ್ರ ಸಹಾಯ ಸಂಖ್ಯೆ</string>
+    <string name="app_covidhosp" >ಕೋವಿಡ್ ಆಸ್ಪತ್ರೆಗಳು</string>
+    <string name="app_selectcity" >ನಗರವನ್ನು ಆರಿಸಿ</string>
+    <string name="app_hosname" >ಆಸ್ಪತ್ರೆಯ ಹೆಸರು</string>
+    <string name="app_hoscity" >ನಗರ</string>
+    <string name="app_hosowner" >ಒಡೆತನದ</string>
+    <string name="app_hosbeds" >ಹಾಸಿಗೆಗಳ ಸಂಖ್ಯೆ</string>
 </resources>

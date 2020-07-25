@@ -72,7 +72,7 @@
             android:layout_height="40dp"
             android:layout_weight="1"
             android:fontFamily="sans-serif-condensed"
-            android:text="@string/app_statelist"
+            android:text="@string/app_selectcity"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <Spinner
@@ -86,5 +86,66 @@
             android:spinnerMode="dropdown" />
     </TableRow>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="87dp">
+
+            <TextView
+                android:id="@+id/txthosname"
+                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                android:layout_width="156dp"
+                android:layout_height="match_parent"
+                android:text="@string/app_hosname"
+                android:textColor="@color/design_default_color_primary_dark" />
+
+            <TextView
+                android:id="@+id/txthoscity"
+                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                android:layout_width="74dp"
+                android:layout_height="match_parent"
+                android:text="@string/app_hoscity"
+                android:textColor="@color/design_default_color_primary_dark" />
+
+            <TextView
+                android:id="@+id/txtowner"
+                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                android:layout_width="84dp"
+                android:layout_height="match_parent"
+                android:text="@string/app_hosowner"
+                android:textColor="@color/design_default_color_primary_dark" />
+
+            <TextView
+                android:id="@+id/txtbeds"
+                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+                android:layout_width="97dp"
+                android:layout_height="match_parent"
+                android:text="@string/app_hosbeds"
+                android:textColor="@color/design_default_color_primary_dark" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="304dp"
+            android:layout_marginTop="120dp"
+            android:orientation="horizontal">
+
+
+            <GridView
+                android:id="@+id/gvcovidhosp"
+                android:layout_width="match_parent"
+                android:layout_height="359dp"
+                android:layout_marginStart="4dp"
+                android:background="@color/grey"
+                android:gravity="center"
+                android:numColumns="1"
+                android:stretchMode="columnWidth" />
+        </TableRow>
+
+    </RelativeLayout>
 
 </LinearLayout>

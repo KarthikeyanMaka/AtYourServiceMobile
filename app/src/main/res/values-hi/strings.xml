@@ -19,4 +19,10 @@
     <string name="app_helpemailtxt">राज्य हेल्पलाइन ईमेल</string>
     <string name="app_helptollfree">हेल्पलाइन टोल फ्री नंबरT</string>
     <string name="app_helpCent">केंद्रीय सहायता सं।</string>
+    <string name="app_covidhosp" >कोविद अस्पताल</string>
+    <string name="app_selectcity" >शहर चुनें</string>
+    <string name="app_hosname" >अस्पताल का नाम</string>
+    <string name="app_hoscity" >शहर</string>
+    <string name="app_hosowner" >के स्वामित्व</string>
+    <string name="app_hosbeds" >बिस्तरों की संख्या</string>
 </resources>

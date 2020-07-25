@@ -19,4 +19,10 @@
     <string name="app_helpemailtxt">రాష్ట్ర హెల్ప్‌లైన్ ఇమెయిల్</string>
     <string name="app_helptollfree">హెల్ప్‌లైన్ టోల్ ఫ్రీ నంబర్</string>
     <string name="app_helpCent">కేంద్ర సహాయం నం</string>
+    <string name="app_covidhosp" >కోవిడ్ ఆసుపత్రులు</string>
+    <string name="app_selectcity" >నగరాన్ని ఎంచుకోండి</string>
+    <string name="app_hosname" >ఆసుపత్రి పేరు</string>
+    <string name="app_hoscity" >నగరం</string>
+    <string name="app_hosowner" >స్వంతం</string>
+    <string name="app_hosbeds" >పడకల సంఖ్య</string>
 </resources>

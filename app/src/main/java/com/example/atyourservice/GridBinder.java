@@ -28,6 +28,52 @@ import java.util.List;
 
 
 public class GridBinder {
+    public static void BindHospitalGrid (Context c, String JsonData, GridView gv) throws  JSONException{
+        try{
+            JSONArray ja = new JSONArray(JsonData);
+            JSONObject jo;
+
+
+            ArrayList<CovidHospitallist> jsonlist = new ArrayList<>();
+
+            jsonlist.clear();
+
+            for (int i=0;i<ja.length();i++) {
+                CovidHospitallist objhoslist = new CovidHospitallist();
+
+                jo = ja.getJSONObject(i);
+                String hosname= "";
+                String hoscity = "";
+                String hosowner = "";
+                String hosbeds = "";
+
+                hosname =jo.getString("name");
+                hoscity =jo.getString("city");
+                hosowner =jo.getString("ownership");
+                hosbeds =jo.getString("hospitalBeds");
+
+
+
+                objhoslist.name=hosname;
+                objhoslist.city=hoscity;
+                objhoslist.ownership=hosowner;
+                objhoslist.hospitalBeds=hosbeds;
+
+                jsonlist.add(objhoslist);
+
+            }
+
+            HospitalGrid objhosgrid = new HospitalGrid(c,jsonlist);
+
+            gv.setAdapter(objhosgrid);
+
+
+        }
+        catch (Exception ex)
+        {throw ex;}
+
+    }
+
     public static void BindHelplineGrid (Context c, String jsonData, GridView gv,boolean isCentral) throws JSONException {
         try {
             JSONArray ja = new JSONArray(jsonData);
@@ -78,6 +124,30 @@ public class GridBinder {
             throw ex;
         }
     }
+    public static void BindCityDropDown (Context c, String jsonData, Spinner gv) throws JSONException{
+
+        try{
+
+            JSONArray ja = new JSONArray(jsonData);
+            JSONObject jo;
+
+            List<String> list = new ArrayList<String>();
+            list.add("");
+            for(int count=0; count<ja.length(); count++){
+                list.add(ja.getString(count));
+            }
+
+            String[] cityArray = list.toArray(new String[list.size()]);
+            ArrayAdapter<String> jsonlist= new ArrayAdapter<String>(c,R.layout.support_simple_spinner_dropdown_item,cityArray);
+
+            gv.setAdapter(jsonlist);
+
+
+        }catch (Exception ex)
+        {throw ex;}
+
+    }
+
     public static void BindStateDropDown (Context c, String jsonData, Spinner gv) throws JSONException {
         try {
 

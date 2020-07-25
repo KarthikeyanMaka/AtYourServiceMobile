@@ -19,4 +19,10 @@
     <string name="app_helpemailtxt">സംസ്ഥാന ഹെൽപ്പ്ലൈൻ ഇമെയിൽ</string>
     <string name="app_helptollfree">ടോൾ ഫ്രീ നമ്പർ ഹെൽപ്പ്ലൈൻ</string>
     <string name="app_helpCent">കേന്ദ്ര സഹായ നമ്പർ</string>
+    <string name="app_covidhosp" >കോവിഡ് ആശുപത്രികൾ</string>
+    <string name="app_selectcity" >നഗരം തിരഞ്ഞെടുക്കുക</string>
+    <string name="app_hosname" >ആശുപത്രിയുടെ പേര്</string>
+    <string name="app_hoscity" >നഗരം</string>
+    <string name="app_hosowner" >ഉടമസ്ഥതയിലുള്ള</string>
+    <string name="app_hosbeds" >കിടക്കകളുടെ എണ്ണം</string>
 </resources>
