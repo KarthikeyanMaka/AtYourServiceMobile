@@ -1,10 +1,16 @@
 package com.example.atyourservice;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.net.Uri;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.widget.AdapterView;
@@ -30,6 +36,9 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -39,15 +48,18 @@ import java.util.Locale;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONException;
+
 import java.util.concurrent.ExecutionException;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements LocationListener {
     private String [] dietVideoIds= new String[5];
     private String [] immVideoIds= new String[5];
     private String [] remVideoIds= new String[5];
     private String [] expVideoIds= new String[5];
     private String [] medVideoIds= new String[5];
+    private GpsTracker gpsTracker;
     private int lstDietId=0;
     private int lstImmId=0;
     private int lstRemId=0;
@@ -56,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView txt;
     private boolean userInteract;
     String CurrentLanguage= "en", currentLang;
+    String defLang = "en";
     Spinner dropdown;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +78,34 @@ public class MainActivity extends AppCompatActivity {
         try {
 
 
+            //To set location permission
+            try {
+                if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
+                    ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
+                }
+            } catch (Exception e){
+                ErrorHandling.ErrorDialog(e.getMessage(),this);
+            }
 
 
-        setContentView(R.layout.activity_main);
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    try {
+                        delayprocess();
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }, 3000);
+
+            defLang= LocationFinder.getLocationLang(MainActivity.this);
+            ErrorHandling.ErrorDialog(defLang,MainActivity.this);
+
+
+
+            setContentView(R.layout.activity_main);
 
         //get the spinner from the xml.
         dropdown = findViewById(R.id.spinner1);
@@ -138,11 +176,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+
         public void Setlocale(String localName){
         Locale Current = getResources().getConfiguration().locale;
         Locale appLocale = new Locale(localName);
 
-            if(Current !=appLocale){
+            if(Current.getLanguage() !=appLocale.getLanguage()){
+
+
 
              Configuration conf = new Configuration();
              conf.locale=appLocale;
@@ -153,8 +195,11 @@ public class MainActivity extends AppCompatActivity {
              finish();
              startActivity(refresh);
 
-
          }
+        }
+        public void delayprocess()
+        {
+
         }
         @Override
         public void onUserInteraction(){
@@ -290,6 +335,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
         }
 
         public String[] LoadVideo (String purl,WebView view){
@@ -344,6 +391,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    @Override
+    public void onLocationChanged(@NonNull Location location) {
+
+    }
 }
 
 
