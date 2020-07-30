@@ -25,4 +25,8 @@
     <string name="app_hoscity" >ನಗರ</string>
     <string name="app_hosowner" >ಒಡೆತನದ</string>
     <string name="app_hosbeds" >ಹಾಸಿಗೆಗಳ ಸಂಖ್ಯೆ</string>
+    <string name="app_totdeces">Deceased</string>
+    <string name="app_totcovid">TotalCases</string>
+    <string name="app_torecov">Recovered</string>
+    <string name="app_totactive">Active</string>
 </resources>

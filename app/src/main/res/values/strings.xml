@@ -24,4 +24,9 @@
     <string name="app_hoscity" >City</string>
     <string name="app_hosowner" >Owned by</string>
     <string name="app_hosbeds" >No of Beds</string>
+    <string name="app_totdeces">Deceased</string>
+    <string name="app_totcovid">TotalCases</string>
+    <string name="app_torecov">Recovered</string>
+    <string name="app_totactive">Active</string>
+
 </resources>

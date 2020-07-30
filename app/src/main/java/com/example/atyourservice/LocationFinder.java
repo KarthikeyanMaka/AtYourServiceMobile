@@ -36,6 +36,32 @@ public class LocationFinder{
         }
         return Locale;
     }
+    public static LangLocModel GetCityState(Context currentScreen) throws JSONException {
+        GpsTracker gpsTracker = new GpsTracker(currentScreen);
+        String Locale = "en";
+        LangLocModel objlocModel = null;
+        if(gpsTracker.canGetLocation()){
+            double latitude = gpsTracker.getLatitude();
+            double longitude = gpsTracker.getLongitude();
+
+
+            String lat= df2.format(latitude);
+            String longit= df2.format(longitude);
+
+            String locationURL ="https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetStateCitybyLoc/"+lat+"/"+longit;
+
+            String result= ServerRequest(locationURL);
+
+            objlocModel=GetLangLocData(result);
+
+
+
+        }else{
+            gpsTracker.showSettingsAlert();
+        }
+        return objlocModel;
+    }
+
     public static String ServerRequest(String URL)
     {
         String result="";

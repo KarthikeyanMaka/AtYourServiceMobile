@@ -25,4 +25,8 @@
     <string name="app_hoscity" >నగరం</string>
     <string name="app_hosowner" >స్వంతం</string>
     <string name="app_hosbeds" >పడకల సంఖ్య</string>
+    <string name="app_totdeces">Deceased</string>
+    <string name="app_totcovid">TotalCases</string>
+    <string name="app_torecov">Recovered</string>
+    <string name="app_totactive">Active</string>
 </resources>

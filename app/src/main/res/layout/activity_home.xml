@@ -4,13 +4,19 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:id="@+id/Scroll1"
 android:layout_width="match_parent"
-android:layout_height="wrap_content">
+android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/Linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.893" >
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="39dp">
@@ -36,6 +42,109 @@ android:layout_height="wrap_content">
         </TableRow>
 
         <include layout="@layout/top_menu" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/layoutborder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.893">
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="397dp"
+                android:layout_height="205dp"
+                android:contentDescription="@string/app_Emer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.893" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/txtRecovered"
+                android:layout_width="107dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textborder"
+                android:text="@string/app_torecov"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/txttotal"
+                android:layout_width="109dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textborder"
+                android:text="@string/app_totcovid"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/txtActive"
+                android:layout_width="94dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textborder"
+                android:text="@string/app_totactive"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/txtdeceased"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textborder"
+                android:text="@string/app_totdeces"
+                android:textColor="@color/black" />
+
+
+        </TableRow>
+        <TableRow android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/txtRecoveredcount"
+                android:layout_width="107dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textborder"
+                android:text="@string/app_torecov"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/txttotalcount"
+                android:layout_width="109dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textborder"
+                android:text="@string/app_totcovid"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/txtActivecount"
+                android:layout_width="94dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textborder"
+                android:text="@string/app_totactive"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/txtdeceasedcount"
+                android:layout_width="95dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textborder"
+                android:text="@string/app_totdeces"
+                android:textColor="@color/black" />
+
+        </TableRow>
 
     </LinearLayout>
 

@@ -25,4 +25,8 @@
     <string name="app_hoscity" >शहर</string>
     <string name="app_hosowner" >के स्वामित्व</string>
     <string name="app_hosbeds" >बिस्तरों की संख्या</string>
+    <string name="app_totdeces">Deceased</string>
+    <string name="app_totcovid">TotalCases</string>
+    <string name="app_torecov">Recovered</string>
+    <string name="app_totactive">Active</string>
 </resources>

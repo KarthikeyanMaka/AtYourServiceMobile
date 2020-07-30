@@ -25,4 +25,8 @@
     <string name="app_hoscity" >നഗരം</string>
     <string name="app_hosowner" >ഉടമസ്ഥതയിലുള്ള</string>
     <string name="app_hosbeds" >കിടക്കകളുടെ എണ്ണം</string>
+    <string name="app_totdeces">Deceased</string>
+    <string name="app_totcovid">TotalCases</string>
+    <string name="app_torecov">Recovered</string>
+    <string name="app_totactive">Active</string>
 </resources>

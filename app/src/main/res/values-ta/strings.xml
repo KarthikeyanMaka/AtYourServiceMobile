@@ -25,4 +25,8 @@
     <string name="app_hoscity" >நகரம்</string>
     <string name="app_hosowner" >யாருடையது</string>
     <string name="app_hosbeds" >படுக்கைகளின் எண்ணிக்கை</string>
+    <string name="app_totdeces">Deceased</string>
+    <string name="app_totcovid">TotalCases</string>
+    <string name="app_torecov">Recovered</string>
+    <string name="app_totactive">Active</string>
 </resources>
