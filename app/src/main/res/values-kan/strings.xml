@@ -25,9 +25,12 @@
     <string name="app_hoscity" >ನಗರ</string>
     <string name="app_hosowner" >ಒಡೆತನದ</string>
     <string name="app_hosbeds" >ಹಾಸಿಗೆಗಳ ಸಂಖ್ಯೆ</string>
-    <string name="app_totdeces">Deceased</string>
-    <string name="app_totcovid">TotalCases</string>
-    <string name="app_torecov">Recovered</string>
-    <string name="app_totactive">Active</string>
-    <string name="app_homehealth">"Your Guide to Fight Covi-19 Watch out here for more videos on "</string>
+    <string name="app_totdeces">ಸತ್ತ</string>
+    <string name="app_totcovid">ಒಟ್ಟು ಪ್ರಕರಣಗಳು</string>
+    <string name="app_torecov">ಚೇತರಿಸಿಕೊಂಡ</string>
+    <string name="app_totactive">ಕ್ರಿಯಾಶೀಲ</string>
+    <string name="app_homehealth">"ಕೋವಿ -19 ವಿರುದ್ಧ ಹೋರಾಡಲು ನಿಮ್ಮ ಮಾರ್ಗದರ್ಶಿ ಹೆಚ್ಚಿನ ವೀಡಿಯೊಗಳಿಗಾಗಿ ಇಲ್ಲಿ ನೋಡಿ "</string>
+    <string name="app_homeemerlink">ನಿಮ್ಮ ಪ್ರದೇಶದಲ್ಲಿ ತುರ್ತು ಸೇವೆಗಳು ಮತ್ತು ಇತರ ಪ್ರಮುಖ ಸೌಲಭ್ಯಗಳು. \n \n ಎಲ್ಲಾ ಸಂಪರ್ಕ ಮಾಹಿತಿಯನ್ನು ಒಂದೇ ಸ್ಥಳದಲ್ಲಿ. ಸೇರಿದಂತೆ :. ಸರ್ಕಾರ ಸಹಾಯವಾಣಿಗಳು ... \n · COVID ಆಸ್ಪತ್ರೆಗಳು ... \n · ಆಂಬ್ಯುಲೆನ್ಸ್ ಸೇವೆಗಳು ... \n · COVID ಪರೀಕ್ಷಾ ಪ್ರಯೋಗಾಲಯಗಳು ... \n · ಸ್ಥಳೀಯ ಎನ್‌ಜಿಒಗಳು ... \n</string>
+    <string name="app_homelocallink">ಸ್ಥಳೀಯ ಸಮುದಾಯ \n *Coming soon</string>
+    <string name="app_homeotherlink">"ಇತರರು:\n "</string>
 </resources>

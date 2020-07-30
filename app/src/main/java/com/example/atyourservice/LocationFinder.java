@@ -10,7 +10,7 @@ import java.text.DecimalFormat;
 import java.util.concurrent.ExecutionException;
 
 public class LocationFinder{
-    private static DecimalFormat df2 = new DecimalFormat("#.##");
+    private static DecimalFormat df2 = new DecimalFormat("#.#");
 
     public static String getLocationLang(Context currentScreen) throws JSONException {
         GpsTracker gpsTracker = new GpsTracker(currentScreen);
@@ -48,7 +48,10 @@ public class LocationFinder{
             String lat= df2.format(latitude);
             String longit= df2.format(longitude);
 
-            String locationURL ="https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetStateCitybyLoc/"+lat+"/"+longit;
+
+            String locationURL ="https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetStateCitybyLoc/"+String.valueOf(latitude)+"/"+String.valueOf(longitude);
+
+           // ErrorHandling.ErrorDialog(String.valueOf(latitude)+String.valueOf(longitude)+"test:"+lat+longit,currentScreen);
 
             String result= ServerRequest(locationURL);
 
@@ -139,7 +142,7 @@ public class LocationFinder{
         JSONArray ja = new JSONArray(jsonResult);
         JSONObject jo;
 
-        ErrorHandling.ErrorDialog(jsonResult,currentScreen);
+
 
         RecoveredCountsModel objRecovered = new RecoveredCountsModel();
 

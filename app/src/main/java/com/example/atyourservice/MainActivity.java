@@ -98,11 +98,13 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                         e.printStackTrace();
                     }
                 }
-            }, 3000);
+            }, 5000);
 
             defLang= LocationFinder.getLocationLang(MainActivity.this);
-            ErrorHandling.ErrorDialog(defLang,MainActivity.this);
 
+
+//            if(defLang !="")
+  //              Setlocale(defLang);
 
 
             setContentView(R.layout.activity_main);

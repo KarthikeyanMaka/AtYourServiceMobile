@@ -25,9 +25,12 @@
     <string name="app_hoscity" >നഗരം</string>
     <string name="app_hosowner" >ഉടമസ്ഥതയിലുള്ള</string>
     <string name="app_hosbeds" >കിടക്കകളുടെ എണ്ണം</string>
-    <string name="app_totdeces">Deceased</string>
-    <string name="app_totcovid">TotalCases</string>
-    <string name="app_torecov">Recovered</string>
-    <string name="app_totactive">Active</string>
-    <string name="app_homehealth">"Your Guide to Fight Covi-19 Watch out here for more videos on "</string>
+    <string name="app_totdeces">മരിച്ചു</string>
+    <string name="app_totcovid">ആകെ കേസുകൾ</string>
+    <string name="app_torecov">സുഖം പ്രാപിച്ചു</string>
+    <string name="app_totactive">സജീവമാണ്</string>
+    <string name="app_homehealth">"കോവി -19 നെ നേരിടാനുള്ള നിങ്ങളുടെ ഗൈഡ് കൂടുതൽ വീഡിയോകൾക്കായി ഇവിടെ കാണുക "</string>
+    <string name="app_homeemerlink">നിങ്ങളുടെ പ്രദേശത്തെ അടിയന്തിര സേവനങ്ങളും മറ്റ് പ്രധാന സ facilities കര്യങ്ങളും. \n\n എല്ലാ കോൺ‌ടാക്റ്റ് വിവരങ്ങളും ഒരിടത്ത്. ഉൾപ്പെടെ :. ഗവ. ഹെൽപ്പ്ലൈനുകൾ ... \n · COVID ആശുപത്രികൾ ... \n · ആംബുലൻസ് സേവനങ്ങൾ ... \n </string>
+    <string name="app_homelocallink">പ്രാദേശിക കമ്മ്യൂണിറ്റി \n * ഉടൻ വരുന്നു</string>
+    <string name="app_homeotherlink">"മറ്റുള്ളവർ:\n "</string>
 </resources>

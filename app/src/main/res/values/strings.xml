@@ -29,5 +29,8 @@
     <string name="app_torecov">Recovered</string>
     <string name="app_totactive">Active</string>
     <string name="app_homehealth">"HEALTH SAFETY \n\nYour Guide to Fight Covi-19 Watch out here for more videos on \n *Diet plan \n *Immunity Booster \n *Home Made Remedies "</string>
+    <string name="app_homeemerlink">EMERGENCY SERVICES \nEmergency services and other important facilities in your area.\nAll the contact information in one place. Including:*Govt. helplines \n*COVID hospitals\n*Ambulance services\n*COVID test labs\n*Local NGOs\n</string>
+    <string name="app_homelocallink">LOCAL COMMUNITY \n *Coming soon</string>
+    <string name="app_homeotherlink">"OTHERS:\n "</string>
 
 </resources>

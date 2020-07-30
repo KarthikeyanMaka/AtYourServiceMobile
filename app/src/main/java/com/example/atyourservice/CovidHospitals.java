@@ -154,5 +154,25 @@ public class CovidHospitals extends AppCompatActivity {
         }
 
     }
+    public void GotoHome(View v)
+    {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
+    public void GotoHealth(View v)
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+    public void GotoEmer(View v)
+    {
+        Intent intent = new Intent(this, Emergency.class);
+        startActivity(intent);
+    }
+    public void GotoLocal(View v)
+    {
+        Intent intent = new Intent(this, Local.class);
+        startActivity(intent);
+    }
 
 }

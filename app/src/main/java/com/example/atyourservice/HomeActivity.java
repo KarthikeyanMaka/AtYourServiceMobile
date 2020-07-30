@@ -6,18 +6,23 @@ import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 import org.json.JSONException;
 import org.w3c.dom.Text;
+
+import java.util.Locale;
 
 public class HomeActivity extends AppCompatActivity {
     String defLang;
@@ -36,39 +41,66 @@ public class HomeActivity extends AppCompatActivity {
     TextView txthomelocal;
     TextView txtcurrDis;
     Integer count=0;
+    Spinner dropdown;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
 
+
+        //Language dropdown configuration
+        dropdown = findViewById(R.id.spinner1);
+        final DropDown langDropDown = new DropDown(dropdown, this);
+
+        dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                if (parentView.getItemAtPosition(position).toString() != "") {
+                    Setlocale(langDropDown.ReturnSelectedLocale(parentView.getItemAtPosition(position).toString()));
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
         //To set location permission
         try {
             if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
                 ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        try {
+                            delayprocess();
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, 8000);
+
             }
+
         } catch (Exception e){
             ErrorHandling.ErrorDialog(e.getMessage(),this);
         }
 
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                try {
-                    delayprocess();
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }, 3000);
 
         try {
             defLang= LocationFinder.getLocationLang(HomeActivity.this);
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+
+      //  if(defLang !="")
+        //    Setlocale(defLang);
 
         txtActiveount = (TextView)findViewById(R.id.txtActivecount);
         txtDeceasedCount = (TextView)findViewById(R.id.txtdeceasedcount);
@@ -99,7 +131,8 @@ public class HomeActivity extends AppCompatActivity {
                 txtDeceasedCount.setText(objCounts.deceased);
                 txtTotCount.setText(objCounts.confirmed);
                 txtRecoveredCount.setText(objCounts.recovered);
-                txtcurrDis.setText("DistrictName:"+objCounts.districtName );
+                if(objCounts.districtName != null)
+                    txtcurrDis.setText("DistrictName:"+objCounts.districtName );
             }
         }
 
@@ -175,5 +208,22 @@ public class HomeActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(this, Local.class);
         startActivity(intent);
+    }
+    public void Setlocale(String localName){
+        Locale Current = getResources().getConfiguration().locale;
+        Locale appLocale = new Locale(localName);
+
+        if(Current.getLanguage() !=appLocale.getLanguage()){
+
+            Configuration conf = new Configuration();
+            conf.locale=appLocale;
+
+            getBaseContext().getResources().updateConfiguration(conf,getBaseContext().getResources().getDisplayMetrics());
+
+            Intent refresh = new Intent(this , HomeActivity.class);
+            finish();
+            startActivity(refresh);
+        }
+
     }
 }

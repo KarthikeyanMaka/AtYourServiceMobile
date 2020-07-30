@@ -145,63 +145,64 @@ android:layout_height="match_parent">
                 android:textColor="@color/black" />
 
         </TableRow>
+
         <TextView
             android:id="@+id/txtcurrentdistrict"
-            android:layout_width="94dp"
+            android:layout_width="206dp"
             android:layout_height="wrap_content"
             android:background="@drawable/textborder"
-            android:text="@string/app_totactive"
-            android:textColor="@color/black" />
+            android:textColor="@color/colorAccent" />
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="178dp"
             android:layout_marginTop="20dp">
 
             <TextView
                 android:id="@+id/txthomehealth"
-                android:layout_width="208dp"
+                android:layout_width="201dp"
                 android:layout_height="match_parent"
-                android:text="@string/app_homehealth"
+                android:background="@drawable/back"
                 android:linksClickable="true"
-                android:textColor="#000000"
-                android:textColorLink="@color/blue"
-                android:background="@drawable/back"/>
+                android:text="@string/app_homehealth"
+                android:textColor="#0645AD"
+                android:textColorLink="@color/blue" />
 
             <TextView
                 android:id="@+id/txthomemergency"
-                android:layout_width="201dp"
+                android:layout_width="204dp"
                 android:layout_height="match_parent"
-                android:text="@string/app_homehealth"
+                android:background="@drawable/back"
                 android:linksClickable="true"
-                android:textColor="#000000"
-                android:textColorLink="@color/blue"
-                android:background="@drawable/back"/>
+                android:text="@string/app_homeemerlink"
+                android:textColor="#0645AD"
+                android:textColorLink="@color/blue" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="176dp">
+            android:layout_height="142dp">
 
             <TextView
                 android:id="@+id/txthomelocal"
-                android:layout_width="208dp"
-                android:layout_height="168dp"
-                android:text="@string/app_homehealth"
+                android:layout_width="203dp"
+                android:layout_height="131dp"
+                android:background="@drawable/back"
                 android:linksClickable="true"
-                android:textColor="#000000"
-                android:background="@drawable/back"/>
+                android:text="@string/app_homelocallink"
+                android:textColor="#0645AD" />
 
             <TextView
                 android:id="@+id/txthomeothers"
                 android:layout_width="201dp"
-                android:layout_height="168dp"
-                android:text="@string/app_homehealth"
+                android:layout_height="128dp"
+                android:background="@drawable/back"
                 android:linksClickable="true"
-                android:textColor="#000000"
-                android:textColorLink="@color/blue"
-                android:background="@drawable/back"/>
+                android:textColor="#0645AD"
+                android:text="@string/app_homeotherlink"
+
+                android:textColorLink="#0645AD" />
 
         </TableRow>
 

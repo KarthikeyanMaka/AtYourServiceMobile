@@ -25,9 +25,12 @@
     <string name="app_hoscity" >నగరం</string>
     <string name="app_hosowner" >స్వంతం</string>
     <string name="app_hosbeds" >పడకల సంఖ్య</string>
-    <string name="app_totdeces">Deceased</string>
-    <string name="app_totcovid">TotalCases</string>
-    <string name="app_torecov">Recovered</string>
-    <string name="app_totactive">Active</string>
-    <string name="app_homehealth">"Your Guide to Fight Covi-19 Watch out here for more videos on "</string>
+    <string name="app_totdeces">చనిపోయిన ప్రజలు</string>
+    <string name="app_totcovid">మొత్తం</string>
+    <string name="app_torecov">నయం</string>
+    <string name="app_totactive">బాధితులు</string>
+    <string name="app_homehealth">"ఆరోగ్య సంరక్షణ \ n \ n ఆవు -19 తో పోరాడటానికి మీ గైడ్ \ n * డైట్ ప్లాన్ గురించి మరిన్ని వీడియోల కోసం ఇక్కడ చూడండి \ n * ఇమ్యునిటీ బూస్టర్ \ n * ఇంట్లో తయారుచేసిన నివారణలు "</string>
+    <string name="app_homeemerlink">మీ ప్రాంతంలో అత్యవసర సేవలు మరియు ఇతర ముఖ్యమైన సౌకర్యాలు. contact n \ n అన్ని సంప్రదింపు సమాచారం ఒకే చోట. Help n * ప్రభుత్వ హెల్ప్‌లైన్‌లు ... \ n ప్రభుత్వ ఆసుపత్రులు ... \ n · అంబులెన్స్ సేవలు ... \ n · ప్రభుత్వ పరీక్షా ప్రయోగశాలలు ... \ n స్థానిక స్వచ్ఛంద సంస్థలు ... \ n</string>
+    <string name="app_homelocallink">స్థానిక సంఘం \n *త్వరలో</string>
+    <string name="app_homeotherlink">"ఇతరులు:\n "</string>
 </resources>
