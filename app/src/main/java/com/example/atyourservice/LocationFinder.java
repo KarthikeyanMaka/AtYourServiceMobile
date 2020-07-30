@@ -127,5 +127,36 @@ public class LocationFinder{
 
         return  objlangloc;
     }
+    public static RecoveredCountsModel GetRecoveredData(String City, String State,Context currentScreen) throws JSONException {
+
+        String Url ="https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetRecoveredCountDist/"+State+"/"+City;
+
+        return GetRecoveredCounts(ServerRequest(Url),currentScreen);
+    }
+
+    public static RecoveredCountsModel GetRecoveredCounts(String jsonResult,Context currentScreen) throws JSONException {
+
+        JSONArray ja = new JSONArray(jsonResult);
+        JSONObject jo;
+
+        ErrorHandling.ErrorDialog(jsonResult,currentScreen);
+
+        RecoveredCountsModel objRecovered = new RecoveredCountsModel();
+
+        for (int i=0;i<ja.length();i++) {
+            jo = ja.getJSONObject(i);
+            objRecovered.active=jo.getString("active");
+            objRecovered.deceased=jo.getString("deceased");
+            objRecovered.confirmed=jo.getString("confirmed");
+            objRecovered.recovered=jo.getString("recovered");
+            objRecovered.dtRecordedDate=jo.getString("dtRecordedDate");
+            objRecovered.stateName=jo.getString("stateName");
+            objRecovered.districtName=jo.getString("districtName");
+            objRecovered.notes=jo.getString("notes");
+        }
+
+
+        return  objRecovered;
+    }
 
 }

@@ -145,7 +145,69 @@ android:layout_height="match_parent">
                 android:textColor="@color/black" />
 
         </TableRow>
+        <TextView
+            android:id="@+id/txtcurrentdistrict"
+            android:layout_width="94dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textborder"
+            android:text="@string/app_totactive"
+            android:textColor="@color/black" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/txthomehealth"
+                android:layout_width="208dp"
+                android:layout_height="match_parent"
+                android:text="@string/app_homehealth"
+                android:linksClickable="true"
+                android:textColor="#000000"
+                android:textColorLink="@color/blue"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:id="@+id/txthomemergency"
+                android:layout_width="201dp"
+                android:layout_height="match_parent"
+                android:text="@string/app_homehealth"
+                android:linksClickable="true"
+                android:textColor="#000000"
+                android:textColorLink="@color/blue"
+                android:background="@drawable/back"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="176dp">
+
+            <TextView
+                android:id="@+id/txthomelocal"
+                android:layout_width="208dp"
+                android:layout_height="168dp"
+                android:text="@string/app_homehealth"
+                android:linksClickable="true"
+                android:textColor="#000000"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:id="@+id/txthomeothers"
+                android:layout_width="201dp"
+                android:layout_height="168dp"
+                android:text="@string/app_homehealth"
+                android:linksClickable="true"
+                android:textColor="#000000"
+                android:textColorLink="@color/blue"
+                android:background="@drawable/back"/>
+
+        </TableRow>
+
 
     </LinearLayout>
+
+
 
 </ScrollView>

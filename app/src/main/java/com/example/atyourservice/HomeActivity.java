@@ -25,11 +25,17 @@ public class HomeActivity extends AppCompatActivity {
     String State;
     LangLocModel objCityState = null;
     ImageView imageView;
-    Integer[] imgList = new Integer[]{R.drawable.giphy,R.drawable.washhans};
+    Integer[] imgList = new Integer[]{R.drawable.giphy,R.drawable.washhans,R.drawable.face};
     TextView txtRecoveredCount;
     TextView txtActiveount;
     TextView txtDeceasedCount;
     TextView txtTotCount;
+    TextView txthomehealth;
+    TextView txthomeemer;
+    TextView txthomeother;
+    TextView txthomelocal;
+    TextView txtcurrDis;
+    Integer count=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +50,7 @@ public class HomeActivity extends AppCompatActivity {
         } catch (Exception e){
             ErrorHandling.ErrorDialog(e.getMessage(),this);
         }
+
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -63,6 +70,13 @@ public class HomeActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        txtActiveount = (TextView)findViewById(R.id.txtActivecount);
+        txtDeceasedCount = (TextView)findViewById(R.id.txtdeceasedcount);
+        txtTotCount = (TextView)findViewById(R.id.txttotalcount);
+        txtRecoveredCount = (TextView)findViewById(R.id.txtRecoveredcount);
+        txtcurrDis = (TextView) findViewById(R.id.txtcurrentdistrict);
+
+
         try {
             objCityState=LocationFinder.GetCityState(HomeActivity.this);
         } catch (JSONException e) {
@@ -72,32 +86,68 @@ public class HomeActivity extends AppCompatActivity {
         if(objCityState !=null){
 
             //code here for getting current covid data
+            RecoveredCountsModel objCounts = null;
+            try {
+                objCounts=LocationFinder.GetRecoveredData(objCityState.city,objCityState.statecode,HomeActivity.this);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
 
+            if (objCounts !=null)
+            {
+                txtActiveount.setText(objCounts.active);
+                txtDeceasedCount.setText(objCounts.deceased);
+                txtTotCount.setText(objCounts.confirmed);
+                txtRecoveredCount.setText(objCounts.recovered);
+                txtcurrDis.setText("DistrictName:"+objCounts.districtName );
+            }
         }
 
         imageView = (ImageView)findViewById(R.id.imageView);
-        Glide.with(this).load(imgList[0]).into(imageView);
+        Glide.with(this).load(imgList[count]).into(imageView);
 
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Glide.with(getApplicationContext()).load(imgList[1]).into(imageView);
+                if(count>1) {
+                    count=0;
+                }
+                else
+                {
+                    count++;
+                }
+
+                Glide.with(getApplicationContext()).load(imgList[count]).into(imageView);
             }
         });
 
-        txtActiveount = (TextView)findViewById(R.id.txtActivecount);
-        txtDeceasedCount = (TextView)findViewById(R.id.txtdeceasedcount);
-        txtTotCount = (TextView)findViewById(R.id.txttotalcount);
-        txtRecoveredCount = (TextView)findViewById(R.id.txtRecoveredcount);
 
-        txtActiveount.setText("1200");
-        txtDeceasedCount.setText("100");
-        txtTotCount.setText("1500");
-        txtRecoveredCount.setText("200");
+        txthomehealth = (TextView)findViewById(R.id.txthomehealth);
+        txthomelocal = (TextView)findViewById(R.id.txthomelocal);
+        txthomeemer = (TextView)findViewById(R.id.txthomemergency);
+        txthomeother = (TextView)findViewById(R.id.txthomeothers);
 
+        txthomeemer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GotoEmer(view);
+            }
+        });
 
+        txthomelocal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GotoLocal(view);
+            }
+        });
 
+        txthomehealth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GotoHealth(view);
+            }
+        });
 
 
 //        Button home = (Button) findViewById(R.id.btn_home);

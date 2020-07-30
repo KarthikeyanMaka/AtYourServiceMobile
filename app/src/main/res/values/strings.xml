@@ -28,5 +28,6 @@
     <string name="app_totcovid">TotalCases</string>
     <string name="app_torecov">Recovered</string>
     <string name="app_totactive">Active</string>
+    <string name="app_homehealth">"HEALTH SAFETY \n\nYour Guide to Fight Covi-19 Watch out here for more videos on \n *Diet plan \n *Immunity Booster \n *Home Made Remedies "</string>
 
 </resources>
