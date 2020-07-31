@@ -7,4 +7,5 @@
     <color name="gold">#e6b121</color>
     <color name="grey">#cccccc</color>
     <color name="black">#FFFFFF</color>
+    <color name="my_custom_color">#8000EE</color>
 </resources>

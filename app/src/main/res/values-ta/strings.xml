@@ -33,4 +33,5 @@
     <string name="app_homeemerlink">உங்கள் பகுதியில் அவசர சேவைகள் மற்றும் பிற முக்கிய வசதிகள். \n\n அனைத்து தொடர்பு தகவல்களும் ஒரே இடத்தில். \n* அரசு ஹெல்ப்லைன்ஸ் ... \ n · கோவிட் மருத்துவமனைகள் ... \ n · ஆம்புலன்ஸ் சேவைகள் ... \ n · கோவிட் சோதனை ஆய்வகங்கள் ... \ n · உள்ளூர் தன்னார்வ தொண்டு நிறுவனங்கள் ... \ n</string>
     <string name="app_homelocallink">உள்ளூர் சமூகம் \n *விரைவில்</string>
     <string name="app_homeotherlink">"மற்றவைகள்:\n "</string>
+    <string name="app_districtName">DistrictName</string>
 </resources>

@@ -33,4 +33,5 @@
     <string name="app_homeemerlink">మీ ప్రాంతంలో అత్యవసర సేవలు మరియు ఇతర ముఖ్యమైన సౌకర్యాలు. contact n \ n అన్ని సంప్రదింపు సమాచారం ఒకే చోట. Help n * ప్రభుత్వ హెల్ప్‌లైన్‌లు ... \ n ప్రభుత్వ ఆసుపత్రులు ... \ n · అంబులెన్స్ సేవలు ... \ n · ప్రభుత్వ పరీక్షా ప్రయోగశాలలు ... \ n స్థానిక స్వచ్ఛంద సంస్థలు ... \ n</string>
     <string name="app_homelocallink">స్థానిక సంఘం \n *త్వరలో</string>
     <string name="app_homeotherlink">"ఇతరులు:\n "</string>
+    <string name="app_districtName">DistrictName</string>
 </resources>

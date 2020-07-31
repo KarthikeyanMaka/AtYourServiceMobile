@@ -1,4 +1,4 @@
-package com.example.atyourservice;
+package appcommon;
 
 import android.os.AsyncTask;
 import java.io.BufferedReader;
@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.HttpURLConnection;
 
-class JsonAsyncTask extends AsyncTask<String, Void, String> {
+public class JsonAsyncTask extends AsyncTask<String, Void, String> {
     public static final String REQUEST_METHOD = "GET";
     public static final int READ_TIMEOUT = 15000;
     public static final int CONNECTION_TIMEOUT = 15000;

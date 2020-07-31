@@ -7,12 +7,10 @@ import androidx.core.content.ContextCompat;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -20,9 +18,14 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import org.json.JSONException;
-import org.w3c.dom.Text;
 
 import java.util.Locale;
+
+import appcommon.DropDown;
+import appcommon.ErrorHandling;
+import appcommon.LangLocModel;
+import appcommon.LocationFinder;
+import appcommon.RecoveredCountsModel;
 
 public class HomeActivity extends AppCompatActivity {
     String defLang;
@@ -132,7 +135,7 @@ public class HomeActivity extends AppCompatActivity {
                 txtTotCount.setText(objCounts.confirmed);
                 txtRecoveredCount.setText(objCounts.recovered);
                 if(objCounts.districtName != null)
-                    txtcurrDis.setText("DistrictName:"+objCounts.districtName );
+                    txtcurrDis.setText(R.string.app_districtName+":"+objCounts.districtName );
             }
         }
 

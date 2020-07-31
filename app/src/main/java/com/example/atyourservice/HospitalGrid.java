@@ -1,9 +1,6 @@
 package com.example.atyourservice;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import appcommon.CovidHospitallist;
 
 public class HospitalGrid extends BaseAdapter {
     Context c;

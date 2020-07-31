@@ -1,8 +1,10 @@
-package com.example.atyourservice;
+package appcommon;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import com.example.atyourservice.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,7 +32,7 @@ public class DataDropDown {
 
             String[] stateArray = stateCodelist.toArray(new String[stateCodelist.size()]);
 
-            ArrayAdapter<String> jsonlist= new ArrayAdapter<String>(c,R.layout.activity_covid_hospitals,stateArray);
+            ArrayAdapter<String> jsonlist= new ArrayAdapter<String>(c, R.layout.activity_covid_hospitals,stateArray);
 
             dropdown.setAdapter(jsonlist);
 

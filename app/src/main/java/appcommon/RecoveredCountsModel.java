@@ -1,4 +1,4 @@
-package com.example.atyourservice;
+package appcommon;
 
 public class RecoveredCountsModel {
     public String notes;

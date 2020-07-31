@@ -33,4 +33,5 @@
     <string name="app_homeemerlink">നിങ്ങളുടെ പ്രദേശത്തെ അടിയന്തിര സേവനങ്ങളും മറ്റ് പ്രധാന സ facilities കര്യങ്ങളും. \n\n എല്ലാ കോൺ‌ടാക്റ്റ് വിവരങ്ങളും ഒരിടത്ത്. ഉൾപ്പെടെ :. ഗവ. ഹെൽപ്പ്ലൈനുകൾ ... \n · COVID ആശുപത്രികൾ ... \n · ആംബുലൻസ് സേവനങ്ങൾ ... \n </string>
     <string name="app_homelocallink">പ്രാദേശിക കമ്മ്യൂണിറ്റി \n * ഉടൻ വരുന്നു</string>
     <string name="app_homeotherlink">"മറ്റുള്ളവർ:\n "</string>
+    <string name="app_districtName">DistrictName</string>
 </resources>

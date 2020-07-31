@@ -1,4 +1,4 @@
-package com.example.atyourservice;
+package appcommon;
 
 public class CovidHospitallist {
     public String state;

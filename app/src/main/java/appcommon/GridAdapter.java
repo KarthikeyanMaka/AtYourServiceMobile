@@ -1,4 +1,4 @@
-package com.example.atyourservice;
+package appcommon;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 
-import com.example.atyourservice.StateHelplinelist;
+import com.example.atyourservice.R;
 
 import java.util.ArrayList;
 

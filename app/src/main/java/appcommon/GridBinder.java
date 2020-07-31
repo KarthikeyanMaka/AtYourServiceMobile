@@ -1,28 +1,17 @@
-package com.example.atyourservice;
+package appcommon;
 
 import android.content.Context;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
-import android.widget.ListAdapter;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 
-import androidx.annotation.LayoutRes;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import com.example.atyourservice.HospitalGrid;
+import com.example.atyourservice.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.xml.sax.ErrorHandler;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -138,7 +127,7 @@ public class GridBinder {
             }
 
             String[] cityArray = list.toArray(new String[list.size()]);
-            ArrayAdapter<String> jsonlist= new ArrayAdapter<String>(c,R.layout.support_simple_spinner_dropdown_item,cityArray);
+            ArrayAdapter<String> jsonlist= new ArrayAdapter<String>(c, R.layout.support_simple_spinner_dropdown_item,cityArray);
 
             gv.setAdapter(jsonlist);
 

@@ -1,56 +1,35 @@
 package com.example.atyourservice;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
-import android.location.LocationManager;
-import android.net.Uri;
 import android.os.Handler;
-import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.MediaController;
 import android.widget.Spinner;
-import android.app.Activity;
-import android.graphics.Bitmap;
-import android.net.wifi.WifiEnterpriseConfig;
-import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.FrameLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import java.util.Locale;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
-import org.json.JSONException;
-
 import java.util.concurrent.ExecutionException;
+
+import appcommon.ErrorHandling;
+import appcommon.GpsTracker;
+import appcommon.JsonAsyncTask;
+import appcommon.LocationFinder;
 
 
 public class MainActivity extends AppCompatActivity implements LocationListener {
