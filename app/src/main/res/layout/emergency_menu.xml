@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/Menu">
+
+    <TableRow
+        android:id="@+id/toolbar"
+        android:layout_width="398dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_emer_helpline"
+            android:layout_width="63dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-1dp"
+            android:layout_weight="0.1"
+            android:onClick="GotoHepline"
+            android:text="@string/app_heplline"
+
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/btn_emer_hospitals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-1dp"
+            android:layout_weight="0.1"
+            android:onClick="GotoHospitals"
+            android:text="@string/app_covidhosp"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/btn_emr_labs"
+            android:layout_width="73dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-1dp"
+            android:layout_weight="0.1"
+            android:onClick="GotoLabs"
+            android:text="@string/app_covidlabs"
+            android:textSize="8sp"
+
+            />
+
+        <Button
+            android:id="@+id/btn_emer_ambulance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-1dp"
+            android:layout_weight="0.1"
+            android:clickable="true"
+            android:onClick="GotoAmbulance"
+            android:text="@string/app_ambulan"
+            android:textSize="8sp" />
+    </TableRow>
+
+</FrameLayout>

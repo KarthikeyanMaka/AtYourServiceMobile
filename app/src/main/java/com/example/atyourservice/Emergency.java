@@ -76,6 +76,24 @@ public class Emergency extends AppCompatActivity {
                 }
             });
 
+            ImageView imglabs =(ImageView) findViewById(R.id.imgtestlabs);
+            imglabs.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent labsintent = new Intent(Emergency.this, CovidLabs.class);
+                    startActivity(labsintent);
+                }
+            });
+
+            ImageView imgAmbula =(ImageView) findViewById(R.id.imgambulance);
+            imgAmbula.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent ambulintent = new Intent(Emergency.this,AmbulanceServices.class);
+                    startActivity(ambulintent);
+                }
+            });
+
 
 
         }

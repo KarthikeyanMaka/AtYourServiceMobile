@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,38 +21,39 @@ import appcommon.ErrorHandling;
 import appcommon.GridBinder;
 import appcommon.LocationFinder;
 
-public class CovidDashboard extends AppCompatActivity {
+public class CovidLabs extends AppCompatActivity {
     Spinner dplang;
-    Spinner dphosstate;
-    Spinner dphosdist;
+    Spinner dplabstate;
+    Spinner dplabscity;
     Context c;
     String currentState="";
-    String currentDist="";
+    String currentCity="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_covid_dashboard);
+        setContentView(R.layout.activity_covid_labs);
 
         try {
-            c = CovidDashboard.this;
-            //Bind State Drop down
+
+            c = CovidLabs.this;
+
             String StateList = LocationFinder.ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllState");
-            dphosstate = (Spinner) findViewById(R.id.dpcovidstate);
+            dplabstate = (Spinner) findViewById(R.id.dplabstate);
             try {
-                GridBinder.BindStateDropDown(CovidDashboard.this, StateList, dphosstate);
+                GridBinder.BindStateDropDown(CovidLabs.this, StateList, dplabstate);
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            dphosdist = (Spinner) findViewById(R.id.dpcoviddist);
+            dplabscity = (Spinner) findViewById(R.id.dplabcity);
 
-            dphosstate.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            dplabstate.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                     if (adapterView.getItemAtPosition(i).toString() != "") {
                         currentState = adapterView.getItemAtPosition(i).toString().split(",")[0].toString();
-                        loadDistrict(currentState);
+                        loadCity(currentState);
                     }
 
                 }
@@ -62,15 +64,18 @@ public class CovidDashboard extends AppCompatActivity {
                 }
             });
 
-            dphosdist.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            dplabscity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                    if (adapterView.getItemAtPosition(i).toString() != ""){
-                        currentDist=adapterView.getItemAtPosition(i).toString();
+                    if (adapterView.getItemAtPosition(i).toString() != "") {
+                        currentCity = adapterView.getItemAtPosition(i).toString();
 
-                        loadCovidDashboard();
+                        try {
+                            loadlabsGrid();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
-
                 }
 
                 @Override
@@ -79,9 +84,8 @@ public class CovidDashboard extends AppCompatActivity {
                 }
             });
 
-
             //Language dropdown configuration
-            dplang =(Spinner)findViewById(R.id.dplangu);
+            dplang = (Spinner) findViewById(R.id.spnlnglabs);
             final DropDown langDropDown = new DropDown(dplang, c);
 
             dplang.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -98,51 +102,60 @@ public class CovidDashboard extends AppCompatActivity {
                 }
             });
 
-
         }
-        catch (Exception ex){
+        catch (Exception ex)
+        {
             ErrorHandling.ErrorDialog(ex.getMessage(),c);
         }
-
-//
-//        Button home = (Button) findViewById(R.id.btn_local);
-//        home.setBackgroundColor(Color.GREEN);
     }
-    public void loadDistrict(String pcurrentState){
+    private void loadCity(String StateCode){
         try{
-            String Url = "https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllStateDistrict/" +pcurrentState;
+            String Url = "https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllStateCity/" +StateCode;
 
             String citylist = LocationFinder.ServerRequest(Url);
-            GridBinder.BindCityDropDown(c, citylist,dphosdist);
+            GridBinder.BindCityDropDown(c, citylist,dplabscity);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-    public void loadCovidDashboard(){
-        try{
-            try{
-                String Url = "https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetRecoveredCountDist/"+currentState+"/"+currentDist;
-                String result = LocationFinder.ServerRequest(Url);
+    public void loadlabsGrid() throws JSONException {
+        try {
+            String Url = "https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetResource/" + currentState + "/" + currentCity;
+            String result = LocationFinder.ServerRequest(Url);
+            //ErrorHandling.ErrorDialog(result+Url,c);
 
-                if(result !=""){
-                    GridView objGrid = (GridView) findViewById(R.id.gvcoviddash);
-                    GridBinder.BindCovidDashGrid(c,result,objGrid);
-                }
-
-            } catch (JSONException e) {
-                ErrorHandling.ErrorDialog(e.getMessage(), c);
+            if (result != "") {
+                GridView objGrid = (GridView) findViewById(R.id.gvcovidlabs);
+                GridBinder.BindCovidLabGrid(c, result, objGrid);
             }
 
-        }
-        catch (Exception ex){
+
+        } catch (Exception ex) {
             throw ex;
         }
-
     }
 
-
+    public void GotoHepline(View v)
+    {
+        Intent intent = new Intent(this, HelpLine.class);
+        startActivity(intent);
+    }
+    public void GotoHospitals(View v)
+    {
+        Intent intent = new Intent(this, CovidHospitals.class);
+        startActivity(intent);
+    }
+    public void GotoLabs(View v)
+    {
+        //Intent intent = new Intent(this, CovidLabs.class);
+        //startActivity(intent);
+    }
+    public void GotoAmbulance(View v)
+    {
+        Intent intent = new Intent(this, AmbulanceServices.class);
+        startActivity(intent);
+    }
     public void GotoHome(View v)
     {
         Intent intent = new Intent(this, HomeActivity.class);
@@ -160,22 +173,24 @@ public class CovidDashboard extends AppCompatActivity {
     }
     public void GotoLocal(View v)
     {
-
+        Intent intent = new Intent(this, CovidDashboard.class);
+        startActivity(intent);
     }
-    public void Setlocale(String localName) {
+    public void Setlocale(String localName){
         Locale Current = getResources().getConfiguration().locale;
         Locale appLocale = new Locale(localName);
 
-        if (Current != appLocale) {
+        if(Current !=appLocale){
 
             Configuration conf = new Configuration();
-            conf.locale = appLocale;
+            conf.locale=appLocale;
 
-            getBaseContext().getResources().updateConfiguration(conf, getBaseContext().getResources().getDisplayMetrics());
+            getBaseContext().getResources().updateConfiguration(conf,getBaseContext().getResources().getDisplayMetrics());
 
-            Intent refresh = new Intent(c, CovidDashboard.class);
+            Intent refresh = new Intent(c , CovidLabs.class);
             finish();
             startActivity(refresh);
         }
+
     }
 }

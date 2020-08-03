@@ -139,8 +139,10 @@ public class HomeActivity extends AppCompatActivity {
                 txtDeceasedCount.setText(objCounts.deceased);
                 txtTotCount.setText(objCounts.confirmed);
                 txtRecoveredCount.setText(objCounts.recovered);
-                if(objCounts.districtName != null)
-                    txtcurrDis.setText(R.string.app_districtName+":"+objCounts.districtName );
+                if(objCounts.districtName != null){
+                    String message =getString(R.string.app_districtName)+":"+objCounts.districtName;
+                    txtcurrDis.setText(message);
+                }
             }
 
         }

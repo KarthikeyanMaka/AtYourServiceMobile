@@ -18,12 +18,12 @@
     <string name="app_helpemailtxt">State Helpline email</string>
     <string name="app_helptollfree">Toll Free</string>
     <string name="app_helpCent">Central Helpline number</string>
-    <string name="app_covidhosp" >Covid Hospitals</string>
-    <string name="app_selectcity" >Choose City</string>
-    <string name="app_hosname" >Hospital Name</string>
-    <string name="app_hoscity" >City</string>
-    <string name="app_hosowner" >Owned by</string>
-    <string name="app_hosbeds" >No of Beds</string>
+    <string name="app_covidhosp">Covid Hospitals</string>
+    <string name="app_selectcity">Choose City</string>
+    <string name="app_hosname">Hospital Name</string>
+    <string name="app_hoscity">City</string>
+    <string name="app_hosowner">Owned by</string>
+    <string name="app_hosbeds">No of Beds</string>
     <string name="app_totdeces">Deceased</string>
     <string name="app_totcovid">TotalCases</string>
     <string name="app_torecov">Recovered</string>
@@ -34,5 +34,9 @@
     <string name="app_homeotherlink">"OTHERS:\n "</string>
     <string name="app_districtName">DistrictName</string>
     <string name="app_selectdistrict">Choose District</string>
+    <string name="app_covidlabs">Covid Test Labs</string>
+    <string name="app_ambulan">Ambulance Services</string>
+    <string name="app_labname">Lab Name</string>
+    <string name="app_labcontact">Contact</string>
 
 </resources>

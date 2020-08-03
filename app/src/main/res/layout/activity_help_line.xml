@@ -33,6 +33,7 @@
         </TableRow>
 
         <include layout="@layout/top_menu" />
+        <include layout="@layout/emergency_menu" />
 
         <TableRow
             android:id="@+id/tblData"

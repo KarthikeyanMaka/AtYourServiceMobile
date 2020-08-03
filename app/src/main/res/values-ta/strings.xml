@@ -35,4 +35,8 @@
     <string name="app_homeotherlink">"மற்றவைகள்:\n "</string>
     <string name="app_districtName">மாவட்டம்</string>
     <string name="app_selectdistrict">மாவட்டத்தைத் தேர்வுசெய்க</string>
+    <string name="app_covidlabs">கோவிட் ஆய்வகம்</string>
+    <string name="app_ambulan">ஆம்புலன்ஸ் சேவைகள்</string>
+    <string name="app_labname">ஆய்வக பெயர்</string>
+    <string name="app_labcontact">தொடர்பு எண்</string>
 </resources>

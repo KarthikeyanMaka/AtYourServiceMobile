@@ -5,7 +5,6 @@ import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Spinner;
 
-import com.example.atyourservice.HospitalGrid;
 import com.example.atyourservice.R;
 
 import org.json.JSONArray;
@@ -52,7 +51,7 @@ public class GridBinder {
 
             }
 
-            HospitalGrid objhosgrid = new HospitalGrid(c,jsonlist);
+            RecoveredCountsModel.HospitalGrid objhosgrid = new RecoveredCountsModel.HospitalGrid(c,jsonlist);
 
             gv.setAdapter(objhosgrid);
 
@@ -61,6 +60,48 @@ public class GridBinder {
         catch (Exception ex)
         {throw ex;}
 
+    }
+    public static void BindCovidLabGrid(Context c, String jsonData, GridView gv) throws JSONException {
+        try{
+
+            JSONArray ja = new JSONArray(jsonData);
+            JSONObject jo;
+
+
+            ArrayList<CovidLabModel> jsonlist = new ArrayList<>();
+
+            jsonlist.clear();
+
+            for (int i=0;i<ja.length();i++) {
+                CovidLabModel objlabmodel = new CovidLabModel();
+
+                jo = ja.getJSONObject(i);
+                String hosname= "";
+                String hoscity = "";
+                String hosowner = "";
+                String hosbeds = "";
+
+                objlabmodel.category =jo.getString("category");
+                objlabmodel.city =jo.getString("city");
+                objlabmodel.contact =jo.getString("contact");
+                objlabmodel.phonenumber =jo.getString("phonenumber");
+                objlabmodel.descriptionandorserviceprovided =jo.getString("descriptionandorserviceprovided");
+                objlabmodel.nameoftheorganisation =jo.getString("nameoftheorganisation");
+                objlabmodel.state =jo.getString("state");
+
+                jsonlist.add(objlabmodel);
+
+            }
+
+            LabGridAdapter objlabGrid = new LabGridAdapter(c,jsonlist);
+
+            gv.setAdapter(objlabGrid);
+
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
     }
     public static void BindCovidDashGrid(Context c, String jsonData, GridView gv) throws JSONException {
         try{

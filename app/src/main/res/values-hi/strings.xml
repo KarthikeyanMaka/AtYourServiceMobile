@@ -35,4 +35,8 @@
     <string name="app_homeotherlink">"दुसरे लोग:\n "</string>
     <string name="app_districtName">जिला</string>
     <string name="app_selectdistrict">जिला चुनें</string>
+    <string name="app_covidlabs">कोविद प्रयोगशाला</string>
+    <string name="app_ambulan">एम्बुलेंस सेवा</string>
+    <string name="app_labname">लैब का नाम</string>
+    <string name="app_labcontact">संपर्क संख्या</string>
 </resources>

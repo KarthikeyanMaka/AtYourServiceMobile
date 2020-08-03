@@ -49,16 +49,88 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@string/app_heplline"
                 android:onClick="ShowHelplinenumbers"
-                android:src="@drawable/helpline" />
+                android:src="@drawable/helpline"
+                android:background="@drawable/imageborder"/>
 
             <ImageView
                 android:id="@+id/imagehospView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/app_covidhosp"
-                app:srcCompat="@drawable/hospitalcovid" />
+                app:srcCompat="@drawable/hospitalcovid"
+                android:background="@drawable/imageborder"/>
         </TableRow>
 
+        <TableRow
+            android:id="@+id/tbllbldesc"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:paddingTop="-5dp">
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:text="@string/app_heplline"
+                android:textColor="@color/fullblack"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="193dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:text="@string/app_covidhosp"
+                android:textColor="@color/fullblack"
+                android:textSize="17sp" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbl2images"
+            android:layout_width="match_parent"
+            android:layout_height="231dp"
+            android:paddingTop="-5dp">
+
+            <ImageView
+                android:id="@+id/imgtestlabs"
+                android:layout_width="198dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/imageborder"
+                android:contentDescription="@string/app_covidlabs"
+                app:srcCompat="@drawable/covidtestlabs" />
+
+            <ImageView
+                android:id="@+id/imgambulance"
+                android:layout_width="211dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/imageborder"
+                android:contentDescription="@string/app_ambulan"
+                app:srcCompat="@drawable/ambulanceimage" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbl2lbldesc"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:paddingTop="-5dp">
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:text="@string/app_covidlabs"
+                android:textColor="@color/fullblack"
+                android:textSize="17sp" />
+
+            <TextView
+                android:layout_width="193dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:text="@string/app_ambulan"
+                android:textColor="@color/fullblack"
+                android:textSize="17sp" />
+
+        </TableRow>
 
     </LinearLayout>
 

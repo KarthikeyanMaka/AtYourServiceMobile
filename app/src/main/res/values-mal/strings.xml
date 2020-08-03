@@ -35,4 +35,8 @@
     <string name="app_homeotherlink">"മറ്റുള്ളവർ:\n "</string>
     <string name="app_districtName">ജില്ല</string>
     <string name="app_selectdistrict">ജില്ല തിരഞ്ഞെടുക്കുക</string>
+    <string name="app_covidlabs">കോവിഡ് ലാബ്</string>
+    <string name="app_ambulan">ആംബുലൻസ് സേവനങ്ങൾ</string>
+    <string name="app_labname">ലാബിന്റെ പേര്</string>
+    <string name="app_labcontact">ബന്ധപ്പെടാനുള്ള നമ്പർ</string>
 </resources>

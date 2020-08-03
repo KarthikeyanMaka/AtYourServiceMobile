@@ -178,5 +178,25 @@ public class CovidHospitals extends AppCompatActivity {
         Intent intent = new Intent(this, CovidDashboard.class);
         startActivity(intent);
     }
+    public void GotoHepline(View v)
+    {
+        Intent intent = new Intent(this, HelpLine.class);
+        startActivity(intent);
+    }
+    public void GotoHospitals(View v)
+    {
+       // Intent intent = new Intent(this, CovidHospitals.class);
+       // startActivity(intent);
+    }
+    public void GotoLabs(View v)
+    {
+        Intent intent = new Intent(this, CovidLabs.class);
+        startActivity(intent);
+    }
+    public void GotoAmbulance(View v)
+    {
+        Intent intent = new Intent(this, AmbulanceServices.class);
+        startActivity(intent);
+    }
 
 }

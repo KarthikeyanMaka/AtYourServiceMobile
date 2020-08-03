@@ -35,4 +35,8 @@
     <string name="app_homeotherlink">"ఇతరులు:\n "</string>
     <string name="app_districtName">జిల్లా పేరు</string>
     <string name="app_selectdistrict">జిల్లాను ఎంచుకోండి</string>
+    <string name="app_covidlabs">కోవిడ్ టెస్ట్ ల్యాబ్స్</string>
+    <string name="app_ambulan">అంబులెన్స్ సేవలు</string>
+    <string name="app_labname">ల్యాబ్ పేరు</string>
+    <string name="app_labcontact">సంప్రదించండి</string>
 </resources>
