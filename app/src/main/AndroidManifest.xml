@@ -22,7 +22,7 @@
         tools:ignore="UnusedAttribute">
         <activity android:name=".CovidHospitals" />
         <activity android:name=".HelpLine" />
-        <activity android:name=".Local" />
+        <activity android:name=".CovidDashboard" />
         <activity android:name=".Emergency" />
         <activity android:name=".HomeActivity" >
             <intent-filter>

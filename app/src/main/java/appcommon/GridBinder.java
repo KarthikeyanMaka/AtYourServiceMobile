@@ -62,6 +62,46 @@ public class GridBinder {
         {throw ex;}
 
     }
+    public static void BindCovidDashGrid(Context c, String jsonData, GridView gv) throws JSONException {
+        try{
+            JSONArray ja= new JSONArray(jsonData);
+            JSONObject jo;
+
+            RecoveredCountsModel objCounts = new RecoveredCountsModel();
+
+            ArrayList<RecoveredCountsModel> jsonlist= new ArrayList<RecoveredCountsModel>();
+            jsonlist.clear();
+
+            for (int i=0;i<ja.length();i++)
+            {
+                jo=ja.getJSONObject(i);
+
+                objCounts.active = jo.getString("active");
+                objCounts.confirmed = jo.getString("confirmed");
+                objCounts.deceased = jo.getString("deceased");
+                objCounts.recovered = jo.getString("recovered");
+                objCounts.dtRecordedDate = jo.getString("dtRecordedDate");
+                objCounts.notes = jo.getString("notes");
+                objCounts.districtName = jo.getString("districtName");
+                objCounts.stateName = jo.getString("stateName");
+
+                jsonlist.add(objCounts);
+
+            }
+
+
+            CovidDashboadAdapter objHelpView = new CovidDashboadAdapter(c,jsonlist);
+
+            gv.setAdapter(objHelpView);
+
+
+
+        }
+        catch (Exception ex)
+        {throw ex;}
+
+
+    }
 
     public static void BindHelplineGrid (Context c, String jsonData, GridView gv,boolean isCentral) throws JSONException {
         try {

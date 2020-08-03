@@ -71,13 +71,13 @@ android:layout_height="match_parent">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="37dp"
             android:layout_marginTop="10dp">
 
             <TextView
                 android:id="@+id/txtRecovered"
                 android:layout_width="107dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@drawable/textborder"
                 android:text="@string/app_torecov"
                 android:textColor="@color/black" />
@@ -85,7 +85,7 @@ android:layout_height="match_parent">
             <TextView
                 android:id="@+id/txttotal"
                 android:layout_width="109dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@drawable/textborder"
                 android:text="@string/app_totcovid"
                 android:textColor="@color/black" />
@@ -93,7 +93,7 @@ android:layout_height="match_parent">
             <TextView
                 android:id="@+id/txtActive"
                 android:layout_width="94dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@drawable/textborder"
                 android:text="@string/app_totactive"
                 android:textColor="@color/black" />
@@ -101,7 +101,7 @@ android:layout_height="match_parent">
             <TextView
                 android:id="@+id/txtdeceased"
                 android:layout_width="95dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@drawable/textborder"
                 android:text="@string/app_totdeces"
                 android:textColor="@color/black" />
@@ -148,14 +148,14 @@ android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/txtcurrentdistrict"
-            android:layout_width="206dp"
+            android:layout_width="221dp"
             android:layout_height="wrap_content"
             android:background="@drawable/textborder"
             android:textColor="@color/colorAccent" />
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="178dp"
+            android:layout_height="223dp"
             android:layout_marginTop="20dp">
 
             <TextView
@@ -170,7 +170,7 @@ android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/txthomemergency"
-                android:layout_width="204dp"
+                android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/back"
                 android:linksClickable="true"
@@ -182,12 +182,12 @@ android:layout_height="match_parent">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="142dp">
+            android:layout_height="102dp">
 
             <TextView
                 android:id="@+id/txthomelocal"
-                android:layout_width="203dp"
-                android:layout_height="131dp"
+                android:layout_width="201dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/back"
                 android:linksClickable="true"
                 android:text="@string/app_homelocallink"
@@ -196,11 +196,11 @@ android:layout_height="match_parent">
             <TextView
                 android:id="@+id/txthomeothers"
                 android:layout_width="201dp"
-                android:layout_height="128dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/back"
                 android:linksClickable="true"
-                android:textColor="#0645AD"
                 android:text="@string/app_homeotherlink"
+                android:textColor="#0645AD"
 
                 android:textColorLink="#0645AD" />
 

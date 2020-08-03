@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Scroll1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/Linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="39dp">
+
+            <TextView
+                android:id="@+id/appName"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/app_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <Spinner
+                android:id="@+id/dplangu"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="25dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+        </TableRow>
+
+        <include layout="@layout/top_menu" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:paddingTop="-5dp">
+
+            <TextView
+                android:id="@+id/txtlblcovidstate"
+                android:layout_width="169dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/app_statelist"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <Spinner
+                android:id="@+id/dpcovidstate"
+                android:layout_width="214dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="25dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:paddingTop="-5dp">
+
+            <TextView
+                android:id="@+id/txtlbcovidist"
+                android:layout_width="169dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/app_selectdistrict"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <Spinner
+                android:id="@+id/dpcoviddist"
+                android:layout_width="214dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="25dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+        </TableRow>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="508dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="47dp">
+
+                <TextView
+                    android:id="@+id/txtlblrecovered"
+                    android:layout_width="107dp"
+                    android:layout_height="39dp"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_torecov"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txtlbltotal"
+                    android:layout_width="109dp"
+                    android:layout_height="39dp"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_totcovid"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txtlblActive"
+                    android:layout_width="94dp"
+                    android:layout_height="39dp"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_totactive"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txtlbldecesed"
+                    android:layout_width="95dp"
+                    android:layout_height="39dp"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_totdeces"
+                    android:textColor="@color/black" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
+
+
+                <GridView
+                    android:id="@+id/gvcoviddash"
+                    android:layout_width="396dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="4dp"
+                    android:background="@color/grey"
+                    android:gravity="center"
+                    android:numColumns="1"
+                    android:stretchMode="columnWidth" />
+            </TableRow>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

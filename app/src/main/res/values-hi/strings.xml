@@ -33,5 +33,6 @@
     <string name="app_homeemerlink">आपके क्षेत्र में आपातकालीन सेवाएं और अन्य महत्वपूर्ण सुविधाएं। \n \n एक ही स्थान पर संपर्क जानकारी। सहित: · सरकार। हेल्पलाइन ... \n · COVID अस्पताल ... \n · एम्बुलेंस सेवाएं ... \n · COVID परीक्षण प्रयोगशाला ... \n · स्थानीय गैर सरकारी संगठन ... \n</string>
     <string name="app_homelocallink">स्थानीय समुदाय \n * जल्द ही आ रहा है</string>
     <string name="app_homeotherlink">"दुसरे लोग:\n "</string>
-    <string name="app_districtName">DistrictName</string>
+    <string name="app_districtName">जिला</string>
+    <string name="app_selectdistrict">जिला चुनें</string>
 </resources>

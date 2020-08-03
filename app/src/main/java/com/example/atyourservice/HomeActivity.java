@@ -111,6 +111,11 @@ public class HomeActivity extends AppCompatActivity {
         txtRecoveredCount = (TextView)findViewById(R.id.txtRecoveredcount);
         txtcurrDis = (TextView) findViewById(R.id.txtcurrentdistrict);
 
+        txtActiveount.setText("");
+        txtDeceasedCount.setText("");
+        txtTotCount.setText("");
+        txtRecoveredCount.setText("");
+        txtcurrDis.setText("");
 
         try {
             objCityState=LocationFinder.GetCityState(HomeActivity.this);
@@ -137,6 +142,7 @@ public class HomeActivity extends AppCompatActivity {
                 if(objCounts.districtName != null)
                     txtcurrDis.setText(R.string.app_districtName+":"+objCounts.districtName );
             }
+
         }
 
         imageView = (ImageView)findViewById(R.id.imageView);
@@ -209,7 +215,7 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void GotoLocal(View v)
     {
-        Intent intent = new Intent(this, Local.class);
+        Intent intent = new Intent(this, CovidDashboard.class);
         startActivity(intent);
     }
     public void Setlocale(String localName){

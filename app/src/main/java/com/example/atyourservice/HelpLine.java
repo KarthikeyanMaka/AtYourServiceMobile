@@ -171,7 +171,7 @@ public class HelpLine extends AppCompatActivity {
     }
     public void GotoLocal(View v)
     {
-        Intent intent = new Intent(this, Local.class);
+        Intent intent = new Intent(this, CovidDashboard.class);
         startActivity(intent);
     }
 }

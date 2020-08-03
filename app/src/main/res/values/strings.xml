@@ -8,7 +8,7 @@
     <string name="app_Home">Home</string>
     <string name="app_Health">Health Safety</string>
     <string name="app_Emer">Emergency Serv</string>
-    <string name="app_Local">Local Community</string>
+    <string name="app_Local">Covid Dashboard</string>
     <string name="home_second">Home Second</string>
     <string name="language">language</string>
     <string name="app_playnxtbtn">Play Next</string>
@@ -33,5 +33,6 @@
     <string name="app_homelocallink">LOCAL COMMUNITY \n *Coming soon</string>
     <string name="app_homeotherlink">"OTHERS:\n "</string>
     <string name="app_districtName">DistrictName</string>
+    <string name="app_selectdistrict">Choose District</string>
 
 </resources>
