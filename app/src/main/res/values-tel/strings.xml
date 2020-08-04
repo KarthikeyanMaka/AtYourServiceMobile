@@ -39,4 +39,6 @@
     <string name="app_ambulan">అంబులెన్స్ సేవలు</string>
     <string name="app_labname">ల్యాబ్ పేరు</string>
     <string name="app_labcontact">సంప్రదించండి</string>
+    <string name="app_statename">రాష్ట్ర పేరుS</string>
+    <string name="app_ambcontact">అంబులెన్స్ పరిచయం</string>
 </resources>

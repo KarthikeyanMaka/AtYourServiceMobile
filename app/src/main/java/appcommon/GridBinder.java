@@ -103,6 +103,40 @@ public class GridBinder {
             throw ex;
         }
     }
+    public static void BindAmbGrid(Context c, String jsonData, GridView gv) throws JSONException {
+        try{
+            JSONArray ja= new JSONArray(jsonData);
+            JSONObject jo;
+
+
+
+            ArrayList<StateAmbulanceModel> jsonlist= new ArrayList<StateAmbulanceModel>();
+            jsonlist.clear();
+
+            for (int i=0;i<ja.length();i++)
+            {
+                StateAmbulanceModel objCounts = new StateAmbulanceModel();
+                jo=ja.getJSONObject(i);
+
+                objCounts.name = jo.getString("name");
+                objCounts.ambulanceContact = jo.getString("ambulanceContact");
+                objCounts.source = jo.getString("source");
+                objCounts.stateCode = jo.getString("stateCode");
+
+                jsonlist.add(objCounts);
+
+            }
+
+
+            StateambGridAdapter objgridView = new StateambGridAdapter(c,jsonlist);
+
+            gv.setAdapter(objgridView);
+
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+    }
     public static void BindCovidDashGrid(Context c, String jsonData, GridView gv) throws JSONException {
         try{
             JSONArray ja= new JSONArray(jsonData);

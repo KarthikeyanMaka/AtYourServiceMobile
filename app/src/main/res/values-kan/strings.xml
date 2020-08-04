@@ -39,4 +39,6 @@
     <string name="app_ambulan">ಆಂಬ್ಯುಲೆನ್ಸ್ ಸೇವೆಗಳು</string>
     <string name="app_labname">ಲ್ಯಾಬ್ ಹೆಸರು</string>
     <string name="app_labcontact">ಸಂಪರ್ಕ ಸಂಖ್ಯೆ</string>
+    <string name="app_statename">ರಾಜ್ಯದ ಹೆಸರು</string>
+    <string name="app_ambcontact">ಆಂಬ್ಯುಲೆನ್ಸ್ ಸಂಪರ್ಕ</string>
 </resources>

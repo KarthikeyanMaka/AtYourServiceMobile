@@ -39,4 +39,6 @@
     <string name="app_ambulan">ஆம்புலன்ஸ் சேவைகள்</string>
     <string name="app_labname">ஆய்வக பெயர்</string>
     <string name="app_labcontact">தொடர்பு எண்</string>
+    <string name="app_statename">மாநில பெயர்</string>
+    <string name="app_ambcontact">ஆம்புலன்ஸ் தொடர்பு</string>
 </resources>
