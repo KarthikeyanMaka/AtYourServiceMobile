@@ -41,4 +41,7 @@
     <string name="app_labcontact">ಸಂಪರ್ಕ ಸಂಖ್ಯೆ</string>
     <string name="app_statename">ರಾಜ್ಯದ ಹೆಸರು</string>
     <string name="app_ambcontact">ಆಂಬ್ಯುಲೆನ್ಸ್ ಸಂಪರ್ಕ</string>
+    <string name="app_terms">Terms and Conditions</string>
+    <string name="app_privacy">Privacy Policy</string>
+    <string name="app_disclaimer">Disclaimer</string>
 </resources>

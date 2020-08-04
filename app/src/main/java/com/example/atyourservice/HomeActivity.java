@@ -220,6 +220,21 @@ public class HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CovidDashboard.class);
         startActivity(intent);
     }
+    public void GotoPrivacy(View v){
+        Intent intent = new Intent(this, Disclaimer.class);
+        intent.putExtra("DisKey","Privacy");
+        startActivity(intent);
+    }
+    public void GotoDisclaimer(View v){
+        Intent intent = new Intent(this, Disclaimer.class);
+        intent.putExtra("DisKey","Disclaimer");
+        startActivity(intent);
+    }
+    public void GotoTerms(View v){
+        Intent intent = new Intent(this, Disclaimer.class);
+        intent.putExtra("DisKey","Terms");
+        startActivity(intent);
+    }
     public void Setlocale(String localName){
         Locale Current = getResources().getConfiguration().locale;
         Locale appLocale = new Locale(localName);
@@ -235,6 +250,6 @@ public class HomeActivity extends AppCompatActivity {
             finish();
             startActivity(refresh);
         }
-
     }
+
 }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/Menu">
+
+    <TableRow
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_terms"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-1dp"
+            android:layout_weight="0.1"
+            android:background="#FFFFFF"
+            android:onClick="GotoTerms"
+            android:text="@string/app_terms"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/btn_privacy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-1dp"
+            android:layout_weight="0.1"
+            android:background="#FFFFFF"
+            android:onClick="GotoPrivacy"
+            android:text="@string/app_privacy"
+            android:textSize="7sp" />
+
+        <Button
+            android:id="@+id/btn_disclaimer"
+            android:layout_width="99dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-3dp"
+            android:layout_marginRight="-1dp"
+            android:layout_weight="0.1"
+            android:background="#FFFFFF"
+            android:onClick="GotoDisclaimer"
+            android:text="@string/app_disclaimer"
+            android:textSize="8sp" />
+
+    </TableRow>
+
+</FrameLayout>

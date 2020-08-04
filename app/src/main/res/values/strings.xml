@@ -40,5 +40,9 @@
     <string name="app_labcontact">Contact</string>
     <string name="app_statename">State Name</string>
     <string name="app_ambcontact">Ambulance Contact</string>
+    <string name="app_terms">Terms and Conditions</string>
+    <string name="app_privacy">Privacy Policy</string>
+    <string name="app_disclaimer">Disclaimer</string>
+
 
 </resources>

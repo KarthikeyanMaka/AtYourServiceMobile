@@ -198,5 +198,20 @@ public class CovidHospitals extends AppCompatActivity {
         Intent intent = new Intent(this, AmbulanceServices.class);
         startActivity(intent);
     }
+    public void GotoPrivacy(View v){
+        Intent intent = new Intent(this, Disclaimer.class);
+        intent.putExtra("DisKey","Privacy");
+        startActivity(intent);
+    }
+    public void GotoDisclaimer(View v){
+        Intent intent = new Intent(this, Disclaimer.class);
+        intent.putExtra("DisKey","Disclaimer");
+        startActivity(intent);
+    }
+    public void GotoTerms(View v){
+        Intent intent = new Intent(this, Disclaimer.class);
+        intent.putExtra("DisKey","Terms");
+        startActivity(intent);
+    }
 
 }

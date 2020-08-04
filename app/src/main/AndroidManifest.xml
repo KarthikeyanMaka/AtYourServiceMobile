@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="UnusedAttribute">
-        <activity android:name=".AmbulanceServices"></activity>
+        <activity android:name=".Disclaimer"></activity>
+        <activity android:name=".AmbulanceServices" />
         <activity android:name=".CovidLabs" />
         <activity android:name=".CovidHospitals" />
         <activity android:name=".HelpLine" />

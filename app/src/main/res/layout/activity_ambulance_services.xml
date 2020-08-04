@@ -61,9 +61,10 @@
                 android:spinnerMode="dropdown" />
         </TableRow>
     </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="484dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -90,15 +91,15 @@
         </TableRow>
 
         <TableRow
-            android:layout_width="401dp"
-            android:layout_height="115dp"
+            android:layout_width="397dp"
+            android:layout_height="112dp"
             android:layout_marginTop="40dp"
             android:orientation="horizontal">
 
             <GridView
                 android:id="@+id/gvamb"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="106dp"
                 android:layout_marginStart="4dp"
                 android:background="@color/grey"
                 android:gravity="center"
@@ -109,6 +110,12 @@
 
 
     </RelativeLayout>
+
+    <include
+        layout="@layout/bottomdisclaimmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="261dp"
+        android:layout_gravity="center|bottom" />
 </LinearLayout>
 
 

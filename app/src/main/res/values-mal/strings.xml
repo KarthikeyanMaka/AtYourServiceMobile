@@ -41,4 +41,7 @@
     <string name="app_labcontact">ബന്ധപ്പെടാനുള്ള നമ്പർ</string>
     <string name="app_statename">സംസ്ഥാനത്തിന്റെ പേര്</string>
     <string name="app_ambcontact">ആംബുലൻസ് കോൺടാക്റ്റ്</string>
+    <string name="app_terms">Terms and Conditions</string>
+    <string name="app_privacy">Privacy Policy</string>
+    <string name="app_disclaimer">Disclaimer</string>
 </resources>

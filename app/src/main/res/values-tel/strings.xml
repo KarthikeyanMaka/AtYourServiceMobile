@@ -41,4 +41,7 @@
     <string name="app_labcontact">సంప్రదించండి</string>
     <string name="app_statename">రాష్ట్ర పేరుS</string>
     <string name="app_ambcontact">అంబులెన్స్ పరిచయం</string>
+    <string name="app_terms">Terms and Conditions</string>
+    <string name="app_privacy">Privacy Policy</string>
+    <string name="app_disclaimer">Disclaimer</string>
 </resources>

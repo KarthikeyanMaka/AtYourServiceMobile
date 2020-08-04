@@ -142,5 +142,9 @@
         </TableRow>
 
     </RelativeLayout>
+    <include layout="@layout/bottomdisclaimmenu"
+        android:layout_gravity="center|bottom"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"/>
 
 </LinearLayout>
