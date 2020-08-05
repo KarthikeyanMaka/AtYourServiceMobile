@@ -8,6 +8,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Spinner;
 
@@ -15,6 +16,7 @@ import org.json.JSONException;
 
 import java.util.Locale;
 
+import appcommon.Common;
 import appcommon.DropDown;
 import appcommon.ErrorHandling;
 import appcommon.GridBinder;
@@ -43,6 +45,14 @@ public class CovidDashboard extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
+
+            //menu color change
+            Button home= (Button)this.findViewById(R.id.btn_home);
+            Button health= (Button)this.findViewById(R.id.btn_Health);
+            Button emer= (Button)this.findViewById(R.id.btn_Emer);
+            Button dash= (Button)this.findViewById(R.id.btn_local);
+            Common.setMenuColor(home,health,emer,dash,"Dash",this);
 
             dphosdist = (Spinner) findViewById(R.id.dpcoviddist);
 
@@ -176,6 +186,7 @@ public class CovidDashboard extends AppCompatActivity {
             Intent refresh = new Intent(c, CovidDashboard.class);
             finish();
             startActivity(refresh);
+
         }
     }
     public void GotoPrivacy(View v){

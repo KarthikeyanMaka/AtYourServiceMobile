@@ -8,12 +8,14 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 
 import java.util.Locale;
 
+import appcommon.Common;
 import appcommon.DropDown;
 import appcommon.ErrorHandling;
 
@@ -29,6 +31,14 @@ public class Emergency extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emergency);
         try {
+
+            //menu color change
+            Button home= (Button)this.findViewById(R.id.btn_home);
+            Button health= (Button)this.findViewById(R.id.btn_Health);
+            Button emer= (Button)this.findViewById(R.id.btn_Emer);
+            Button dash= (Button)this.findViewById(R.id.btn_local);
+            Common.setMenuColor(home,health,emer,dash,"Emer",this);
+
 
             //Language dropdown configuration
             dropdown = findViewById(R.id.spinner1);

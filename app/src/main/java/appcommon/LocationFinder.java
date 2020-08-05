@@ -1,6 +1,8 @@
 package appcommon;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -160,6 +162,25 @@ public class LocationFinder{
 
 
         return  objRecovered;
+    }
+    public static boolean isNetworkStatusAvailable(Context context){
+        try{
+
+            ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            if(connectivityManager !=null){
+                NetworkInfo netInfros = connectivityManager.getActiveNetworkInfo();
+                if(netInfros !=null)
+                    if(netInfros.isConnected())
+                        return true;
+
+            }
+            return false;
+
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+
     }
 
 }

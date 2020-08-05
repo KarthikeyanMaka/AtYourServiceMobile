@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Spinner;
 
@@ -15,6 +16,7 @@ import org.json.JSONException;
 import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
+import appcommon.Common;
 import appcommon.DropDown;
 import appcommon.ErrorHandling;
 import appcommon.GridBinder;
@@ -28,6 +30,13 @@ public class HelpLine extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_line);
         try {
+
+            Button home= (Button)this.findViewById(R.id.btn_home);
+            Button health= (Button)this.findViewById(R.id.btn_Health);
+            Button emer= (Button)this.findViewById(R.id.btn_Emer);
+            Button dash= (Button)this.findViewById(R.id.btn_local);
+            Common.setMenuColor(home,health,emer,dash,"Emer",this);
+
 
             //CentralHelpline Config
             String CentralJsonData ="["+ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetCentralHelpline")+"]";

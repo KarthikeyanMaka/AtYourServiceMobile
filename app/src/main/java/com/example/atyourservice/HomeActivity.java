@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -21,6 +22,8 @@ import org.json.JSONException;
 
 import java.util.Locale;
 
+import appcommon.AppNotification;
+import appcommon.Common;
 import appcommon.DropDown;
 import appcommon.ErrorHandling;
 import appcommon.LangLocModel;
@@ -47,13 +50,23 @@ public class HomeActivity extends AppCompatActivity {
     Spinner dropdown;
     Handler handler = new Handler();
     Runnable runnable;
-    int delay = 5000;
+    int delay = 20000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        if(!LocationFinder.isNetworkStatusAvailable(this)){
+            ErrorHandling.AlertMessage(getString(R.string.app_networkmsg), this);
+        }
+        //AppNotification.NotificationBuildShow(this);
 
+        //menu color change
+        Button home= (Button)findViewById(R.id.btn_home);
+        Button health= (Button)findViewById(R.id.btn_Health);
+        Button emer= (Button)findViewById(R.id.btn_Emer);
+        Button dash= (Button)findViewById(R.id.btn_local);
+        Common.setMenuColor(home,health,emer,dash,"Home",this);
 
         //Language dropdown configuration
         dropdown = findViewById(R.id.spinner1);
@@ -268,6 +281,8 @@ public class HomeActivity extends AppCompatActivity {
                 }
 
                 Glide.with(getApplicationContext()).load(imgList[count]).into(imageView);
+
+
             }
         }, delay);
         super.onResume();

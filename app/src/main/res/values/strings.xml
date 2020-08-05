@@ -43,6 +43,7 @@
     <string name="app_terms">Terms and Conditions</string>
     <string name="app_privacy">Privacy Policy</string>
     <string name="app_disclaimer">Disclaimer</string>
+    <string name="app_networkmsg">Please Switch on Internet and restart the app</string>
 
 
 </resources>

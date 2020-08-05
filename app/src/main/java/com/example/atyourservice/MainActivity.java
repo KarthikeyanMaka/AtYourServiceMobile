@@ -8,6 +8,7 @@ import android.location.LocationListener;
 import android.os.Handler;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +27,7 @@ import java.util.Locale;
 
 import java.util.concurrent.ExecutionException;
 
+import appcommon.Common;
 import appcommon.ErrorHandling;
 import appcommon.GpsTracker;
 import appcommon.JsonAsyncTask;
@@ -53,103 +55,117 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_main);
         try {
 
-
-            //To set location permission
-            try {
-                if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
-                    ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
-                }
-            } catch (Exception e){
-                ErrorHandling.ErrorDialog(e.getMessage(),this);
-            }
+            //menu color change
+            Button home= (Button)this.findViewById(R.id.btn_home);
+            Button health= (Button)this.findViewById(R.id.btn_Health);
+            Button emer= (Button)this.findViewById(R.id.btn_Emer);
+            Button dash= (Button)this.findViewById(R.id.btn_local);
+            Common.setMenuColor(home,health,emer,dash,"Health",this);
 
 
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                public void run() {
-                    try {
-                        delayprocess();
+            if (!LocationFinder.isNetworkStatusAvailable(this)) {
+                ErrorHandling.AlertMessage(getString(R.string.app_networkmsg), this);
+            } else {
 
-                    } catch (Exception e) {
-                        e.printStackTrace();
+
+
+                //To set location permission
+                try {
+                    if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
                     }
+                } catch (Exception e) {
+                    ErrorHandling.ErrorDialog(e.getMessage(), this);
                 }
-            }, 5000);
 
-            defLang= LocationFinder.getLocationLang(MainActivity.this);
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        try {
+                            delayprocess();
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, 5000);
+
+                defLang = LocationFinder.getLocationLang(MainActivity.this);
 
 
 //            if(defLang !="")
-  //              Setlocale(defLang);
+                //              Setlocale(defLang);
 
 
-            setContentView(R.layout.activity_main);
-
-        //get the spinner from the xml.
-        dropdown = findViewById(R.id.spinner1);
-
-        String[] items = new String[]{"","தமிழ்", "हिन्दी", "English","ಕನ್ನಡ","తెలుగు","മലയാളം"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-        dropdown.setAdapter(adapter);
 
 
-        final ScrollView scrollView=(ScrollView) findViewById(R.id.Scroll1);
-        scrollView.setVerticalScrollbarPosition(ScrollView.SCROLLBAR_POSITION_RIGHT);
-        scrollView.setVerticalScrollBarEnabled(true);
+                //get the spinner from the xml.
+                dropdown = findViewById(R.id.spinner1);
 
-        Locale Current = getResources().getConfiguration().locale;
-        CreateLinkPlay(Current.getLanguage());
+                String[] items = new String[]{"", "தமிழ்", "हिन्दी", "English", "ಕನ್ನಡ", "తెలుగు", "മലയാളം"};
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+                dropdown.setAdapter(adapter);
 
-        dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                    if(parentView.getItemAtPosition(position).toString() != "") {
-                        String urllng = "Tamil";
-                        String localeName ="en";
 
-                        switch (parentView.getItemAtPosition(position).toString()) {
-                            case "தமிழ்":
-                                urllng = "Tamil";
-                                localeName ="ta";
-                                break;
-                            case "English":
-                                urllng = "English";
-                                localeName ="en";
-                                break;
-                            case "తెలుగు":
-                                urllng = "Telugu";
-                                localeName ="tel";
-                                break;
-                            case "ಕನ್ನಡ":
-                                urllng = "Kannada";
-                                localeName ="kan";
-                                break;
-                            case "മലയാളം":
-                                urllng = "Malayalam";
-                                localeName ="mal";
-                                break;
-                            case "हिन्दी":
-                                urllng = "Hindi";
-                                localeName ="hi";
-                                break;
+                final ScrollView scrollView = (ScrollView) findViewById(R.id.Scroll1);
+                scrollView.setVerticalScrollbarPosition(ScrollView.SCROLLBAR_POSITION_RIGHT);
+                scrollView.setVerticalScrollBarEnabled(true);
+
+                Locale Current = getResources().getConfiguration().locale;
+                CreateLinkPlay(Current.getLanguage());
+
+                dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                        if (parentView.getItemAtPosition(position).toString() != "") {
+                            String urllng = "Tamil";
+                            String localeName = "en";
+
+                            switch (parentView.getItemAtPosition(position).toString()) {
+                                case "தமிழ்":
+                                    urllng = "Tamil";
+                                    localeName = "ta";
+                                    break;
+                                case "English":
+                                    urllng = "English";
+                                    localeName = "en";
+                                    break;
+                                case "తెలుగు":
+                                    urllng = "Telugu";
+                                    localeName = "tel";
+                                    break;
+                                case "ಕನ್ನಡ":
+                                    urllng = "Kannada";
+                                    localeName = "kan";
+                                    break;
+                                case "മലയാളം":
+                                    urllng = "Malayalam";
+                                    localeName = "mal";
+                                    break;
+                                case "हिन्दी":
+                                    urllng = "Hindi";
+                                    localeName = "hi";
+                                    break;
+
+                            }
+
+                            Setlocale(localeName);
 
                         }
-
-                        Setlocale(localeName);
-
                     }
+
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parentView) {
+                        // your code here
+                    }
+
+                });
             }
-
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                // your code here
-            }
-
-        });
         }
         catch (Exception ex)
         {
@@ -217,56 +233,66 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         {
             final WebView view1=(WebView) findViewById(R.id.mWebView1);
 
-            if (lstDietId > (dietVideoIds.length - 1) || dietVideoIds[lstDietId].length()==0)
-                lstDietId = 0;
-            else
-                lstDietId = lstDietId + 1;
+            if(dietVideoIds.length!=0) {
+                if (lstDietId >= (dietVideoIds.length - 1))
+                    lstDietId = 0;
+                else
+                    lstDietId = lstDietId + 1;
 
-            PlayVideos(view1,dietVideoIds,lstDietId);
+                PlayVideos(view1, dietVideoIds, lstDietId);
+            }
         }
         public void PlayNexImmVideo(View view)
         {
             final WebView view1=(WebView) findViewById(R.id.mWebView2);
 
-            if (lstImmId > (immVideoIds.length - 1) || immVideoIds[lstImmId].length()==0)
-                lstImmId = 0;
-            else
-                lstImmId = lstImmId + 1;
+            if(immVideoIds.length !=0) {
+                if (lstImmId >= (immVideoIds.length - 1))
+                    lstImmId = 0;
+                else
+                    lstImmId = lstImmId + 1;
 
-            PlayVideos(view1,immVideoIds,lstImmId);
+                PlayVideos(view1, immVideoIds, lstImmId);
+            }
         }
         public void PlayNexRemVideo(View view)
         {
             final WebView view1=(WebView) findViewById(R.id.mWebView3);
 
-            if (lstRemId> (remVideoIds.length - 1)  || remVideoIds[lstRemId].length()==0 )
-                lstRemId = 0;
-            else
-                lstRemId= lstRemId + 1;
+            if(remVideoIds.length !=0 ) {
+                if (lstRemId >= (remVideoIds.length - 1))
+                    lstRemId = 0;
+                else
+                    lstRemId = lstRemId + 1;
 
-            PlayVideos(view1,remVideoIds,lstRemId);
+                PlayVideos(view1, remVideoIds, lstRemId);
+            }
         }
         public void PlayNexExpVideo(View view)
         {
             final WebView view1=(WebView) findViewById(R.id.mWebView4);
 
-            if (lstExpId> (expVideoIds.length - 1) || expVideoIds[lstExpId].length()==0 )
-                lstExpId = 0;
-            else
-                lstExpId= lstExpId + 1;
+            if(expVideoIds.length!=0) {
+                if (lstExpId >= (expVideoIds.length - 1))
+                    lstExpId = 0;
+                else
+                    lstExpId = lstExpId + 1;
 
-            PlayVideos(view1,expVideoIds,lstExpId);
+                PlayVideos(view1, expVideoIds, lstExpId);
+            }
         }
         public void PlayNexMedVideo(View view)
         {
             final WebView view1=(WebView) findViewById(R.id.mWebView5);
 
-            if (lstMedId> (medVideoIds.length - 1) || medVideoIds[lstMedId].length()==0)
-                lstMedId = 0;
-            else
-                lstMedId= lstMedId + 1;
+            if(medVideoIds.length !=0) {
+                if (lstMedId > (medVideoIds.length - 1))
+                    lstMedId = 0;
+                else
+                    lstMedId = lstMedId + 1;
 
-            PlayVideos(view1,medVideoIds,lstMedId);
+                PlayVideos(view1, medVideoIds, lstMedId);
+            }
         }
 
 
