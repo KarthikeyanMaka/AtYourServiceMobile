@@ -45,12 +45,12 @@
 
             <ImageView
                 android:id="@+id/imghelpline"
-                android:layout_width="194dp"
+                android:layout_width="201dp"
                 android:layout_height="match_parent"
+                android:background="@drawable/imageborder"
                 android:contentDescription="@string/app_heplline"
                 android:onClick="ShowHelplinenumbers"
-                android:src="@drawable/helpline"
-                android:background="@drawable/imageborder"/>
+                android:src="@drawable/helpline" />
 
             <ImageView
                 android:id="@+id/imagehospView"

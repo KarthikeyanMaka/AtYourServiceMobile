@@ -47,7 +47,7 @@ android:layout_height="match_parent">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/layoutborder"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -71,7 +71,7 @@ android:layout_height="match_parent">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="37dp"
+            android:layout_height="58dp"
             android:layout_marginTop="10dp">
 
             <TextView
@@ -108,14 +108,17 @@ android:layout_height="match_parent">
 
 
         </TableRow>
-        <TableRow android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:background="@drawable/imageborder">
 
 
             <TextView
                 android:id="@+id/txtRecoveredcount"
                 android:layout_width="107dp"
-                android:layout_height="wrap_content"
+                android:layout_height="43dp"
                 android:background="@drawable/textborder"
                 android:text="@string/app_torecov"
                 android:textColor="@color/black" />
@@ -123,7 +126,7 @@ android:layout_height="match_parent">
             <TextView
                 android:id="@+id/txttotalcount"
                 android:layout_width="109dp"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
                 android:background="@drawable/textborder"
                 android:text="@string/app_totcovid"
                 android:textColor="@color/black" />
@@ -131,7 +134,7 @@ android:layout_height="match_parent">
             <TextView
                 android:id="@+id/txtActivecount"
                 android:layout_width="94dp"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
                 android:background="@drawable/textborder"
                 android:text="@string/app_totactive"
                 android:textColor="@color/black" />
@@ -139,7 +142,7 @@ android:layout_height="match_parent">
             <TextView
                 android:id="@+id/txtdeceasedcount"
                 android:layout_width="95dp"
-                android:layout_height="wrap_content"
+                android:layout_height="43dp"
                 android:background="@drawable/textborder"
                 android:text="@string/app_totdeces"
                 android:textColor="@color/black" />

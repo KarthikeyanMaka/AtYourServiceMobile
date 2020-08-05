@@ -33,7 +33,7 @@ public class HomeActivity extends AppCompatActivity {
     String State;
     LangLocModel objCityState = null;
     ImageView imageView;
-    Integer[] imgList = new Integer[]{R.drawable.giphy,R.drawable.washhans,R.drawable.face};
+    Integer[] imgList = new Integer[]{R.drawable.awarnessone,R.drawable.thanks,R.drawable.stayhomeone,R.drawable.giphy,R.drawable.washhans,R.drawable.face};
     TextView txtRecoveredCount;
     TextView txtActiveount;
     TextView txtDeceasedCount;
@@ -45,6 +45,9 @@ public class HomeActivity extends AppCompatActivity {
     TextView txtcurrDis;
     Integer count=0;
     Spinner dropdown;
+    Handler handler = new Handler();
+    Runnable runnable;
+    int delay = 5000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -154,7 +157,7 @@ public class HomeActivity extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(count>1) {
+                if(count>3) {
                     count=0;
                 }
                 else
@@ -250,6 +253,29 @@ public class HomeActivity extends AppCompatActivity {
             finish();
             startActivity(refresh);
         }
+    }
+    @Override
+    protected void onResume() {
+        handler.postDelayed(runnable = new Runnable() {
+            public void run() {
+                handler.postDelayed(runnable, delay);
+                if(count>3) {
+                    count=0;
+                }
+                else
+                {
+                    count++;
+                }
+
+                Glide.with(getApplicationContext()).load(imgList[count]).into(imageView);
+            }
+        }, delay);
+        super.onResume();
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        handler.removeCallbacks(runnable); //stop handler when activity not visible super.onPause();
     }
 
 }
