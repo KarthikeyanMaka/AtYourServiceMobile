@@ -6,7 +6,7 @@
     <color name="blue">#0066cc</color>
     <color name="gold">#e6b121</color>
     <color name="grey">#cccccc</color>
-    <color name="black">#FFFFFF</color>
+    <color name="black">#00004d</color>
     <color name="my_custom_color">#8000EE</color>
     <color name="fullblack">#000000</color>
 </resources>
