@@ -43,8 +43,10 @@
 
         <LinearLayout
             android:id="@+id/constrantid"
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_width="384dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
             android:background="@android:color/background_light"
             android:orientation="vertical"
             android:verticalScrollbarPosition="left"
@@ -54,7 +56,6 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:layout_marginBottom="-52dp"
                 android:background="#333"
                 android:text="@string/app_Diet"
@@ -63,37 +64,35 @@
 
             <WebView
                 android:id="@+id/mWebView1"
-                android:layout_width="match_parent"
+                android:layout_width="374dp"
                 android:layout_height="340dp"
+                android:layout_gravity="center"
                 android:layout_marginTop="55dp"
                 tools:visibility="visible" />
 
             <Button
                 android:id="@+id/btnDiet"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                style="@style/Widget.AppCompat.Button.Colored"
+                android:background="@drawable/buttonstyleone"
                 android:onClick="PlayNexDietVideo"
-                android:textColor="@color/colorPrimaryDark"
                 android:text="@string/app_playnxtbtn"
-                />
+                android:layout_gravity="center"
+                android:textColor="@color/colorPrimaryDark" />
 
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/constrantid2"
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_width="384dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
             android:background="@android:color/background_light"
-            android:divider="@android:drawable/arrow_down_float"
-            android:drawingCacheQuality="auto"
-            android:focusable="auto"
             android:orientation="vertical"
-            android:textAlignment="viewEnd"
-            android:verticalScrollbarPosition="left"
-            tools:context=".MainActivity"
-            tools:layout_editor_absoluteX="353dp">
+            android:verticalScrollbarPosition="left">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
@@ -118,25 +117,24 @@
                 android:layout_height="50dp"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:onClick="PlayNexImmVideo"
+                android:background="@drawable/buttonstyleone"
                 android:textColor="@color/colorPrimaryDark"
                 android:text="@string/app_playnxtbtn"
                 android:visibility="visible"
+                android:layout_gravity="center"
                 />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/constrantid3"
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_width="384dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
             android:background="@android:color/background_light"
-            android:divider="@android:drawable/arrow_down_float"
-            android:drawingCacheQuality="auto"
-            android:focusable="auto"
             android:orientation="vertical"
-            android:textAlignment="viewEnd"
             android:verticalScrollbarPosition="left"
-            tools:context=".MainActivity"
-            tools:layout_editor_absoluteX="353dp">
+            tools:context=".MainActivity">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
@@ -159,27 +157,26 @@
                 android:id="@+id/btnRem"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:background="@drawable/buttonstyleone"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:onClick="PlayNexRemVideo"
                 android:textColor="@color/colorPrimaryDark"
                 android:text="@string/app_playnxtbtn"
                 android:visibility="visible"
+                android:layout_gravity="center"
                 />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/constrantid4"
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_width="384dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
             android:background="@android:color/background_light"
-            android:divider="@android:drawable/arrow_down_float"
-            android:drawingCacheQuality="auto"
-            android:focusable="auto"
             android:orientation="vertical"
-            android:textAlignment="viewEnd"
             android:verticalScrollbarPosition="left"
-            tools:context=".MainActivity"
-            tools:layout_editor_absoluteX="353dp">
+            tools:context=".MainActivity">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="match_parent"
@@ -203,28 +200,25 @@
                 android:id="@+id/btnExp"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:background="@drawable/buttonstyleone"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:onClick="PlayNexExpVideo"
                 android:textColor="@color/colorPrimaryDark"
                 android:text="@string/app_playnxtbtn"
                 android:visibility="visible"
+                android:layout_gravity="center"
                 />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/constrantid5"
-
-
-            android:layout_width="fill_parent"
             android:layout_height="match_parent"
+            android:layout_width="384dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
             android:background="@android:color/background_light"
-            android:divider="@android:drawable/arrow_down_float"
-            android:drawingCacheQuality="auto"
-            android:focusable="auto"
             android:orientation="vertical"
-            android:textAlignment="viewEnd"
             android:verticalScrollbarPosition="left"
-            android:weightSum="3"
             tools:context=".MainActivity">
 
 
@@ -249,11 +243,13 @@
                 android:id="@+id/btnMed"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:background="@drawable/buttonstyleone"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:onClick="PlayNexMedVideo"
                 android:textColor="@color/colorPrimaryDark"
                 android:text="@string/app_playnxtbtn"
                 android:visibility="visible"
+                android:layout_gravity="center"
                 />
         </LinearLayout>
         <include layout="@layout/bottomdisclaimmenu"

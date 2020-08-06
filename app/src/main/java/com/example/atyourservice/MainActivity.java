@@ -28,6 +28,7 @@ import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 import appcommon.Common;
+import appcommon.DropDown;
 import appcommon.ErrorHandling;
 import appcommon.GpsTracker;
 import appcommon.JsonAsyncTask;
@@ -76,23 +77,24 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 try {
                     if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                         ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
+
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            public void run() {
+                                try {
+                                    delayprocess();
+
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }, 5000);
+
                     }
                 } catch (Exception e) {
                     ErrorHandling.ErrorDialog(e.getMessage(), this);
                 }
 
-
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    public void run() {
-                        try {
-                            delayprocess();
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, 5000);
 
                 defLang = LocationFinder.getLocationLang(MainActivity.this);
 
@@ -102,13 +104,23 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
 
 
-
-                //get the spinner from the xml.
+                //Language dropdown configuration
                 dropdown = findViewById(R.id.spinner1);
+                final DropDown langDropDown = new DropDown(dropdown, this);
 
-                String[] items = new String[]{"", "தமிழ்", "हिन्दी", "English", "ಕನ್ನಡ", "తెలుగు", "മലയാളം"};
-                ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
-                dropdown.setAdapter(adapter);
+                dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                        if (parentView.getItemAtPosition(position).toString() != "") {
+                            Setlocale(langDropDown.ReturnSelectedLocale(parentView.getItemAtPosition(position).toString()));
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
 
 
                 final ScrollView scrollView = (ScrollView) findViewById(R.id.Scroll1);
@@ -118,53 +130,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 Locale Current = getResources().getConfiguration().locale;
                 CreateLinkPlay(Current.getLanguage());
 
-                dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                        if (parentView.getItemAtPosition(position).toString() != "") {
-                            String urllng = "Tamil";
-                            String localeName = "en";
 
-                            switch (parentView.getItemAtPosition(position).toString()) {
-                                case "தமிழ்":
-                                    urllng = "Tamil";
-                                    localeName = "ta";
-                                    break;
-                                case "English":
-                                    urllng = "English";
-                                    localeName = "en";
-                                    break;
-                                case "తెలుగు":
-                                    urllng = "Telugu";
-                                    localeName = "tel";
-                                    break;
-                                case "ಕನ್ನಡ":
-                                    urllng = "Kannada";
-                                    localeName = "kan";
-                                    break;
-                                case "മലയാളം":
-                                    urllng = "Malayalam";
-                                    localeName = "mal";
-                                    break;
-                                case "हिन्दी":
-                                    urllng = "Hindi";
-                                    localeName = "hi";
-                                    break;
-
-                            }
-
-                            Setlocale(localeName);
-
-                        }
-                    }
-
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parentView) {
-                        // your code here
-                    }
-
-                });
             }
         }
         catch (Exception ex)

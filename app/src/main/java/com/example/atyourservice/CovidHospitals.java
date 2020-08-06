@@ -22,6 +22,7 @@ import appcommon.DropDown;
 import appcommon.ErrorHandling;
 import appcommon.GridBinder;
 import appcommon.JsonAsyncTask;
+import appcommon.LocationFinder;
 
 public class CovidHospitals extends AppCompatActivity {
     Spinner dplang;
@@ -36,7 +37,7 @@ public class CovidHospitals extends AppCompatActivity {
         setContentView(R.layout.activity_covid_hospitals);
 
         c= CovidHospitals.this;
-        String StateList= ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllState");
+        String StateList= LocationFinder.ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllState");
         dphosstate = (Spinner) findViewById(R.id.dphosstate);
         try {
             GridBinder.BindStateDropDown(CovidHospitals.this, StateList,dphosstate);
@@ -106,28 +107,12 @@ public class CovidHospitals extends AppCompatActivity {
 
 
     }
-    private String ServerRequest(String URL)
-    {
-        String result="";
 
-        JsonAsyncTask getRequest = new JsonAsyncTask();
-        try {
-            result = getRequest.execute(URL).get();
-        } catch (ExecutionException e) {
-          ErrorHandling.ErrorDialog(e.getMessage(), c);
-        } catch (InterruptedException e) {
-            ErrorHandling.ErrorDialog(e.getMessage(), c);
-        }catch (Exception e)
-            {ErrorHandling.ErrorDialog(e.getMessage(), c);}
-
-
-        return result;
-    }
     private void loadHosGrid ()
     {
         try{
             String Url = "https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetHospitals/"+currentState+"/"+currentCity;
-            String result = ServerRequest(Url);
+            String result = LocationFinder.ServerRequest(Url);
 
             if(result !=""){
                 GridView objGrid = (GridView) findViewById(R.id.gvcovidhosp);
@@ -143,7 +128,7 @@ public class CovidHospitals extends AppCompatActivity {
         try{
         String Url = "https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllStateCity/" +StateCode;
 
-        String citylist = ServerRequest(Url);
+        String citylist = LocationFinder.ServerRequest(Url);
         GridBinder.BindCityDropDown(c, citylist,dphoscity);
 
         } catch (Exception e) {

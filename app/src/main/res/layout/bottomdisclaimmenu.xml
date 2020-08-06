@@ -31,7 +31,7 @@
             android:background="#FFFFFF"
             android:onClick="GotoPrivacy"
             android:text="@string/app_privacy"
-            android:textSize="7sp" />
+            android:textSize="8sp"/>
 
         <Button
             android:id="@+id/btn_disclaimer"

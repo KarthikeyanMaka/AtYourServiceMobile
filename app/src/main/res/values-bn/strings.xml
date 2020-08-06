@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">স্মার্ট পরিবেশন</string>
+    <string name="app_Diet">ডায়েট প্ল্যান</string>
+    <string name="app_Imm">ইমিউনিটি বুস্টার</string>
+    <string name="app_Med">মেডিটেশন ভিডিও</string>
+    <string name="app_Cov">কোভিড -19 অভিজ্ঞতা</string>
+    <string name="app_HomeRe">ক্স</string>
+    <string name="app_Home">বাড়ি</string>
+    <string name="app_Health">স্বাস্থ্য এবং সুরক্ষা</string>
+    <string name="app_Emer">জরুরী সেবা</string>
+    <string name="app_Local">কোভিড ড্যাশবোর্ড</string>
+    <string name="home_second">হোম সেকেন্ড</string>
+    <string name="language">ভাষা</string>
+    <string name="app_playnxtbtn">পরবর্তী খেলুন</string>
+    <string name="app_heplline">হেল্পলাইন</string>
+    <string name="app_statelist">রাজ্য চয়ন করুন</string>
+    <string name="app_helpnotext">রাজ্যের হেল্পলাইন নম্বর</string>
+    <string name="app_helpemailtxt">রাজ্য হেল্পলাইন ইমেল</string>
+    <string name="app_helptollfree">কর মুক্ত</string>
+    <string name="app_helpCent">কেন্দ্রীয় হেল্পলাইন নম্বর</string>
+    <string name="app_covidhosp">কোভিড হাসপাতাল</string>
+    <string name="app_selectcity">হর চয়ন করুন</string>
+    <string name="app_hosname">হাসপাতালের নাম</string>
+    <string name="app_hoscity">শহর</string>
+    <string name="app_hosowner">মালিক</string>
+    <string name="app_hosbeds">শয্যা সংখ্যা</string>
+    <string name="app_totdeces">মৃত</string>
+    <string name="app_totcovid">মোট কেস</string>
+    <string name="app_torecov">চাঙ্গা</string>
+    <string name="app_totactive">সক্রিয়</string>
+    <string name="app_homehealth">"স্বাস্থ্য এবং সুরক্ষা\n\nকোভি -১১ এর বিরুদ্ধে লড়াইয়ের জন্য আপনার গাইডটি আরও ভিডিও দেখতে এখানে দেখুন\n * ডায়েটের পরিকল্পনা\n
+* ইমিউনিটি বুস্টার\n *হোম মেড রেমেডিজ"</string>
+    <string name="app_homeemerlink">জরুরী সেবা\nআপনার অঞ্চলে জরুরি পরিষেবা এবং অন্যান্য গুরুত্বপূর্ণ সুবিধা .\nসমস্ত যোগাযোগের তথ্য এক জায়গায়। সহ: * সরকার। হেল্পলাইন \n* কভিড হাসপাতাল\n*অ্যাম্বুলেন্স পরিষেবা\n*কভিড পরীক্ষার ল্যাব\n*স্থানীয় এনজিও\n</string>
+    <string name="app_homelocallink">স্থানীয় কমিউনিটি\n*শীঘ্রই আসছে</string>
+    <string name="app_homeotherlink">"অন্যান্য:\n "</string>
+    <string name="app_districtName">জেলার নাম</string>
+    <string name="app_selectdistrict">জেলা নির্বাচন করুন</string>
+    <string name="app_covidlabs">কোভিড টেস্ট ল্যাব</string>
+    <string name="app_ambulan">অ্যাম্বুলেন্স পরিষেবা</string>
+    <string name="app_labname">ল্যাব নাম</string>
+    <string name="app_labcontact">যোগাযোগ</string>
+    <string name="app_statename">রাষ্ট্রের নাম</string>
+    <string name="app_ambcontact">অ্যাম্বুলেন্স যোগাযোগ</string>
+    <string name="app_terms">শর্তাবলী</string>
+    <string name="app_privacy">গোপনীয়তা নীতি</string>
+    <string name="app_disclaimer">দাবি পরিত্যাগী</string>
+    <string name="app_networkmsg">ইন্টারনেট চালু করুন এবং অ্যাপ্লিকেশন পুনরায় চালু করুন</string>
+
+
+</resources>

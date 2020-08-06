@@ -21,6 +21,7 @@ import appcommon.DropDown;
 import appcommon.ErrorHandling;
 import appcommon.GridBinder;
 import appcommon.JsonAsyncTask;
+import appcommon.LocationFinder;
 
 public class HelpLine extends AppCompatActivity {
     Spinner dropdown;
@@ -39,12 +40,12 @@ public class HelpLine extends AppCompatActivity {
 
 
             //CentralHelpline Config
-            String CentralJsonData ="["+ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetCentralHelpline")+"]";
+            String CentralJsonData ="["+ LocationFinder.ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetCentralHelpline")+"]";
             GridView objCentGrid = (GridView) findViewById(R.id.gvCenthelp);
             GridBinder.BindHelplineGrid(this,CentralJsonData,objCentGrid,true);
 
             //State Drop Down Configuration
-            String StateList= ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllState");
+            String StateList= LocationFinder.ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllState");
             stateDrop =(Spinner)findViewById(R.id.dpState);
             GridBinder.BindStateDropDown(this, StateList,stateDrop);
 
@@ -125,21 +126,7 @@ public class HelpLine extends AppCompatActivity {
         }
 
     }
-    public String ServerRequest(String URL)
-    {
-        String result="";
 
-        JsonAsyncTask getRequest = new JsonAsyncTask();
-        try {
-            result = getRequest.execute(URL).get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        return result;
-    }
     public String ConstructHelplineURL(String URL, String StateCodeName)
     {
         String result = "";
@@ -147,7 +134,7 @@ public class HelpLine extends AppCompatActivity {
         String StateCode = StateCodeName.split(",")[0].toString();
 
         URL=URL.replace("<StateCode>",StateCode);
-        result =ServerRequest(URL);
+        result =LocationFinder.ServerRequest(URL);
         return result;
     }
     public void LoadStateHelplineGrid(String StateCodeName)

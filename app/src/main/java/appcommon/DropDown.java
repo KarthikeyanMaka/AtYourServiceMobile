@@ -13,7 +13,7 @@ public class DropDown {
     public DropDown(Spinner pdropDown, Context screen)
     {
             this.dropdown = pdropDown;
-            String[] items = new String[]{"", "தமிழ்", "हिन्दी", "English", "ಕನ್ನಡ", "తెలుగు", "മലയാളം"};
+            String[] items = new String[]{"", "தமிழ்", "हिन्दी", "English", "ಕನ್ನಡ", "తెలుగు", "മലയാളം","বাংলা"};
             ArrayAdapter<String> adapter = new ArrayAdapter<>(screen, android.R.layout.simple_spinner_dropdown_item, items);
             dropdown.setAdapter(adapter);
     }
@@ -38,6 +38,9 @@ public class DropDown {
                 break;
             case "हिन्दी":
                 localeName = "hi";
+                break;
+            case "বাংলা":
+                localeName = "bn";
                 break;
 
             }
