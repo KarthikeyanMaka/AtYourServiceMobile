@@ -40,7 +40,7 @@ public class CovidLabs extends AppCompatActivity {
 
             c = CovidLabs.this;
 
-            String StateList = LocationFinder.ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllState");
+            String StateList = LocationFinder.ServerRequest(Common.API_SERVER+"GetAllState");
             dplabstate = (Spinner) findViewById(R.id.dplabstate);
             try {
                 GridBinder.BindStateDropDown(CovidLabs.this, StateList, dplabstate);
@@ -53,6 +53,10 @@ public class CovidLabs extends AppCompatActivity {
             Button emer= (Button)this.findViewById(R.id.btn_Emer);
             Button dash= (Button)this.findViewById(R.id.btn_local);
             Common.setMenuColor(home,health,emer,dash,"Emer",this);
+
+
+            Button intMenu = (Button)this.findViewById(R.id.btn_emr_labs);
+            Common.SetInternalMenuColor(intMenu);
 
 
             dplabscity = (Spinner) findViewById(R.id.dplabcity);
@@ -119,7 +123,7 @@ public class CovidLabs extends AppCompatActivity {
     }
     private void loadCity(String StateCode){
         try{
-            String Url = "https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllStateCity/" +StateCode;
+            String Url = Common.API_SERVER+"GetAllStateCity/" +StateCode;
 
             String citylist = LocationFinder.ServerRequest(Url);
             GridBinder.BindCityDropDown(c, citylist,dplabscity);
@@ -130,7 +134,7 @@ public class CovidLabs extends AppCompatActivity {
     }
     public void loadlabsGrid() throws JSONException {
         try {
-            String Url = "https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetResource/" + currentState + "/" + currentCity;
+            String Url = Common.API_SERVER+"GetResource/" + currentState + "/" + currentCity;
             String result = LocationFinder.ServerRequest(Url);
             //ErrorHandling.ErrorDialog(result+Url,c);
 

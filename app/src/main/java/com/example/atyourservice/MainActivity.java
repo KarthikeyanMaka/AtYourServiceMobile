@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                                     delayprocess();
 
                                 } catch (Exception e) {
-                                    e.printStackTrace();
+                                    throw e;
                                 }
                             }
                         }, 5000);
@@ -263,53 +263,57 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
 
     public void CreateLinkPlay(String urllng){
-        switch (urllng) {
-            case "ta":
-                urllng = "Tamil";
-                break;
-            case "en":
-                urllng = "English";
-                break;
-            case "tel":
-                urllng = "Telugu";
-                break;
-            case "kan":
-                urllng = "Kannada";
-                break;
-            case "mal":
-                urllng = "Malayalam";
-                break;
-            case "hi":
-                urllng = "Hindi";
-                break;
-            default:
-                urllng="Tamil";
+        try {
+            switch (urllng) {
+                case "ta":
+                    urllng = "Tamil";
+                    break;
+                case "en":
+                    urllng = "English";
+                    break;
+                case "tel":
+                    urllng = "Telugu";
+                    break;
+                case "kan":
+                    urllng = "Kannada";
+                    break;
+                case "mal":
+                    urllng = "Malayalam";
+                    break;
+                case "hi":
+                    urllng = "Hindi";
+                    break;
+                default:
+                    urllng = "Tamil";
+
+            }
+
+            final WebView view1 = (WebView) findViewById(R.id.mWebView1);
+            final WebView view2 = (WebView) findViewById(R.id.mWebView2);
+            final WebView view3 = (WebView) findViewById(R.id.mWebView3);
+            final WebView view4 = (WebView) findViewById(R.id.mWebView4);
+            final WebView view5 = (WebView) findViewById(R.id.mWebView5);
+
+            String baseurl =Common.API_SERVER+"GetAllYoutubeID/";
+
+            String ImmBoosURL = baseurl+"ImmunityBooster/" + urllng + "/Rating/5";
+            String DietPlan = baseurl+"DietPlan/" + urllng + "/Rating/5";
+            String HomeMadeRemedies = baseurl+"HomeMadeRemedies/" + urllng + "/Rating/5";
+            String ExpVideos = baseurl+"Covid%20Experience/" + urllng + "/Views/5";
+            String Meditation = baseurl+"meditation/" + urllng + "/Views/5";
+
+            dietVideoIds = LoadVideo(DietPlan, view1);
+            immVideoIds = LoadVideo(ImmBoosURL, view2);
+            remVideoIds = LoadVideo(HomeMadeRemedies, view3);
+            expVideoIds = LoadVideo(ExpVideos, view4);
+            medVideoIds = LoadVideo(Meditation, view5);
+
 
         }
-
-            final WebView view1=(WebView) findViewById(R.id.mWebView1);
-            final WebView view2=(WebView) findViewById(R.id.mWebView2);
-            final WebView view3=(WebView) findViewById(R.id.mWebView3);
-            final WebView view4=(WebView) findViewById(R.id.mWebView4);
-            final WebView view5=(WebView) findViewById(R.id.mWebView5);
-
-
-            String ImmBoosURL="https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllYoutubeID/ImmunityBooster/"+urllng+"/Rating/5";
-            String DietPlan="https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllYoutubeID/DietPlan/"+urllng+"/Rating/5";
-            String HomeMadeRemedies="https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllYoutubeID/HomeMadeRemedies/"+urllng+"/Rating/5";
-            String ExpVideos="https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllYoutubeID/Covid%20Experience/"+urllng+"/Views/5";
-            String Meditation="https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllYoutubeID/meditation/"+urllng+"/Views/5";
-
-            dietVideoIds=LoadVideo(DietPlan,view1);
-            immVideoIds=LoadVideo(ImmBoosURL,view2);
-            remVideoIds=LoadVideo(HomeMadeRemedies,view3);
-            expVideoIds=LoadVideo(ExpVideos,view4);
-            medVideoIds=LoadVideo(Meditation,view5);
-
-
-
-
-
+        catch (Exception ex)
+        {
+            ErrorHandling.ErrorDialog(ex.getMessage().toString(),this);
+        }
         }
 
         public String[] LoadVideo (String purl,WebView view){
@@ -341,7 +345,8 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         }
 
 
-        public void PlayVideos(WebView view, String[] videoId,int order){
+        public void PlayVideos(WebView view, String[] videoId,int order) {
+            try {
             /*final VideoView view1 =(VideoView) findViewById(R.id.videoView);
 
             MediaController mediaController= new MediaController(this);
@@ -353,14 +358,17 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
             view1.start();*/
 
 
-            view.getSettings().setJavaScriptEnabled(true);
-            view.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NORMAL);
-            view.getSettings().setLoadWithOverviewMode(true);
-            view.getSettings().setUseWideViewPort(true);
-            view.getSettings().setBuiltInZoomControls(true);
-            view.loadUrl("https://www.youtube.com/embed/"+videoId[order].toString()+"?autoplay=1&vq=small");
-            view.setWebChromeClient(new WebChromeClient());
+                view.getSettings().setJavaScriptEnabled(true);
+                view.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NORMAL);
+                view.getSettings().setLoadWithOverviewMode(true);
+                view.getSettings().setUseWideViewPort(true);
+                view.getSettings().setBuiltInZoomControls(true);
+                view.loadUrl("https://www.youtube.com/embed/" + videoId[order].toString() + "?autoplay=1&vq=small");
+                view.setWebChromeClient(new WebChromeClient());
 
+            } catch (Exception ex) {
+                ErrorHandling.ErrorDialog(ex.getMessage().toString(), this);
+            }
         }
 
 

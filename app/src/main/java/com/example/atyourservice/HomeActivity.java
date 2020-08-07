@@ -36,7 +36,7 @@ public class HomeActivity extends AppCompatActivity {
     String State;
     LangLocModel objCityState = null;
     ImageView imageView;
-    Integer[] imgList = new Integer[]{R.drawable.awarnessone,R.drawable.thanks,R.drawable.stayhomeone,R.drawable.giphy,R.drawable.washhans,R.drawable.face};
+    Integer[] imgList = new Integer[]{R.drawable.awarnessone,R.drawable.stayhomeone,R.drawable.thanks,R.drawable.giphy,R.drawable.washhans,R.drawable.face};
     TextView txtRecoveredCount;
     TextView txtActiveount;
     TextView txtDeceasedCount;
@@ -269,22 +269,26 @@ public class HomeActivity extends AppCompatActivity {
     }
     @Override
     protected void onResume() {
-        handler.postDelayed(runnable = new Runnable() {
-            public void run() {
-                handler.postDelayed(runnable, delay);
-                if(count>3) {
-                    count=0;
+        try {
+            handler.postDelayed(runnable = new Runnable() {
+                public void run() {
+                    handler.postDelayed(runnable, delay);
+                    if (count > 3) {
+                        count = 0;
+                    } else {
+                        count++;
+                    }
+
+                    Glide.with(getApplicationContext()).load(imgList[count]).into(imageView);
+
+
                 }
-                else
-                {
-                    count++;
-                }
-
-                Glide.with(getApplicationContext()).load(imgList[count]).into(imageView);
-
-
-            }
-        }, delay);
+            }, delay);
+        }
+        catch (Exception ex)
+        {
+            ErrorHandling.ErrorDialog(ex.getMessage().toString(),this);
+        }
         super.onResume();
     }
     @Override

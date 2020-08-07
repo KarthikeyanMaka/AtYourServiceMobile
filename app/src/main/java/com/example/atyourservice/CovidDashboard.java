@@ -38,7 +38,7 @@ public class CovidDashboard extends AppCompatActivity {
         try {
             c = CovidDashboard.this;
             //Bind State Drop down
-            String StateList = LocationFinder.ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllState");
+            String StateList = LocationFinder.ServerRequest(Common.API_SERVER+"GetAllState");
             dphosstate = (Spinner) findViewById(R.id.dpcovidstate);
             try {
                 GridBinder.BindStateDropDown(CovidDashboard.this, StateList, dphosstate);
@@ -61,6 +61,7 @@ public class CovidDashboard extends AppCompatActivity {
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                     if (adapterView.getItemAtPosition(i).toString() != "") {
                         currentState = adapterView.getItemAtPosition(i).toString().split(",")[0].toString();
+                        loadCovidDashboardState();
                         loadDistrict(currentState);
                     }
 
@@ -88,6 +89,11 @@ public class CovidDashboard extends AppCompatActivity {
 
                 }
             });
+
+            //india dashboard
+            loadCovidDashboardIndia();
+
+
 
 
             //Language dropdown configuration
@@ -120,7 +126,7 @@ public class CovidDashboard extends AppCompatActivity {
     }
     public void loadDistrict(String pcurrentState){
         try{
-            String Url = "https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllStateDistrict/" +pcurrentState;
+            String Url = Common.API_SERVER+"GetAllStateDistrict/" +pcurrentState;
 
             String citylist = LocationFinder.ServerRequest(Url);
             GridBinder.BindCityDropDown(c, citylist,dphosdist);
@@ -130,14 +136,60 @@ public class CovidDashboard extends AppCompatActivity {
         }
 
     }
+
     public void loadCovidDashboard(){
         try{
             try{
-                String Url = "https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetRecoveredCountDist/"+currentState+"/"+currentDist;
+                String Url = Common.API_SERVER+"GetRecoveredCountDist/"+currentState+"/"+currentDist;
                 String result = LocationFinder.ServerRequest(Url);
 
                 if(result !=""){
                     GridView objGrid = (GridView) findViewById(R.id.gvcoviddash);
+                    GridBinder.BindCovidDashGrid(c,result,objGrid);
+                }
+
+            } catch (JSONException e) {
+                ErrorHandling.ErrorDialog(e.getMessage(), c);
+            }
+
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+
+    }
+    public void loadCovidDashboardIndia(){
+        try{
+            try{
+                String Url = Common.API_SERVER+"GetRecoveredCasesindia";
+                String result = LocationFinder.ServerRequest(Url);
+
+                if(result !=""){
+                    result ="["+result+"]";
+                    GridView objGrid = (GridView) findViewById(R.id.gvcovidindia);
+                    GridBinder.BindCovidDashGrid(c,result,objGrid);
+                }
+
+            } catch (JSONException e) {
+                ErrorHandling.ErrorDialog(e.getMessage(), c);
+            }
+
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+
+    }
+    public void loadCovidDashboardState(){
+        try{
+            try{
+                String Url = Common.API_SERVER+"GetRecoveredCountState/"+currentState;
+                String result = LocationFinder.ServerRequest(Url);
+
+
+                if(result !=""){
+                    result ="["+result+"]";
+                    GridView objGrid = (GridView) findViewById(R.id.gvcovidstate);
                     GridBinder.BindCovidDashGrid(c,result,objGrid);
                 }
 

@@ -43,6 +43,8 @@ public class AmbulanceServices extends AppCompatActivity {
             Button dash= (Button)this.findViewById(R.id.btn_local);
             Common.setMenuColor(home,health,emer,dash,"Emer",this);
 
+            Button intMenu = (Button)this.findViewById(R.id.btn_emer_ambulance);
+            Common.SetInternalMenuColor(intMenu);
 
             dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
@@ -59,7 +61,7 @@ public class AmbulanceServices extends AppCompatActivity {
             });
 
             //State Drop Down Configuration
-            String StateList = LocationFinder.ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllState");
+            String StateList = LocationFinder.ServerRequest(Common.API_SERVER+"GetAllState");
             stateDrop = (Spinner) findViewById(R.id.dpambstate);
             GridBinder.BindStateDropDown(this, StateList, stateDrop);
 
@@ -90,7 +92,7 @@ public class AmbulanceServices extends AppCompatActivity {
     }
     public void LoadAmbulanceGrid(String StateCode) throws JSONException {
         try{
-            String Url = "https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetStateWiseAmbHelpline/" + StateCode;
+            String Url = Common.API_SERVER+"GetStateWiseAmbHelpline/" + StateCode;
             String result = LocationFinder.ServerRequest(Url);
             //ErrorHandling.ErrorDialog(result+Url,c);
 
@@ -159,4 +161,25 @@ public class AmbulanceServices extends AppCompatActivity {
         intent.putExtra("DisKey","Terms");
         startActivity(intent);
     }
+    public void GotoHome(View v)
+    {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
+    public void GotoHealth(View v)
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+    public void GotoEmer(View v)
+    {
+        Intent intent = new Intent(this, Emergency.class);
+        startActivity(intent);
+    }
+    public void GotoLocal(View v)
+    {
+        Intent intent = new Intent(this, CovidDashboard.class);
+        startActivity(intent);
+    }
+
 }

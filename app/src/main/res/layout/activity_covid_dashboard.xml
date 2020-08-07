@@ -86,9 +86,26 @@
                 android:spinnerMode="dropdown" />
         </TableRow>
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="134dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:foregroundGravity="center"
+                android:background="@drawable/textborder"
+                android:text="@string/app_districtwise"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="508dp">
+            android:layout_height="119dp">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -139,6 +156,162 @@
 
                 <GridView
                     android:id="@+id/gvcoviddash"
+                    android:layout_width="396dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="4dp"
+                    android:background="@color/grey"
+                    android:gravity="center"
+                    android:numColumns="1"
+                    android:stretchMode="columnWidth" />
+            </TableRow>
+        </RelativeLayout>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="134dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:foregroundGravity="center"
+                android:background="@drawable/textborder"
+                android:text="@string/app_statedata"
+                android:textColor="@android:color/black" />
+        </TableRow>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="116dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="47dp">
+
+                <TextView
+                    android:id="@+id/txtlblstaterecovered"
+                    android:layout_width="107dp"
+                    android:layout_height="39dp"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_torecov"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txtlblstatetotal"
+                    android:layout_width="109dp"
+                    android:layout_height="39dp"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_totcovid"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txtlblstateActive"
+                    android:layout_width="94dp"
+                    android:layout_height="39dp"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_totactive"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txtlblstatedecesed"
+                    android:layout_width="95dp"
+                    android:layout_height="39dp"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_totdeces"
+                    android:textColor="@color/black" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
+
+
+                <GridView
+                    android:id="@+id/gvcovidstate"
+                    android:layout_width="396dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="4dp"
+                    android:background="@color/grey"
+                    android:gravity="center"
+                    android:numColumns="1"
+                    android:stretchMode="columnWidth" />
+            </TableRow>
+        </RelativeLayout>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="134dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:foregroundGravity="center"
+                android:background="@drawable/textborder"
+                android:text="@string/app_indiadata"
+                android:textColor="@android:color/black" />
+        </TableRow>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="508dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="47dp">
+
+                <TextView
+                    android:id="@+id/txtlblindrecovered"
+                    android:layout_width="107dp"
+                    android:layout_height="39dp"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_torecov"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txtlblindtotal"
+                    android:layout_width="109dp"
+                    android:layout_height="39dp"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_totcovid"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txtlblindActive"
+                    android:layout_width="94dp"
+                    android:layout_height="39dp"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_totactive"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txtlblinddecesed"
+                    android:layout_width="95dp"
+                    android:layout_height="39dp"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_totdeces"
+                    android:textColor="@color/black" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
+
+
+                <GridView
+                    android:id="@+id/gvcovidindia"
                     android:layout_width="396dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="4dp"

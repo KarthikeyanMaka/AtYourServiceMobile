@@ -25,7 +25,7 @@ public class LocationFinder{
             String lat= df2.format(latitude);
             String longit= df2.format(longitude);
 
-            String locationURL ="https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetStateCitybyLoc/"+lat+"/"+longit;
+            String locationURL =Common.API_SERVER+"GetStateCitybyLoc/"+lat+"/"+longit;
 
             String result= ServerRequest(locationURL);
 
@@ -51,7 +51,7 @@ public class LocationFinder{
             String longit= df2.format(longitude);
 
 
-            String locationURL ="https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetStateCitybyLoc/"+String.valueOf(latitude)+"/"+String.valueOf(longitude);
+            String locationURL =Common.API_SERVER+"GetStateCitybyLoc/"+String.valueOf(latitude)+"/"+String.valueOf(longitude);
 
            // ErrorHandling.ErrorDialog(String.valueOf(latitude)+String.valueOf(longitude)+"test:"+lat+longit,currentScreen);
 
@@ -134,7 +134,7 @@ public class LocationFinder{
     }
     public static RecoveredCountsModel GetRecoveredData(String City, String State,Context currentScreen) throws JSONException {
 
-        String Url ="https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetRecoveredCountDist/"+State+"/"+City;
+        String Url =Common.API_SERVER+"GetRecoveredCountDist/"+State+"/"+City;
 
         return GetRecoveredCounts(ServerRequest(Url),currentScreen);
     }

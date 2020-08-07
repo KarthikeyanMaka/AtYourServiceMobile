@@ -45,6 +45,9 @@
     <string name="app_privacy">গোপনীয়তা নীতি</string>
     <string name="app_disclaimer">দাবি পরিত্যাগী</string>
     <string name="app_networkmsg">ইন্টারনেট চালু করুন এবং অ্যাপ্লিকেশন পুনরায় চালু করুন</string>
+    <string name="app_statedata">StateWise Data</string>
+    <string name="app_indiadata">Overall India</string>
+    <string name="app_districtwise">DistrictWise Data</string>
 
 
 </resources>

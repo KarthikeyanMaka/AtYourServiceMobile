@@ -39,13 +39,17 @@ public class HelpLine extends AppCompatActivity {
             Common.setMenuColor(home,health,emer,dash,"Emer",this);
 
 
+            Button intMenu = (Button)this.findViewById(R.id.btn_emer_helpline);
+            Common.SetInternalMenuColor(intMenu);
+
+
             //CentralHelpline Config
-            String CentralJsonData ="["+ LocationFinder.ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetCentralHelpline")+"]";
+            String CentralJsonData ="["+ LocationFinder.ServerRequest(Common.API_SERVER+"GetCentralHelpline")+"]";
             GridView objCentGrid = (GridView) findViewById(R.id.gvCenthelp);
             GridBinder.BindHelplineGrid(this,CentralJsonData,objCentGrid,true);
 
             //State Drop Down Configuration
-            String StateList= LocationFinder.ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllState");
+            String StateList= LocationFinder.ServerRequest(Common.API_SERVER+"GetAllState");
             stateDrop =(Spinner)findViewById(R.id.dpState);
             GridBinder.BindStateDropDown(this, StateList,stateDrop);
 
@@ -129,18 +133,26 @@ public class HelpLine extends AppCompatActivity {
 
     public String ConstructHelplineURL(String URL, String StateCodeName)
     {
+
         String result = "";
+        try {
+            String StateCode = StateCodeName.split(",")[0].toString();
 
-        String StateCode = StateCodeName.split(",")[0].toString();
-
-        URL=URL.replace("<StateCode>",StateCode);
-        result =LocationFinder.ServerRequest(URL);
+            URL = URL.replace("<StateCode>", StateCode);
+            result = LocationFinder.ServerRequest(URL);
+        }
+        catch (Exception ex)
+        {
+            ErrorHandling.ErrorDialog(ex.getMessage().toString(),this);
+        }
         return result;
     }
     public void LoadStateHelplineGrid(String StateCodeName)
     {
-        String JsonData = ConstructHelplineURL("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetHelplinebyState/<StateCode>"
+        String JsonData = ConstructHelplineURL(Common.API_SERVER+"GetHelplinebyState/<StateCode>"
                 , StateCodeName);
+
+
 
         //State Helpline config
         GridView objGrid = (GridView) findViewById(R.id.gvhelp);
@@ -148,6 +160,9 @@ public class HelpLine extends AppCompatActivity {
             GridBinder.BindHelplineGrid(getApplicationContext(), JsonData, objGrid, false);
         } catch (JSONException e) {
             ErrorHandling.ErrorDialog(e.getMessage().toString(), getApplicationContext());
+        }catch (Exception ex)
+        {
+            ErrorHandling.ErrorDialog(ex.getMessage().toString(),this);
         }
     }
     public void GotoHome(View v)

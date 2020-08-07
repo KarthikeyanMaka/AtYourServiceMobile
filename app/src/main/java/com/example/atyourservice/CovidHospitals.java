@@ -37,7 +37,7 @@ public class CovidHospitals extends AppCompatActivity {
         setContentView(R.layout.activity_covid_hospitals);
 
         c= CovidHospitals.this;
-        String StateList= LocationFinder.ServerRequest("https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllState");
+        String StateList= LocationFinder.ServerRequest(Common.API_SERVER+"GetAllState");
         dphosstate = (Spinner) findViewById(R.id.dphosstate);
         try {
             GridBinder.BindStateDropDown(CovidHospitals.this, StateList,dphosstate);
@@ -51,6 +51,9 @@ public class CovidHospitals extends AppCompatActivity {
         Button dash= (Button)this.findViewById(R.id.btn_local);
         Common.setMenuColor(home,health,emer,dash,"Emer",this);
 
+
+        Button intMenu = (Button)this.findViewById(R.id.btn_emer_hospitals);
+        Common.SetInternalMenuColor(intMenu);
 
         dphoscity= (Spinner) findViewById(R.id.dphoscity);
 
@@ -111,7 +114,7 @@ public class CovidHospitals extends AppCompatActivity {
     private void loadHosGrid ()
     {
         try{
-            String Url = "https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetHospitals/"+currentState+"/"+currentCity;
+            String Url = Common.API_SERVER+"GetHospitals/"+currentState+"/"+currentCity;
             String result = LocationFinder.ServerRequest(Url);
 
             if(result !=""){
@@ -126,7 +129,7 @@ public class CovidHospitals extends AppCompatActivity {
     }
     private void loadCity(String StateCode){
         try{
-        String Url = "https://atyoursupport20200712092520.azurewebsites.net/api/Data/GetAllStateCity/" +StateCode;
+        String Url = Common.API_SERVER+"GetAllStateCity/" +StateCode;
 
         String citylist = LocationFinder.ServerRequest(Url);
         GridBinder.BindCityDropDown(c, citylist,dphoscity);

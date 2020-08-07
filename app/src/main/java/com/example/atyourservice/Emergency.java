@@ -54,8 +54,14 @@ public class Emergency extends AppCompatActivity {
             dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                    if (parentView.getItemAtPosition(position).toString() != "") {
-                        Setlocale(langDropDown.ReturnSelectedLocale(parentView.getItemAtPosition(position).toString()));
+                    try {
+                        if (parentView.getItemAtPosition(position).toString() != "") {
+                            Setlocale(langDropDown.ReturnSelectedLocale(parentView.getItemAtPosition(position).toString()));
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
                     }
                 }
 
