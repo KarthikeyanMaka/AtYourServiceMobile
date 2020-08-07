@@ -2,11 +2,16 @@ package com.example.atyourservice;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -29,6 +34,9 @@ import appcommon.ErrorHandling;
 import appcommon.LangLocModel;
 import appcommon.LocationFinder;
 import appcommon.RecoveredCountsModel;
+import android.app.NotificationManager;
+import androidx.core.app.NotificationCompat;
+
 
 public class HomeActivity extends AppCompatActivity {
     String defLang;
@@ -223,8 +231,10 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void GotoHealth(View v)
     {
+
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+
     }
     public void GotoEmer(View v)
     {
@@ -280,7 +290,7 @@ public class HomeActivity extends AppCompatActivity {
                     }
 
                     Glide.with(getApplicationContext()).load(imgList[count]).into(imageView);
-
+                    SendNotification();
 
                 }
             }, delay);
@@ -296,5 +306,9 @@ public class HomeActivity extends AppCompatActivity {
         super.onPause();
         handler.removeCallbacks(runnable); //stop handler when activity not visible super.onPause();
     }
+    public void SendNotification(){
+        Common.sendNotification(this);
+    }
 
 }
+

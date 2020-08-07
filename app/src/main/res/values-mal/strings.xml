@@ -47,4 +47,6 @@
     <string name="app_statedata">StateWise Data</string>
     <string name="app_indiadata">Overall India</string>
     <string name="app_districtwise">DistrictWise Data</string>
+    <string name="app_NotTitle">SmartServe Notification</string>
+    <string name="app_Notmsg">Dont forget to Wash your Hands, Always use Mask, Keep Social Distancing</string>
 </resources>
