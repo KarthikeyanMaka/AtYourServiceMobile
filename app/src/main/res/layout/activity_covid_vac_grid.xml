@@ -8,7 +8,8 @@
         android:id="@+id/grdcovidvacname"
         android:layout_width="106dp"
         android:layout_height="173dp"
-        android:layout_gravity="start"
+        android:layout_gravity="center"
+        android:textAlignment="center"
         android:background="@drawable/textborder"
         android:textAppearance="?android:attr/textAppearanceListItemSmall"
         android:textColor="@color/black"
@@ -16,19 +17,22 @@
 
     <TextView
         android:id="@+id/grdcovidvacorg"
-        android:layout_width="123dp"
+        android:layout_width="143dp"
         android:layout_height="173dp"
-        android:layout_gravity="start"
+        android:layout_gravity="center"
+        android:textAlignment="center"
         android:background="@drawable/textborder"
         android:textAppearance="?android:attr/textAppearanceListItemSmall"
         android:textColor="@color/black"
+
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/grdCovidvaccurrphase"
-        android:layout_width="91dp"
+        android:layout_width="75dp"
         android:layout_height="173dp"
-        android:layout_gravity="start"
+        android:layout_gravity="center"
+        android:textAlignment="center"
         android:background="@drawable/textborder"
         android:textAppearance="?android:attr/textAppearanceListItemSmall"
         android:textColor="@color/black"
@@ -38,7 +42,8 @@
         android:id="@+id/grdCovidlstdate"
         android:layout_width="88dp"
         android:layout_height="173dp"
-        android:layout_gravity="start"
+        android:layout_gravity="center"
+        android:textAlignment="center"
         android:background="@drawable/textborder"
         android:textAppearance="?android:attr/textAppearanceListItemSmall"
         android:textColor="@color/black"

@@ -57,7 +57,7 @@
 
                 <TextView
                     android:id="@+id/txtlblorg"
-                    android:layout_width="123dp"
+                    android:layout_width="143dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/textborder"
                     android:text="@string/app_vacorg"
@@ -66,7 +66,7 @@
 
                 <TextView
                     android:id="@+id/txtlblcurrphase"
-                    android:layout_width="91dp"
+                    android:layout_width="73dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/textborder"
                     android:text="@string/app_curphase"
