@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Scroll1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/Linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="39dp">
+
+            <TextView
+                android:id="@+id/appName"
+                android:layout_width="wrap_content"
+                android:layout_height="31dp"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/app_name"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <Spinner
+                android:id="@+id/dpvaclangu"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="25dp"
+                android:layout_weight="1"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dropdown" />
+        </TableRow>
+
+        <include layout="@layout/top_menu" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="593dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginTop="40dp">
+
+                <TextView
+                    android:id="@+id/txtlblvacname"
+                    android:layout_width="106dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_vaccinename"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txtlblorg"
+                    android:layout_width="123dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_vacorg"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txtlblcurrphase"
+                    android:layout_width="91dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_curphase"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/txtlbldate"
+                    android:layout_width="88dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/textborder"
+                    android:text="@string/app_Lstdate"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="441dp"
+
+                android:layout_marginTop="110dp"
+                android:orientation="horizontal">
+
+
+                <GridView
+                    android:id="@+id/gvcovidvaccine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="437dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@color/grey"
+                    android:gravity="center"
+                    android:numColumns="1"
+                    android:stretchMode="columnWidth" />
+            </TableRow>
+        </RelativeLayout>
+        <include layout="@layout/bottomdisclaimmenu"
+            android:layout_gravity="center|bottom"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+    </LinearLayout>
+
+
+</ScrollView>

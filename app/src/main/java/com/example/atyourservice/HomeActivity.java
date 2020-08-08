@@ -34,6 +34,8 @@ import appcommon.ErrorHandling;
 import appcommon.LangLocModel;
 import appcommon.LocationFinder;
 import appcommon.RecoveredCountsModel;
+import appcommon.VaccineModel;
+
 import android.app.NotificationManager;
 import androidx.core.app.NotificationCompat;
 
@@ -58,7 +60,8 @@ public class HomeActivity extends AppCompatActivity {
     Spinner dropdown;
     Handler handler = new Handler();
     Runnable runnable;
-    int delay = 20000;
+    int delay = 10000;
+    int notdelay=300000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -217,6 +220,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        txthomeother.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                GotoVaccine(view);
+            }
+        });
+
 
 //        Button home = (Button) findViewById(R.id.btn_home);
 //        home.setBackgroundColor(Color.GREEN);
@@ -227,6 +237,13 @@ public class HomeActivity extends AppCompatActivity {
     }
     public void GotoHome(View v)
     {
+
+    }
+    public void GotoVaccine(View v)
+    {
+
+        Intent intent = new Intent(this, CovidVaccine.class);
+        startActivity(intent);
 
     }
     public void GotoHealth(View v)
@@ -305,6 +322,30 @@ public class HomeActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         handler.removeCallbacks(runnable); //stop handler when activity not visible super.onPause();
+    }
+    @Override
+    protected void onUserLeaveHint(){
+        try {
+            handler.postDelayed(runnable = new Runnable() {
+                public void run() {
+                    handler.postDelayed(runnable, notdelay);
+                    if (count > 3) {
+                        count = 0;
+                    } else {
+                        count++;
+                    }
+
+                    //Glide.with(getApplicationContext()).load(imgList[count]).into(imageView);
+                    SendNotification();
+
+                }
+            }, delay);
+        }
+        catch (Exception ex)
+        {
+            ErrorHandling.ErrorDialog(ex.getMessage().toString(),this);
+        }
+        super.onUserLeaveHint();
     }
     public void SendNotification(){
         Common.sendNotification(this);

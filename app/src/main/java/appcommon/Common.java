@@ -51,7 +51,7 @@ public class Common {
 
             NotificationCompat.Builder mBuilder =
                     new NotificationCompat.Builder(mcontext, "1")
-                            .setSmallIcon(R.drawable.notification_icon)
+                            .setSmallIcon(R.drawable.smartserveicon)
                             .setContentTitle(mcontext.getString(R.string.app_NotTitle))
                             .setContentText(mcontext.getString(R.string.app_Notmsg));
 

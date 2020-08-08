@@ -32,7 +32,7 @@
 * ইমিউনিটি বুস্টার\n *হোম মেড রেমেডিজ"</string>
     <string name="app_homeemerlink">জরুরী সেবা\nআপনার অঞ্চলে জরুরি পরিষেবা এবং অন্যান্য গুরুত্বপূর্ণ সুবিধা .\nসমস্ত যোগাযোগের তথ্য এক জায়গায়। সহ: * সরকার। হেল্পলাইন \n* কভিড হাসপাতাল\n*অ্যাম্বুলেন্স পরিষেবা\n*কভিড পরীক্ষার ল্যাব\n*স্থানীয় এনজিও\n</string>
     <string name="app_homelocallink">স্থানীয় কমিউনিটি\n*শীঘ্রই আসছে</string>
-    <string name="app_homeotherlink">"অন্যান্য:\n "</string>
+    <string name="app_homeotherlink">"কোভিড 19 ভ্যাকসিনের স্থিতি:\n "</string>
     <string name="app_districtName">জেলার নাম</string>
     <string name="app_selectdistrict">জেলা নির্বাচন করুন</string>
     <string name="app_covidlabs">কোভিড টেস্ট ল্যাব</string>
@@ -45,11 +45,17 @@
     <string name="app_privacy">গোপনীয়তা নীতি</string>
     <string name="app_disclaimer">দাবি পরিত্যাগী</string>
     <string name="app_networkmsg">ইন্টারনেট চালু করুন এবং অ্যাপ্লিকেশন পুনরায় চালু করুন</string>
-    <string name="app_statedata">StateWise Data</string>
-    <string name="app_indiadata">Overall India</string>
-    <string name="app_districtwise">DistrictWise Data</string>
-    <string name="app_NotTitle">SmartServe Notification</string>
-    <string name="app_Notmsg">Dont forget to Wash your Hands, Always use Mask, Keep Social Distancing</string>
+    <string name="app_statedata">স্টেটওয়াইজ ডেটা</string>
+    <string name="app_indiadata">সামগ্রিক ভারত</string>
+    <string name="app_districtwise">জেলাভিত্তিক ডেটা</string>
+    <string name="app_NotTitle">স্মার্ট সার্ভার বিজ্ঞপ্তি</string>
+    <string name="app_Notmsg">আপনার হাত ধোয়ার কথা ভুলে যাবেন না \n সর্বদা মাস্ক পরুন \nসামাজিক দূরত্ব বজায় রাখুন</string>
+    <string name="app_vaccinename">ভ্যাকসিন নাম</string>
+    <string name="app_vacorg">সংগঠন</string>
+    <string name="app_curphase">কারেন্ট ফেজ</string>
+    <string name="app_comPhase">শেষ পর্যায়ে</string>
+    <string name="app_Lstdate">আপডেটের তারিখ</string>
+    <string name="app_vaclink">সারা দেশে সর্বশেষতম ভ্যাকসিন স্থিতি পান</string>
 
 
 </resources>

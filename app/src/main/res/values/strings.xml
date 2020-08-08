@@ -43,12 +43,18 @@
     <string name="app_terms">Terms and Conditions</string>
     <string name="app_privacy">Privacy Policy</string>
     <string name="app_disclaimer">Disclaimer</string>
-    <string name="app_networkmsg">Please Switch on Internet and restart the app</string>
+    <string name="app_networkmsg" translatable="false">Please Switch on Internet and restart the app</string>
     <string name="app_statedata">StateWise Data</string>
     <string name="app_indiadata">Overall India</string>
     <string name="app_districtwise">DistrictWise Data</string>
     <string name="app_NotTitle">SmartServe Notification</string>
     <string name="app_Notmsg">Dont forget to Wash your Hands, Always use Mask, Keep Social Distancing</string>
+    <string name="app_vaccinename">Vaccine Name</string>
+    <string name="app_vacorg">Organisation</string>
+    <string name="app_curphase">Current Phase</string>
+    <string name="app_comPhase">CompletedPhase</string>
+    <string name="app_Lstdate">Updated Date</string>
+    <string name="app_vaclink">Get the latest Vaccine Status across the country</string>
 
 
 </resources>

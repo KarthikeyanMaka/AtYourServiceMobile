@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/grdcovidvacname"
+        android:layout_width="106dp"
+        android:layout_height="173dp"
+        android:layout_gravity="start"
+        android:background="@drawable/textborder"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/grdcovidvacorg"
+        android:layout_width="123dp"
+        android:layout_height="173dp"
+        android:layout_gravity="start"
+        android:background="@drawable/textborder"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/grdCovidvaccurrphase"
+        android:layout_width="91dp"
+        android:layout_height="173dp"
+        android:layout_gravity="start"
+        android:background="@drawable/textborder"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/grdCovidlstdate"
+        android:layout_width="88dp"
+        android:layout_height="173dp"
+        android:layout_gravity="start"
+        android:background="@drawable/textborder"
+        android:textAppearance="?android:attr/textAppearanceListItemSmall"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+
+</TableRow>

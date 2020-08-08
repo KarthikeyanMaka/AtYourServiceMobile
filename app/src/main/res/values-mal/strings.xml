@@ -44,9 +44,15 @@
     <string name="app_terms">Terms and Conditions</string>
     <string name="app_privacy">Privacy Policy</string>
     <string name="app_disclaimer">Disclaimer</string>
-    <string name="app_statedata">StateWise Data</string>
-    <string name="app_indiadata">Overall India</string>
-    <string name="app_districtwise">DistrictWise Data</string>
-    <string name="app_NotTitle">SmartServe Notification</string>
-    <string name="app_Notmsg">Dont forget to Wash your Hands, Always use Mask, Keep Social Distancing</string>
+    <string name="app_statedata">സംസ്ഥാന ജ്ഞാനികൾ</string>
+    <string name="app_indiadata">മൊത്തത്തിൽ ഇന്ത്യ</string>
+    <string name="app_districtwise">ജില്ലാ വൈസ്</string>
+    <string name="app_NotTitle">സ്മാർട്ട് സെർവർ അറിയിപ്പ്</string>
+    <string name="app_Notmsg">നിങ്ങളുടെ കൈ കഴുകാൻ മറക്കരുത്\n എല്ലായ്പ്പോഴും മാസ്ക് ധരിക്കുക\n സാമൂഹിക അകലം പാലിക്കുക</string>
+    <string name="app_vaccinename">വാക്സിൻ നാമം</string>
+    <string name="app_vacorg">സംഘടന</string>
+    <string name="app_curphase">നിലവിലെ ഘട്ടം</string>
+    <string name="app_comPhase">ഘട്ടം പൂർത്തിയായി</string>
+    <string name="app_Lstdate">അപ്‌ഡേറ്റുചെയ്‌ത തീയതി</string>
+    <string name="app_vaclink">രാജ്യത്തുടനീളം ഏറ്റവും പുതിയ വാക്സിൻ നില നേടുക</string>
 </resources>

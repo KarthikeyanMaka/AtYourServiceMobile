@@ -61,6 +61,42 @@ public class GridBinder {
         {throw ex;}
 
     }
+    public static void BindVaccineGrid (Context c, String jsonData, GridView gv) throws JSONException {
+        try{
+            JSONArray ja = new JSONArray(jsonData);
+            JSONObject jo;
+
+
+            ArrayList<VaccineModel> jsonlist = new ArrayList<>();
+
+            jsonlist.clear();
+
+            for (int i=0;i<ja.length();i++) {
+                VaccineModel objvaclist = new VaccineModel();
+
+                jo = ja.getJSONObject(i);
+
+                objvaclist.vaccineName= jo.getString("vaccineName");
+                objvaclist.completedPhase= jo.getString("completedPhase");
+                objvaclist.lastUpdatedDate= jo.getString("lastUpdatedDate");
+                objvaclist.organisation= jo.getString("organisation")+",Country:"+jo.getString("country");
+                objvaclist.currentPhase= jo.getString("currentPhase");
+                objvaclist.country= jo.getString("country");
+
+                jsonlist.add(objvaclist);
+
+            }
+
+            CovidVacGridAdapter vacGridAdapter = new CovidVacGridAdapter(c,jsonlist);
+
+            gv.setAdapter(vacGridAdapter);
+
+
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+    }
     public static void BindCovidLabGrid(Context c, String jsonData, GridView gv) throws JSONException {
         try{
 
