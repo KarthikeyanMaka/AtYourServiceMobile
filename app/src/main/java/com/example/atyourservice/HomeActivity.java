@@ -25,6 +25,7 @@ import com.bumptech.glide.Glide;
 
 import org.json.JSONException;
 
+import java.io.IOException;
 import java.util.Locale;
 
 import appcommon.AppNotification;
@@ -146,7 +147,7 @@ public class HomeActivity extends AppCompatActivity {
 
         try {
             objCityState=LocationFinder.GetCityState(HomeActivity.this);
-        } catch (JSONException e) {
+        } catch (JSONException | IOException e) {
             e.printStackTrace();
         }
 

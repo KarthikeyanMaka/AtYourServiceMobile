@@ -1,6 +1,8 @@
 package appcommon;
 
 import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
@@ -8,7 +10,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.ExecutionException;
 
 public class LocationFinder{
@@ -38,7 +43,7 @@ public class LocationFinder{
         }
         return Locale;
     }
-    public static LangLocModel GetCityState(Context currentScreen) throws JSONException {
+    public static LangLocModel GetCityState(Context currentScreen) throws JSONException, IOException {
         GpsTracker gpsTracker = new GpsTracker(currentScreen);
         String Locale = "en";
         LangLocModel objlocModel = null;
@@ -49,6 +54,14 @@ public class LocationFinder{
 
             String lat= df2.format(latitude);
             String longit= df2.format(longitude);
+
+            /*Geocoder geocoder= new Geocoder(currentScreen, java.util.Locale.getDefault());
+
+            List<Address> addresses = geocoder.getFromLocation(latitude,longitude,1);
+
+            ErrorHandling.ErrorDialog(addresses.get(0).getAddressLine(0)+","+
+                    addresses.get(0).getAddressLine(1),currentScreen);
+*/
 
 
             String locationURL =Common.API_SERVER+"GetStateCitybyLoc/"+String.valueOf(latitude)+"/"+String.valueOf(longitude);
@@ -159,6 +172,7 @@ public class LocationFinder{
             objRecovered.districtName=jo.getString("districtName");
             objRecovered.notes=jo.getString("notes");
         }
+
 
 
         return  objRecovered;

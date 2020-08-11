@@ -14,7 +14,7 @@ import com.example.atyourservice.R;
 
 public class Common {
 
-    public static final String API_SERVER ="https://atyoursupport20200712092520.azurewebsites.net/api/Data/";
+    public static final String API_SERVER ="https://atyoursupport20200811122207.azurewebsites.net/api/Data/";
     public static void setMenuColor(Button b1, Button b2, Button b3, Button b4, String curScreen, Context context){
 
       /*  b1.setBackgroundColor(Color.GRAY);

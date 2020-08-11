@@ -283,6 +283,9 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 case "hi":
                     urllng = "Hindi";
                     break;
+                case "bn":
+                    urllng ="Bengali";
+                    break;
                 default:
                     urllng = "Tamil";
 
@@ -296,10 +299,10 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
             String baseurl =Common.API_SERVER+"GetAllYoutubeID/";
 
-            String ImmBoosURL = baseurl+"ImmunityBooster/" + urllng + "/Rating/5";
-            String DietPlan = baseurl+"DietPlan/" + urllng + "/Rating/5";
-            String HomeMadeRemedies = baseurl+"HomeMadeRemedies/" + urllng + "/Rating/5";
-            String ExpVideos = baseurl+"Covid%20Experience/" + urllng + "/Views/5";
+            String ImmBoosURL = baseurl+"Immunity Booster/" + urllng + "/Rating/5";
+            String DietPlan = baseurl+"Diet Plan/" + urllng + "/Rating/5";
+            String HomeMadeRemedies = baseurl+"Home Made Remedies/" + urllng + "/Rating/5";
+            String ExpVideos = baseurl+"Covid Experience/" + urllng + "/Views/5";
             String Meditation = baseurl+"meditation/" + urllng + "/Views/5";
 
             dietVideoIds = LoadVideo(DietPlan, view1);
