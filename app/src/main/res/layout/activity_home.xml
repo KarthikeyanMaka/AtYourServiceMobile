@@ -21,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="39dp"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="3dp">
+            android:layout_marginStart="3dp"
+            android:background="#f5f6f7">
             <TextView
                 android:id="@+id/appName"
                 android:layout_width="wrap_content"
@@ -29,7 +30,8 @@
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
                 android:text="@string/app_name"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#214f75"/>
 
             <Spinner
                 android:id="@+id/spinner1"
@@ -49,9 +51,10 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="213dp"
             android:layout_marginTop="10dp"
 
+            android:background="#f5f6f7"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -63,7 +66,7 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="205dp"
+                android:layout_height="198dp"
                 android:layout_gravity="center"
                 android:contentDescription="@string/app_Emer"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -82,10 +85,10 @@
             <TextView
                 android:id="@+id/txtcurrentdistrict"
                 android:layout_width="match_parent"
-                android:layout_height="41dp"
+                android:layout_height="28dp"
                 android:textAlignment="center"
-
-                android:textColor="@color/black" />
+                android:textColor="#295391"
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow
@@ -101,7 +104,7 @@
                 android:background="@drawable/textborder"
                 android:gravity="center"
                 android:text="@string/app_torecov"
-                android:textColor="@color/black"
+                android:textColor="@android:color/white"
                 android:textSize="12sp" />
 
             <TextView
@@ -111,7 +114,7 @@
                 android:background="@drawable/textborder"
                 android:gravity="center"
                 android:text="@string/app_totcovid"
-                android:textColor="@color/black" />
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/txtActive"
@@ -120,7 +123,7 @@
                 android:background="@drawable/textborder"
                 android:gravity="center"
                 android:text="@string/app_totactive"
-                android:textColor="@color/black" />
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/txtdeceased"
@@ -129,7 +132,7 @@
                 android:background="@drawable/textborder"
                 android:gravity="center"
                 android:text="@string/app_totdeces"
-                android:textColor="@color/black" />
+                android:textColor="@android:color/white" />
 
 
         </TableRow>
@@ -144,37 +147,37 @@
                 android:id="@+id/txtRecoveredcount"
                 android:layout_width="79dp"
                 android:layout_height="43dp"
-                android:background="@drawable/textborder"
+                android:background="@drawable/rowtextborder"
                 android:gravity="center"
                 android:text="@string/app_torecov"
-                android:textColor="@color/black" />
+                android:textColor="@color/gridrowtxtcolor" />
 
             <TextView
                 android:id="@+id/txttotalcount"
                 android:layout_width="79dp"
                 android:layout_height="44dp"
-                android:background="@drawable/textborder"
+                android:background="@drawable/rowtextborder"
                 android:gravity="center"
                 android:text="@string/app_totcovid"
-                android:textColor="@color/black" />
+                android:textColor="@color/gridrowtxtcolor" />
 
             <TextView
                 android:id="@+id/txtActivecount"
                 android:layout_width="79dp"
                 android:layout_height="44dp"
-                android:background="@drawable/textborder"
+                android:background="@drawable/rowtextborder"
                 android:gravity="center"
                 android:text="@string/app_totactive"
-                android:textColor="@color/black" />
+                android:textColor="@color/gridrowtxtcolor" />
 
             <TextView
                 android:id="@+id/txtdeceasedcount"
                 android:layout_width="79dp"
                 android:layout_height="43dp"
-                android:background="@drawable/textborder"
+                android:background="@drawable/rowtextborder"
                 android:gravity="center"
                 android:text="@string/app_totdeces"
-                android:textColor="@color/black" />
+                android:textColor="@color/gridrowtxtcolor" />
 
         </TableRow>
 
@@ -188,27 +191,27 @@
             <Button
                 android:id="@+id/txthomehealth"
                 style="@style/Widget.AppCompat.ButtonBar"
-                android:layout_width="140dp"
+                android:layout_width="129dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/buttonstyleone"
                 android:linksClickable="true"
                 android:text="@string/app_homehealth"
-                android:textAlignment="gravity"
+                android:textAlignment="viewStart"
                 android:textAllCaps="false"
-                android:textColor="#2D4F4F"
+                android:textColor="#295391"
                 android:textColorLink="@android:color/white" />
 
             <Button
                 android:id="@+id/txthomemergency"
                 style="@style/Widget.AppCompat.ButtonBar"
                 android:layout_width="140dp"
-                android:layout_height="wrap_content"
+                android:layout_height="223dp"
                 android:background="@drawable/buttonstyleone"
                 android:linksClickable="true"
                 android:text="@string/app_homeemerlink"
-                android:textAlignment="gravity"
+                android:textAlignment="viewStart"
                 android:textAllCaps="false"
-                android:textColor="#2D4F4F" />
+                android:textColor="#295391" />
 
         </TableRow>
 
@@ -226,9 +229,9 @@
                 android:background="@drawable/buttonstyleone"
                 android:linksClickable="true"
                 android:text="@string/app_homelocallink"
-                android:textAlignment="textStart"
+                android:textAlignment="viewStart"
                 android:textAllCaps="false"
-                android:textColor="#2D4F4F" />
+                android:textColor="#295391" />
 
             <Button
                 android:id="@+id/txthomeothers"
@@ -238,9 +241,9 @@
                 android:background="@drawable/buttonstyleone"
                 android:linksClickable="true"
                 android:text="@string/app_vaclink"
-                android:textAlignment="textStart"
+                android:textAlignment="viewStart"
                 android:textAllCaps="false"
-                android:textColor="#2D4F4F"
+                android:textColor="#295391"
                 android:textColorLink="#0645AD" />
 
         </TableRow>

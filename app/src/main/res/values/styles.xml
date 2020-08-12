@@ -2,12 +2,19 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#006666</item>
-        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorPrimary">#295391</item>
+        <item name="colorPrimaryDark">#295391</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/bgcolor</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:scrollbarSize">8dp</item>
     </style>
     <style name="NewTheme" parent="android:style/Theme.Light">
         <item name="android:windowBackground">#dce8e6</item>
+    </style>
+    <style name="GridTopTextColor">
+        <item name="android:textColor">#427196</item>
     </style>
     <style name="MyCustomTheme">
     <item name="android:windowBackground">@color/my_custom_color</item>
