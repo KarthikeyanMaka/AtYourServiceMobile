@@ -55,4 +55,5 @@
     <string name="app_comPhase">पूरा हुआ चरण</string>
     <string name="app_Lstdate">आजकीतारीख</string>
     <string name="app_vaclink">देश भर में नवीनतम वैक्सीन स्थिति प्राप्त करें</string>
+    <string name="app_chooselang">Select Language</string>
 </resources>

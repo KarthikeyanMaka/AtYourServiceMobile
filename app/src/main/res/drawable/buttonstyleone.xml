@@ -5,9 +5,9 @@
     <corners android:radius="8dp" />
     <gradient
         android:angle="90"
-        android:startColor="#FFFFFF"
-        android:centerColor="#FFFFFF"
-        android:endColor="#FFFFFF" />
+        android:startColor="@color/homebtncolor"
+        android:centerColor="@color/homebtncolor"
+        android:endColor="@color/homebtncolor" />
 
 
 </shape>

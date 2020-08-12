@@ -22,7 +22,7 @@ public class Common {
         b3.setBackgroundColor(Color.GRAY);
         b4.setBackgroundColor(Color.GRAY);*/
 
-        int color = Color.TRANSPARENT;
+        int color = Color.parseColor("#6390ba");
 
         switch (curScreen){
             case "Home":

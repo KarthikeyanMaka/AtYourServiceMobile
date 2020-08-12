@@ -80,9 +80,11 @@ public class HomeActivity extends AppCompatActivity {
         Button dash= (Button)findViewById(R.id.btn_local);
         Common.setMenuColor(home,health,emer,dash,"Home",this);
 
+        Locale Current = getResources().getConfiguration().locale;
+
         //Language dropdown configuration
         dropdown = findViewById(R.id.spinner1);
-        final DropDown langDropDown = new DropDown(dropdown, this);
+        final DropDown langDropDown = new DropDown(dropdown, this,Current.getLanguage());
 
         dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -196,7 +198,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
         txthomehealth = (TextView)findViewById(R.id.txthomehealth);
-        txthomelocal = (TextView)findViewById(R.id.txthomelocal);
+      //  txthomelocal = (TextView)findViewById(R.id.txthomelocal);
         txthomeemer = (TextView)findViewById(R.id.txthomemergency);
         txthomeother = (TextView)findViewById(R.id.txthomeothers);
 
@@ -207,13 +209,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        txthomelocal.setOnClickListener(new View.OnClickListener() {
+     /*   txthomelocal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 GotoLocal(view);
             }
         });
-
+*/
         txthomehealth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -11,4 +11,8 @@
     <color name="fullblack">#000000</color>
     <color name="gridrowtxtcolor">#6a6b6a</color>
     <color name="bgcolor">#edf2ee</color>
+    <color name="recoverheadcolor">#425878</color>
+    <color name="recoverrowcolor">#bed9ed</color>
+    <color name="homebtncolor">#edf2ee</color>
+    <color name="homehighcolor">#295391</color>
 </resources>

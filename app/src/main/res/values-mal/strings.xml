@@ -55,4 +55,5 @@
     <string name="app_comPhase">ഘട്ടം പൂർത്തിയായി</string>
     <string name="app_Lstdate">അപ്‌ഡേറ്റുചെയ്‌ത തീയതി</string>
     <string name="app_vaclink">രാജ്യത്തുടനീളം ഏറ്റവും പുതിയ വാക്സിൻ നില നേടുക</string>
+    <string name="app_chooselang">Select Language</string>
 </resources>

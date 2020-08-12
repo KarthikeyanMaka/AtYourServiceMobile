@@ -16,7 +16,7 @@
             android:layout_marginLeft="-3dp"
             android:layout_marginRight="-1dp"
             android:layout_weight="0.1"
-            android:background="#FFFFFF"
+            android:background="@android:color/transparent"
             android:onClick="GotoTerms"
             android:text="@string/app_terms"
             android:textSize="8sp" />
@@ -28,7 +28,7 @@
             android:layout_marginLeft="-3dp"
             android:layout_marginRight="-1dp"
             android:layout_weight="0.1"
-            android:background="#FFFFFF"
+            android:background="@android:color/transparent"
             android:onClick="GotoPrivacy"
             android:text="@string/app_privacy"
             android:textSize="8sp"/>
@@ -40,7 +40,7 @@
             android:layout_marginLeft="-3dp"
             android:layout_marginRight="-1dp"
             android:layout_weight="0.1"
-            android:background="#FFFFFF"
+            android:background="@android:color/transparent"
             android:onClick="GotoDisclaimer"
             android:text="@string/app_disclaimer"
             android:textSize="8sp" />

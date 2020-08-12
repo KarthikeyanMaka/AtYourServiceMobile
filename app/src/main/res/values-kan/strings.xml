@@ -55,4 +55,5 @@
     <string name="app_comPhase">ಪೂರ್ಣಗೊಂಡ ಹಂತ</string>
     <string name="app_Lstdate">ನವೀಕರಿಸಿದ ದಿನಾಂಕ</string>
     <string name="app_vaclink">ದೇಶಾದ್ಯಂತ ಇತ್ತೀಚಿನ ಲಸಿಕೆ ಸ್ಥಿತಿಯನ್ನು ಪಡೆಯಿರಿ</string>
+    <string name="app_chooselang">Select Language</string>
 </resources>

@@ -17,26 +17,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.893" >
+
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="39dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="40dp"
             android:layout_marginStart="3dp"
-            android:background="#f5f6f7">
+            android:layout_marginTop="10dp">
+
             <TextView
                 android:id="@+id/appName"
                 android:layout_width="wrap_content"
-                android:layout_height="31dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
-                android:text="@string/app_name"
+                android:text="@string/app_chooselang"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="#214f75"/>
+                android:textColor="#214f75" />
 
             <Spinner
                 android:id="@+id/spinner1"
                 android:layout_width="wrap_content"
-                android:layout_height="35dp"
+                android:layout_height="40dp"
                 android:layout_gravity="end"
                 android:layout_marginTop="25dp"
                 android:layout_weight="1"
@@ -51,24 +53,26 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="213dp"
+            android:layout_height="182dp"
             android:layout_marginTop="10dp"
 
-            android:background="#f5f6f7"
+            android:background="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.893">
+            app:layout_constraintVertical_bias="0.893"
+            >
 
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="198dp"
+                android:layout_height="186dp"
                 android:layout_gravity="center"
                 android:contentDescription="@string/app_Emer"
+                android:background="@android:color/transparent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -76,16 +80,30 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.893" />
         </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="29dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtcoviddash"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_Local"
+                android:textAlignment="center"
+                android:textColor="#295391"
+                android:textStyle="bold" />
+        </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="46dp"
+            android:layout_height="29dp"
             android:gravity="center">
 
             <TextView
                 android:id="@+id/txtcurrentdistrict"
                 android:layout_width="match_parent"
-                android:layout_height="28dp"
+                android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textColor="#295391"
                 android:textStyle="bold" />
@@ -101,11 +119,12 @@
                 android:id="@+id/txtRecovered"
                 android:layout_width="79dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/textborder"
+                android:background="@color/recoverheadcolor"
                 android:gravity="center"
                 android:text="@string/app_torecov"
                 android:textColor="@android:color/white"
-                android:textSize="12sp" />
+                android:textSize="12sp"
+                />
 
             <TextView
                 android:id="@+id/txttotal"
@@ -147,7 +166,7 @@
                 android:id="@+id/txtRecoveredcount"
                 android:layout_width="79dp"
                 android:layout_height="43dp"
-                android:background="@drawable/rowtextborder"
+                android:background="@color/recoverrowcolor"
                 android:gravity="center"
                 android:text="@string/app_torecov"
                 android:textColor="@color/gridrowtxtcolor" />
@@ -183,6 +202,29 @@
 
         <TableRow
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp">
+
+            <Button
+                android:id="@+id/txthomeothers"
+                style="@style/Widget.AppCompat.ButtonBar"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonstyletwo"
+                android:linksClickable="true"
+                android:text="@string/app_vaclink"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textColorLink="#0645AD" />
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="223dp"
             android:layout_marginStart="3dp"
             android:layout_marginTop="20dp"
@@ -191,8 +233,11 @@
             <Button
                 android:id="@+id/txthomehealth"
                 style="@style/Widget.AppCompat.ButtonBar"
-                android:layout_width="129dp"
+                android:layout_width="300dp"
                 android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+
                 android:background="@drawable/buttonstyleone"
                 android:linksClickable="true"
                 android:text="@string/app_homehealth"
@@ -204,8 +249,10 @@
             <Button
                 android:id="@+id/txthomemergency"
                 style="@style/Widget.AppCompat.ButtonBar"
-                android:layout_width="140dp"
+                android:layout_width="wrap_content"
                 android:layout_height="223dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
                 android:background="@drawable/buttonstyleone"
                 android:linksClickable="true"
                 android:text="@string/app_homeemerlink"
@@ -215,38 +262,6 @@
 
         </TableRow>
 
-        <TableRow
-            android:layout_marginStart="3dp"
-            android:layout_width="match_parent"
-            android:layout_height="102dp"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/txthomelocal"
-                style="@style/Widget.AppCompat.ButtonBar"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/buttonstyleone"
-                android:linksClickable="true"
-                android:text="@string/app_homelocallink"
-                android:textAlignment="viewStart"
-                android:textAllCaps="false"
-                android:textColor="#295391" />
-
-            <Button
-                android:id="@+id/txthomeothers"
-                style="@style/Widget.AppCompat.ButtonBar"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/buttonstyleone"
-                android:linksClickable="true"
-                android:text="@string/app_vaclink"
-                android:textAlignment="viewStart"
-                android:textAllCaps="false"
-                android:textColor="#295391"
-                android:textColorLink="#0645AD" />
-
-        </TableRow>
 
         <include layout="@layout/bottomdisclaimmenu"
             android:layout_gravity="center|bottom"

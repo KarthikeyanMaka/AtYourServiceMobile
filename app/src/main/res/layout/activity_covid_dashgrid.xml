@@ -2,47 +2,40 @@
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:gravity="center">
 
     <TextView
         android:id="@+id/grdcovidRec"
-        android:layout_width="106dp"
-        android:layout_height="40dp"
-        android:layout_gravity="start"
-        android:background="@drawable/textborder"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:layout_width="79dp"
+        android:layout_height="43dp"
+        android:background="@color/recoverrowcolor"
+        android:gravity="center"
+        android:textColor="@color/gridrowtxtcolor" />
 
     <TextView
         android:id="@+id/grdcovidTot"
-        android:layout_width="115dp"
-        android:layout_height="40dp"
-        android:layout_gravity="start"
-        android:background="@drawable/textborder"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:layout_width="79dp"
+        android:layout_height="44dp"
+        android:background="@drawable/rowtextborder"
+        android:gravity="center"
+        android:textColor="@color/gridrowtxtcolor" />
 
     <TextView
         android:id="@+id/grdCovidActive"
-        android:layout_width="91dp"
-        android:layout_height="40dp"
-        android:layout_gravity="start"
-        android:background="@drawable/textborder"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:layout_width="79dp"
+        android:layout_height="44dp"
+        android:background="@drawable/rowtextborder"
+        android:gravity="center"
+        android:textColor="@color/gridrowtxtcolor"/>
 
     <TextView
         android:id="@+id/grdCovidDece"
-        android:layout_width="97dp"
-        android:layout_height="40dp"
-        android:layout_gravity="start"
-        android:background="@drawable/textborder"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:layout_width="79dp"
+        android:layout_height="44dp"
+        android:background="@drawable/rowtextborder"
+        android:gravity="center"
+        android:textColor="@color/gridrowtxtcolor" />
 
 
 </TableRow>

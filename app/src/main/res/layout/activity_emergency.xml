@@ -10,19 +10,24 @@
         android:id="@+id/Linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center">
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="39dp">
+            android:layout_height="39dp"
+            android:background="@android:color/transparent">
 
             <TextView
                 android:id="@+id/appName"
                 android:layout_width="wrap_content"
-                android:layout_height="31dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
-                android:text="@string/app_name"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:text="@string/app_chooselang"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#214f75"  />
 
             <Spinner
                 android:id="@+id/spinner1"
@@ -40,70 +45,80 @@
         <TableRow
             android:id="@+id/tblimages"
             android:layout_width="match_parent"
-            android:layout_height="210dp"
-            android:paddingTop="-5dp">
+            android:layout_height="166dp"
+            android:paddingTop="15dp">
 
             <ImageView
                 android:id="@+id/imghelpline"
-                android:layout_width="201dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/imageborder"
+                android:layout_width="160dp"
+                android:layout_height="139dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:contentDescription="@string/app_heplline"
                 android:onClick="ShowHelplinenumbers"
                 android:src="@drawable/helpline" />
 
             <ImageView
                 android:id="@+id/imagehospView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="160dp"
+                android:layout_height="140dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:contentDescription="@string/app_covidhosp"
-                app:srcCompat="@drawable/hospitalcovid"
-                android:background="@drawable/imageborder"/>
+                app:srcCompat="@drawable/hospitalcovid" />
         </TableRow>
 
         <TableRow
             android:id="@+id/tbllbldesc"
             android:layout_width="match_parent"
-            android:layout_height="67dp"
+            android:layout_height="48dp"
             android:paddingTop="-5dp">
 
             <TextView
-                android:layout_width="180dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
+                android:layout_width="137dp"
+                android:layout_height="44dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
                 android:text="@string/app_heplline"
-                android:textColor="@color/fullblack"
-                android:textSize="17sp" />
+                android:textColor="@color/homehighcolor"
+                />
 
             <TextView
-                android:layout_width="193dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
                 android:text="@string/app_covidhosp"
-                android:textColor="@color/fullblack"
-                android:textSize="17sp" />
+                android:textColor="@color/homehighcolor"
+                 />
 
         </TableRow>
 
         <TableRow
             android:id="@+id/tbl2images"
             android:layout_width="match_parent"
-            android:layout_height="231dp"
+            android:layout_height="154dp"
             android:paddingTop="-5dp">
 
             <ImageView
                 android:id="@+id/imgtestlabs"
-                android:layout_width="198dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/imageborder"
+                android:layout_width="137dp"
+                android:layout_height="142dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:contentDescription="@string/app_covidlabs"
                 app:srcCompat="@drawable/covidtestlabs" />
 
             <ImageView
                 android:id="@+id/imgambulance"
-                android:layout_width="211dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/imageborder"
+                android:layout_width="170dp"
+                android:layout_height="133dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:contentDescription="@string/app_ambulan"
                 app:srcCompat="@drawable/ambulanceimage" />
         </TableRow>
@@ -115,20 +130,22 @@
             android:paddingTop="-5dp">
 
             <TextView
-                android:layout_width="180dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
                 android:text="@string/app_covidlabs"
-                android:textColor="@color/fullblack"
-                android:textSize="17sp" />
+                android:textColor="@color/homehighcolor"
+                 />
 
             <TextView
-                android:layout_width="193dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
                 android:text="@string/app_ambulan"
-                android:textColor="@color/fullblack"
-                android:textSize="17sp" />
+                android:textColor="@color/homehighcolor"
+                />
 
         </TableRow>
         <include layout="@layout/bottomdisclaimmenu"

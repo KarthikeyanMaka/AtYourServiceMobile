@@ -18,11 +18,13 @@
             <TextView
                 android:id="@+id/appName"
                 android:layout_width="wrap_content"
-                android:layout_height="31dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
-                android:text="@string/app_name"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:text="@string/app_chooselang"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#214f75" />
 
             <Spinner
                 android:id="@+id/dplangu"
@@ -40,7 +42,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="61dp"
-            android:paddingTop="-5dp">
+            android:paddingTop="15dp">
 
             <TextView
                 android:id="@+id/txtlblcovidstate"
@@ -49,12 +51,13 @@
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
                 android:text="@string/app_statelist"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <Spinner
                 android:id="@+id/dpcovidstate"
                 android:layout_width="214dp"
-                android:layout_height="wrap_content"
+                android:layout_height="38dp"
                 android:layout_gravity="end"
                 android:layout_marginTop="25dp"
                 android:layout_weight="1"
@@ -72,6 +75,7 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
+                android:textAlignment="center"
                 android:text="@string/app_selectdistrict"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -88,60 +92,62 @@
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="53dp"
+            android:layout_height="39dp"
             android:gravity="center">
 
             <TextView
-                android:layout_width="134dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:foregroundGravity="center"
-                android:background="@drawable/textborder"
-                android:text="@string/app_districtwise"
-                android:textColor="@android:color/black" />
+                android:textAllCaps="true"
+                android:textColor="#295391"
+                android:textStyle="bold"
+                android:text="@string/app_districtwise"/>
         </TableRow>
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="119dp">
+            android:layout_height="119dp"
+            android:layout_gravity="center"
+            >
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="47dp">
+                android:layout_height="47dp"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/txtlblrecovered"
-                    android:layout_width="107dp"
+                    android:layout_width="79dp"
                     android:layout_height="39dp"
-                    android:background="@drawable/textborder"
+                    android:background="@color/recoverheadcolor"
                     android:text="@string/app_torecov"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white" />
 
                 <TextView
                     android:id="@+id/txtlbltotal"
-                    android:layout_width="109dp"
+                    android:layout_width="79dp"
                     android:layout_height="39dp"
                     android:background="@drawable/textborder"
                     android:text="@string/app_totcovid"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white"/>
 
                 <TextView
                     android:id="@+id/txtlblActive"
-                    android:layout_width="94dp"
+                    android:layout_width="79dp"
                     android:layout_height="39dp"
                     android:background="@drawable/textborder"
                     android:text="@string/app_totactive"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white" />
 
                 <TextView
                     android:id="@+id/txtlbldecesed"
-                    android:layout_width="95dp"
+                    android:layout_width="79dp"
                     android:layout_height="39dp"
                     android:background="@drawable/textborder"
                     android:text="@string/app_totdeces"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white" />
 
 
             </TableRow>
@@ -149,17 +155,16 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
-
+                android:gravity="center"
                 android:layout_marginTop="50dp"
                 android:orientation="horizontal">
 
 
                 <GridView
                     android:id="@+id/gvcoviddash"
-                    android:layout_width="396dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="4dp"
-                    android:background="@color/grey"
+                    android:background="@android:color/transparent"
                     android:gravity="center"
                     android:numColumns="1"
                     android:stretchMode="columnWidth" />
@@ -172,55 +177,57 @@
             android:gravity="center">
 
             <TextView
-                android:layout_width="134dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:foregroundGravity="center"
-                android:background="@drawable/textborder"
+                android:textAllCaps="true"
+                android:textColor="#295391"
+                android:textStyle="bold"
                 android:text="@string/app_statedata"
-                android:textColor="@android:color/black" />
+                 />
         </TableRow>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="116dp">
+            android:layout_height="116dp"
+            android:layout_gravity="center">
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="47dp">
+                android:layout_height="47dp"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/txtlblstaterecovered"
-                    android:layout_width="107dp"
+                    android:layout_width="79dp"
                     android:layout_height="39dp"
-                    android:background="@drawable/textborder"
+                    android:background="@color/recoverheadcolor"
                     android:text="@string/app_torecov"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white" />
 
                 <TextView
                     android:id="@+id/txtlblstatetotal"
-                    android:layout_width="109dp"
+                    android:layout_width="79dp"
                     android:layout_height="39dp"
                     android:background="@drawable/textborder"
                     android:text="@string/app_totcovid"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white" />
 
                 <TextView
                     android:id="@+id/txtlblstateActive"
-                    android:layout_width="94dp"
+                    android:layout_width="79dp"
                     android:layout_height="39dp"
                     android:background="@drawable/textborder"
                     android:text="@string/app_totactive"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white" />
 
                 <TextView
                     android:id="@+id/txtlblstatedecesed"
-                    android:layout_width="95dp"
+                    android:layout_width="79dp"
                     android:layout_height="39dp"
                     android:background="@drawable/textborder"
                     android:text="@string/app_totdeces"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white" />
 
 
             </TableRow>
@@ -228,17 +235,16 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
-
+                android:gravity="center"
                 android:layout_marginTop="50dp"
                 android:orientation="horizontal">
 
 
                 <GridView
                     android:id="@+id/gvcovidstate"
-                    android:layout_width="396dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="4dp"
-                    android:background="@color/grey"
+                    android:background="@android:color/transparent"
                     android:gravity="center"
                     android:numColumns="1"
                     android:stretchMode="columnWidth" />
@@ -250,54 +256,57 @@
             android:gravity="center">
 
             <TextView
-                android:layout_width="134dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:foregroundGravity="center"
-                android:background="@drawable/textborder"
+                android:textAllCaps="true"
+                android:textColor="#295391"
+                android:textStyle="bold"
                 android:text="@string/app_indiadata"
-                android:textColor="@android:color/black" />
+                />
         </TableRow>
+
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="508dp">
+            android:layout_height="116dp"
+            android:layout_gravity="center">
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="47dp">
+                android:layout_height="47dp"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/txtlblindrecovered"
-                    android:layout_width="107dp"
+                    android:layout_width="79dp"
                     android:layout_height="39dp"
-                    android:background="@drawable/textborder"
+                    android:background="@color/recoverheadcolor"
                     android:text="@string/app_torecov"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white" />
 
                 <TextView
                     android:id="@+id/txtlblindtotal"
-                    android:layout_width="109dp"
+                    android:layout_width="79dp"
                     android:layout_height="39dp"
                     android:background="@drawable/textborder"
                     android:text="@string/app_totcovid"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white" />
 
                 <TextView
                     android:id="@+id/txtlblindActive"
-                    android:layout_width="94dp"
+                    android:layout_width="79dp"
                     android:layout_height="39dp"
                     android:background="@drawable/textborder"
                     android:text="@string/app_totactive"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white" />
 
                 <TextView
                     android:id="@+id/txtlblinddecesed"
-                    android:layout_width="95dp"
+                    android:layout_width="79dp"
                     android:layout_height="39dp"
                     android:background="@drawable/textborder"
                     android:text="@string/app_totdeces"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white" />
 
 
             </TableRow>
@@ -305,17 +314,16 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
-
                 android:layout_marginTop="50dp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
 
                 <GridView
                     android:id="@+id/gvcovidindia"
-                    android:layout_width="396dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="4dp"
-                    android:background="@color/grey"
+                    android:background="@android:color/transparent"
                     android:gravity="center"
                     android:numColumns="1"
                     android:stretchMode="columnWidth" />

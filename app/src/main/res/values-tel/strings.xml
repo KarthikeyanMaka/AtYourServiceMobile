@@ -55,4 +55,5 @@
     <string name="app_comPhase">దశ పూర్తయింది</string>
     <string name="app_Lstdate">నవీకరించబడిన తేదీ</string>
     <string name="app_vaclink">దేశవ్యాప్తంగా తాజా వ్యాక్సిన్ స్థితిని పొందండి</string>
+    <string name="app_chooselang">Select Language</string>
 </resources>
