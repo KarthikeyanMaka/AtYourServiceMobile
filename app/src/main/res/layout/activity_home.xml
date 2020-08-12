@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/Scroll1"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Scroll1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/Linear1"
@@ -42,7 +42,10 @@ android:layout_height="match_parent">
                 android:spinnerMode="dropdown" />
         </TableRow>
 
-        <include layout="@layout/top_menu" />
+        <include
+            layout="@layout/top_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <TableRow
             android:layout_width="match_parent"
@@ -59,7 +62,7 @@ android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="458dp"
+                android:layout_width="match_parent"
                 android:layout_height="205dp"
                 android:layout_gravity="center"
                 android:contentDescription="@string/app_Emer"
@@ -73,45 +76,59 @@ android:layout_height="match_parent">
 
         <TableRow
             android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtcurrentdistrict"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:textAlignment="center"
+
+                android:textColor="@color/black" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="58dp"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="3dp"
             android:gravity="center">
 
             <TextView
                 android:id="@+id/txtRecovered"
-                android:gravity="center"
-                android:layout_width="107dp"
+                android:layout_width="79dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/textborder"
+                android:gravity="center"
                 android:text="@string/app_torecov"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/txttotal"
-                android:layout_width="109dp"
+                android:layout_width="79dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/textborder"
-                android:text="@string/app_totcovid"
                 android:gravity="center"
+                android:text="@string/app_totcovid"
                 android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/txtActive"
-                android:layout_width="94dp"
+                android:layout_width="79dp"
                 android:layout_height="match_parent"
-                android:gravity="center"
                 android:background="@drawable/textborder"
+                android:gravity="center"
                 android:text="@string/app_totactive"
                 android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/txtdeceased"
-                android:layout_width="95dp"
+                android:layout_width="79dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/textborder"
-                android:text="@string/app_totdeces"
                 android:gravity="center"
+                android:text="@string/app_totdeces"
                 android:textColor="@color/black" />
 
 
@@ -120,61 +137,45 @@ android:layout_height="match_parent">
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="57dp"
-            android:layout_marginStart="3dp"
             android:gravity="center">
 
 
             <TextView
                 android:id="@+id/txtRecoveredcount"
-                android:layout_width="107dp"
+                android:layout_width="79dp"
                 android:layout_height="43dp"
                 android:background="@drawable/textborder"
-                android:text="@string/app_torecov"
-
                 android:gravity="center"
+                android:text="@string/app_torecov"
                 android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/txttotalcount"
-                android:layout_width="109dp"
+                android:layout_width="79dp"
                 android:layout_height="44dp"
                 android:background="@drawable/textborder"
-                android:text="@string/app_totcovid"
                 android:gravity="center"
+                android:text="@string/app_totcovid"
                 android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/txtActivecount"
-                android:layout_width="94dp"
+                android:layout_width="79dp"
                 android:layout_height="44dp"
                 android:background="@drawable/textborder"
-                android:text="@string/app_totactive"
                 android:gravity="center"
+                android:text="@string/app_totactive"
                 android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/txtdeceasedcount"
-                android:layout_width="95dp"
+                android:layout_width="79dp"
                 android:layout_height="43dp"
                 android:background="@drawable/textborder"
-                android:text="@string/app_totdeces"
                 android:gravity="center"
+                android:text="@string/app_totdeces"
                 android:textColor="@color/black" />
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="46dp"
-            android:gravity="center">
-
-            <TextView
-                android:id="@+id/txtcurrentdistrict"
-                android:layout_width="389dp"
-                android:layout_height="41dp"
-                android:textAlignment="center"
-
-                android:textColor="@color/black" />
         </TableRow>
 
         <TableRow
@@ -186,29 +187,28 @@ android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/txthomehealth"
-                android:layout_width="201dp"
+                style="@style/Widget.AppCompat.ButtonBar"
+                android:layout_width="140dp"
                 android:layout_height="match_parent"
                 android:background="@drawable/buttonstyleone"
                 android:linksClickable="true"
-                android:textColor="#2D4F4F"
+                android:text="@string/app_homehealth"
                 android:textAlignment="gravity"
                 android:textAllCaps="false"
-                android:text="@string/app_homehealth"
-                style="@style/Widget.AppCompat.ButtonBar"
-                android:textColorLink="@android:color/white"
-                />
+                android:textColor="#2D4F4F"
+                android:textColorLink="@android:color/white" />
 
             <Button
                 android:id="@+id/txthomemergency"
-                android:layout_width="200dp"
-                android:layout_height="match_parent"
+                style="@style/Widget.AppCompat.ButtonBar"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/buttonstyleone"
                 android:linksClickable="true"
                 android:text="@string/app_homeemerlink"
-                android:textColor="#2D4F4F"
                 android:textAlignment="gravity"
                 android:textAllCaps="false"
-                style="@style/Widget.AppCompat.ButtonBar"/>
+                android:textColor="#2D4F4F" />
 
         </TableRow>
 
@@ -220,28 +220,28 @@ android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/txthomelocal"
-                android:layout_width="201dp"
-                android:layout_height="match_parent"
+                style="@style/Widget.AppCompat.ButtonBar"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/buttonstyleone"
                 android:linksClickable="true"
                 android:text="@string/app_homelocallink"
-                android:textColor="#2D4F4F"
                 android:textAlignment="textStart"
-                style="@style/Widget.AppCompat.ButtonBar"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textColor="#2D4F4F" />
 
             <Button
                 android:id="@+id/txthomeothers"
-                android:layout_width="201dp"
-                android:layout_height="match_parent"
+                style="@style/Widget.AppCompat.ButtonBar"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/buttonstyleone"
                 android:linksClickable="true"
                 android:text="@string/app_vaclink"
-                android:textColor="#2D4F4F"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
-                android:textColorLink="#0645AD"
-                style="@style/Widget.AppCompat.ButtonBar"/>
+                android:textColor="#2D4F4F"
+                android:textColorLink="#0645AD" />
 
         </TableRow>
 
