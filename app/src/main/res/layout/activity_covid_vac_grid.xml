@@ -2,52 +2,53 @@
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:gravity="center"
+    >
 
     <TextView
         android:id="@+id/grdcovidvacname"
-        android:layout_width="106dp"
+        android:layout_width="80dp"
         android:layout_height="173dp"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:textAlignment="center"
-        android:background="@drawable/textborder"
+        android:background="@color/recoverrowcolor"
         android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:textColor="@color/gridrowtxtcolor"
+         />
 
     <TextView
         android:id="@+id/grdcovidvacorg"
-        android:layout_width="143dp"
+        android:layout_width="110dp"
         android:layout_height="173dp"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:textAlignment="center"
-        android:background="@drawable/textborder"
+        android:background="@drawable/rowtextborder"
         android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
-
-        android:textStyle="bold" />
+        android:textColor="@color/gridrowtxtcolor"
+         />
 
     <TextView
         android:id="@+id/grdCovidvaccurrphase"
-        android:layout_width="75dp"
+        android:layout_width="60dp"
         android:layout_height="173dp"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:textAlignment="center"
-        android:background="@drawable/textborder"
+        android:background="@drawable/rowtextborder"
         android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:textColor="@color/gridrowtxtcolor"
+        />
 
     <TextView
         android:id="@+id/grdCovidlstdate"
-        android:layout_width="88dp"
+        android:layout_width="60dp"
         android:layout_height="173dp"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:textAlignment="center"
-        android:background="@drawable/textborder"
+        android:background="@drawable/rowtextborder"
         android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:textColor="@color/gridrowtxtcolor"
+         />
 
 
 </TableRow>

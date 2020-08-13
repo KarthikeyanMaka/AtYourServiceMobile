@@ -2,26 +2,27 @@
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:gravity="center">
 
     <TextView
         android:id="@+id/grdambstatename"
-        android:layout_width="205dp"
-        android:layout_height="70dp"
-        android:layout_gravity="start"
-        android:background="@drawable/textborder"
+        android:layout_width="143dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@color/recoverrowcolor"
         android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
+        android:textColor="@color/gridrowtxtcolor"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/grdambcontact"
-        android:layout_width="205dp"
+        android:layout_width="143dp"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@drawable/textborder"
+        android:gravity="center"
+        android:background="@drawable/rowtextborder"
         android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
+        android:textColor="@color/gridrowtxtcolor"
         android:textStyle="bold" />
 
 

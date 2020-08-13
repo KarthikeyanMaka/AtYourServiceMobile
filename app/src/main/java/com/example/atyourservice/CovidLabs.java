@@ -40,6 +40,7 @@ public class CovidLabs extends AppCompatActivity {
 
             c = CovidLabs.this;
 
+
             String StateList = LocationFinder.ServerRequest(Common.API_SERVER+"GetAllState");
             dplabstate = (Spinner) findViewById(R.id.dplabstate);
             try {
@@ -97,9 +98,11 @@ public class CovidLabs extends AppCompatActivity {
                 }
             });
 
+            Locale Current = getResources().getConfiguration().locale;
+
             //Language dropdown configuration
             dplang = (Spinner) findViewById(R.id.spnlnglabs);
-            final DropDown langDropDown = new DropDown(dplang, c);
+            final DropDown langDropDown = new DropDown(dplang, c,Current.getLanguage());
 
             dplang.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
@@ -193,7 +196,7 @@ public class CovidLabs extends AppCompatActivity {
         Locale Current = getResources().getConfiguration().locale;
         Locale appLocale = new Locale(localName);
 
-        if(Current !=appLocale){
+        if(Current.getLanguage() !=appLocale.getLanguage()){
 
             Configuration conf = new Configuration();
             conf.locale=appLocale;

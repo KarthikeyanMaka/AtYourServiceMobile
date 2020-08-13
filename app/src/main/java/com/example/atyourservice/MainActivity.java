@@ -102,11 +102,12 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 //            if(defLang !="")
                 //              Setlocale(defLang);
 
-
+                Locale Current = getResources().getConfiguration().locale;
 
                 //Language dropdown configuration
                 dropdown = findViewById(R.id.spinner1);
-                final DropDown langDropDown = new DropDown(dropdown, this);
+                final DropDown langDropDown = new DropDown(dropdown, this,Current.getLanguage());
+
 
                 dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -127,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 scrollView.setVerticalScrollbarPosition(ScrollView.SCROLLBAR_POSITION_RIGHT);
                 scrollView.setVerticalScrollBarEnabled(true);
 
-                Locale Current = getResources().getConfiguration().locale;
+//                Locale Current = getResources().getConfiguration().locale;
                 CreateLinkPlay(Current.getLanguage());
 
 

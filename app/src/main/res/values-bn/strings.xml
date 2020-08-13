@@ -56,7 +56,7 @@
     <string name="app_comPhase">শেষ পর্যায়ে</string>
     <string name="app_Lstdate">আপডেটের তারিখ</string>
     <string name="app_vaclink">সারা দেশে সর্বশেষতম ভ্যাকসিন স্থিতি পান</string>
-    <string name="app_chooselang">Select Language</string>
+    <string name="app_chooselang">ভাষা নির্বাচন কর</string>
 
 
 </resources>

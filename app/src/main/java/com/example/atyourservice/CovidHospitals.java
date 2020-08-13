@@ -89,9 +89,11 @@ public class CovidHospitals extends AppCompatActivity {
             }
         });
 
+        Locale Current = getResources().getConfiguration().locale;
+
         //Language dropdown configuration
         dplang =(Spinner)findViewById(R.id.spnlng);
-        final DropDown langDropDown = new DropDown(dplang, c);
+        final DropDown langDropDown = new DropDown(dplang, c,Current.getLanguage());
 
         dplang.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -142,7 +144,7 @@ public class CovidHospitals extends AppCompatActivity {
         Locale Current = getResources().getConfiguration().locale;
         Locale appLocale = new Locale(localName);
 
-        if(Current !=appLocale){
+        if(Current.getLanguage() !=appLocale.getLanguage()){
 
             Configuration conf = new Configuration();
             conf.locale=appLocale;

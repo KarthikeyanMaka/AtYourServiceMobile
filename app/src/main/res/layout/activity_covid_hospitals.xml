@@ -10,14 +10,17 @@
         android:orientation="vertical">
         <TableRow  android:layout_width="match_parent"
             android:layout_height="39dp">
+
             <TextView
                 android:id="@+id/txtappname"
                 android:layout_width="wrap_content"
-                android:layout_height="31dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
-                android:text="@string/app_name"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:text="@string/app_chooselang"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#214f75" />
 
             <Spinner
                 android:id="@+id/spnlng"
@@ -36,7 +39,10 @@
         layout="@layout/top_menu"
         android:layout_height="wrap_content"
         android:layout_width="match_parent" />
-    <include layout="@layout/emergency_menu" />
+    <include layout="@layout/emergency_menu"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"/>
 
     <TableRow
         android:layout_width="match_parent"
@@ -48,6 +54,7 @@
             android:layout_width="169dp"
             android:layout_height="40dp"
             android:layout_weight="1"
+            android:gravity="center"
             android:fontFamily="sans-serif-condensed"
             android:text="@string/app_statelist"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
@@ -72,6 +79,7 @@
             android:layout_width="169dp"
             android:layout_height="40dp"
             android:layout_weight="1"
+            android:gravity="center"
             android:fontFamily="sans-serif-condensed"
             android:text="@string/app_selectcity"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
@@ -89,50 +97,55 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="500dp">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="87dp">
+            android:layout_height="60dp"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/txthosname"
-                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-                android:layout_width="156dp"
-                android:layout_height="match_parent"
+                android:layout_width="125dp"
+                android:layout_height="52dp"
+                android:background="@color/recoverheadcolor"
+                android:gravity="center"
                 android:text="@string/app_hosname"
-                android:textColor="@color/design_default_color_primary_dark" />
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/txthoscity"
-                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-                android:layout_width="74dp"
-                android:layout_height="match_parent"
+                android:layout_width="64dp"
+                android:layout_height="52dp"
+                android:background="@drawable/textborder"
+                android:gravity="center"
                 android:text="@string/app_hoscity"
-                android:textColor="@color/design_default_color_primary_dark" />
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/txtowner"
-                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-                android:layout_width="84dp"
-                android:layout_height="match_parent"
+                android:layout_width="64dp"
+                android:layout_height="52dp"
+                android:background="@drawable/textborder"
+                android:gravity="center"
                 android:text="@string/app_hosowner"
-                android:textColor="@color/design_default_color_primary_dark" />
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/txtbeds"
-                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-                android:layout_width="97dp"
-                android:layout_height="match_parent"
+                android:layout_width="64dp"
+                android:layout_height="54dp"
+                android:background="@drawable/textborder"
+                android:gravity="center"
                 android:text="@string/app_hosbeds"
-                android:textColor="@color/design_default_color_primary_dark" />
+                android:textColor="@android:color/white" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="304dp"
-            android:layout_marginTop="120dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="horizontal">
 
 
@@ -141,7 +154,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="359dp"
                 android:layout_marginStart="4dp"
-                android:background="@color/grey"
+                android:background="@android:color/transparent"
                 android:gravity="center"
                 android:numColumns="1"
                 android:stretchMode="columnWidth" />

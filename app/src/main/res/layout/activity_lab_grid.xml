@@ -2,36 +2,35 @@
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:gravity="center">
 
     <TextView
         android:id="@+id/grdlabname"
-        android:layout_width="125dp"
-        android:layout_height="40dp"
-        android:layout_gravity="start"
-        android:background="@drawable/textborder"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:layout_width="177dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@color/recoverrowcolor"
+        android:textColor="@color/gridrowtxtcolor"
+        android:textStyle="bold"
+        />
 
     <TextView
         android:id="@+id/grdlabowner"
-        android:layout_width="173dp"
-        android:layout_height="40dp"
-        android:layout_gravity="start"
-        android:background="@drawable/textborder"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
+        android:layout_width="69dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@drawable/rowtextborder"
+        android:textColor="@color/gridrowtxtcolor"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/grdlabcontact"
-        android:layout_width="113dp"
-        android:layout_height="40dp"
-        android:layout_gravity="start"
-        android:background="@drawable/textborder"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
+        android:layout_width="69dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@drawable/rowtextborder"
+        android:textColor="@color/gridrowtxtcolor"
         android:textStyle="bold" />
 
 

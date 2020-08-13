@@ -39,10 +39,11 @@ public class Emergency extends AppCompatActivity {
             Button dash= (Button)this.findViewById(R.id.btn_local);
             Common.setMenuColor(home,health,emer,dash,"Emer",this);
 
+            Locale Current = getResources().getConfiguration().locale;
 
             //Language dropdown configuration
             dropdown = findViewById(R.id.spinner1);
-            final DropDown langDropDown = new DropDown(dropdown, this);
+            final DropDown langDropDown = new DropDown(dropdown, this,Current.getLanguage());
 
 
             //Adding scroll bars
@@ -123,7 +124,7 @@ public class Emergency extends AppCompatActivity {
         Locale Current = getResources().getConfiguration().locale;
         Locale appLocale = new Locale(localName);
 
-        if(Current !=appLocale){
+        if(Current.getLanguage() !=appLocale.getLanguage()){
 
             Configuration conf = new Configuration();
             conf.locale=appLocale;

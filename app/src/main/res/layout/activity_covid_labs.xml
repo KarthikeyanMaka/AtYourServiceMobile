@@ -13,11 +13,13 @@
             <TextView
                 android:id="@+id/txtappname"
                 android:layout_width="wrap_content"
-                android:layout_height="31dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
-                android:text="@string/app_name"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:text="@string/app_chooselang"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#214f75"/>
 
             <Spinner
                 android:id="@+id/spnlnglabs"
@@ -38,50 +40,56 @@
         android:layout_width="match_parent" />
 
     <include
-        layout="@layout/emergency_menu"/>
+        layout="@layout/emergency_menu"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"/>
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="61dp"
-        android:paddingTop="-5dp">
+        android:paddingTop="5dp">
 
         <TextView
             android:id="@+id/statelabsdplbl"
             android:layout_width="169dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:fontFamily="sans-serif-condensed"
+            android:layout_gravity="center"
+            android:textAlignment="center"
             android:text="@string/app_statelist"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <Spinner
             android:id="@+id/dplabstate"
             android:layout_width="214dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_gravity="end"
             android:layout_marginTop="25dp"
             android:layout_weight="1"
             android:background="@android:drawable/btn_dropdown"
             android:spinnerMode="dropdown" />
     </TableRow>
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="61dp"
-        android:paddingTop="-5dp">
+        android:paddingTop="5dp">
 
         <TextView
             android:id="@+id/citylabdblbl"
             android:layout_width="169dp"
             android:layout_height="40dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
-            android:fontFamily="sans-serif-condensed"
             android:text="@string/app_selectcity"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
         <Spinner
             android:id="@+id/dplabcity"
             android:layout_width="214dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_gravity="end"
             android:layout_marginTop="25dp"
             android:layout_weight="1"
@@ -91,51 +99,56 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="400dp"
+        android:layout_gravity="center"
+        android:gravity="center">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="101dp">
+            android:layout_height="49dp"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/txtlabname"
-                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-                android:layout_width="164dp"
-                android:layout_height="match_parent"
+                android:layout_width="177dp"
+                android:layout_height="48dp"
+                android:background="@color/recoverheadcolor"
+                android:gravity="center"
                 android:text="@string/app_labname"
-                android:textColor="@color/design_default_color_primary_dark" />
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/txtlabCat"
-                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-                android:layout_width="145dp"
-                android:layout_height="match_parent"
+                android:layout_width="69dp"
+                android:layout_height="48dp"
+                android:background="@drawable/textborder"
+                android:gravity="center"
                 android:text="@string/app_hosowner"
-                android:textColor="@color/design_default_color_primary_dark" />
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/txtlabContact"
-                style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-                android:layout_width="97dp"
-                android:layout_height="match_parent"
+                android:layout_width="69dp"
+                android:layout_height="48dp"
+                android:background="@drawable/textborder"
+                android:gravity="center"
                 android:text="@string/app_labcontact"
-                android:textColor="@color/design_default_color_primary_dark" />
+                android:textColor="@android:color/white" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="304dp"
-            android:layout_marginTop="120dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:gravity="center">
 
 
             <GridView
                 android:id="@+id/gvcovidlabs"
                 android:layout_width="match_parent"
-                android:layout_height="359dp"
-                android:layout_marginStart="4dp"
-                android:background="@color/grey"
+                android:layout_height="290dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
                 android:gravity="center"
                 android:numColumns="1"
                 android:stretchMode="columnWidth" />

@@ -72,10 +72,10 @@ public class HelpLine extends AppCompatActivity {
             }
         });
 
-
+            Locale Current = getResources().getConfiguration().locale;
         //Language dropdown configuration
         dropdown =(Spinner)findViewById(R.id.spinner1);
-        final DropDown langDropDown = new DropDown(dropdown, this);
+        final DropDown langDropDown = new DropDown(dropdown, this,Current.getLanguage());
 
 
             dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -117,7 +117,7 @@ public class HelpLine extends AppCompatActivity {
         Locale Current = getResources().getConfiguration().locale;
         Locale appLocale = new Locale(localName);
 
-        if(Current !=appLocale){
+        if(Current.getLanguage() !=appLocale.getLanguage()){
 
             Configuration conf = new Configuration();
             conf.locale=appLocale;

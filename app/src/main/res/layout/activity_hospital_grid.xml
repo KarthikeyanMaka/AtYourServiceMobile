@@ -2,47 +2,40 @@
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:gravity="center">
 
     <TextView
         android:id="@+id/grdhosname"
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-        android:layout_gravity="start"
-        android:background="@drawable/textborder"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:layout_width="125dp"
+        android:layout_height="66dp"
+        android:layout_gravity="center"
+        android:background="@color/recoverrowcolor"
+        android:textColor="@color/gridrowtxtcolor" />
 
     <TextView
         android:id="@+id/grdhoscity"
-        android:layout_width="83dp"
-        android:layout_height="40dp"
-        android:layout_gravity="start"
-        android:background="@drawable/textborder"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:layout_width="64dp"
+        android:layout_height="66dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rowtextborder"
+        android:textColor="@color/gridrowtxtcolor" />
 
     <TextView
         android:id="@+id/grdhosowner"
-        android:layout_width="89dp"
-        android:layout_height="40dp"
-        android:layout_gravity="start"
-        android:background="@drawable/textborder"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:layout_width="64dp"
+        android:layout_height="66dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rowtextborder"
+        android:textColor="@color/gridrowtxtcolor" />
 
     <TextView
         android:id="@+id/grdhosbeds"
-        android:layout_width="97dp"
-        android:layout_height="40dp"
-        android:layout_gravity="start"
-        android:background="@drawable/textborder"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:layout_width="64dp"
+        android:layout_height="66dp"
+        android:layout_gravity="center"
+        android:background="@drawable/rowtextborder"
+        android:textColor="@color/gridrowtxtcolor" />
 
 
 </TableRow>

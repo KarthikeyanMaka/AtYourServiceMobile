@@ -33,9 +33,10 @@ public class AmbulanceServices extends AppCompatActivity {
         c=AmbulanceServices.this;
 
         try {
+            Locale Current = getResources().getConfiguration().locale;
             //Language dropdown configuration
             dropdown = (Spinner) findViewById(R.id.spnamblang);
-            final DropDown langDropDown = new DropDown(dropdown, this);
+            final DropDown langDropDown = new DropDown(dropdown, this,Current.getLanguage());
 
             Button home= (Button)this.findViewById(R.id.btn_home);
             Button health= (Button)this.findViewById(R.id.btn_Health);
@@ -112,7 +113,7 @@ public class AmbulanceServices extends AppCompatActivity {
         Locale Current = getResources().getConfiguration().locale;
         Locale appLocale = new Locale(localName);
 
-        if(Current !=appLocale){
+        if(Current.getLanguage() !=appLocale.getLanguage()){
 
             Configuration conf = new Configuration();
             conf.locale=appLocale;

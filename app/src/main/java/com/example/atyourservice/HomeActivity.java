@@ -47,7 +47,8 @@ public class HomeActivity extends AppCompatActivity {
     String State;
     LangLocModel objCityState = null;
     ImageView imageView;
-    Integer[] imgList = new Integer[]{R.drawable.awarnessone,R.drawable.stayhomeone,R.drawable.thanks,R.drawable.giphy,R.drawable.washhans,R.drawable.face};
+    Integer[] imgList = new Integer[]{R.drawable.a1,R.drawable.a2,R.drawable.a3,R.drawable.a4,R.drawable.a5,R.drawable.a6,
+            R.drawable.a7,R.drawable.a8,R.drawable.a9,R.drawable.a10,R.drawable.a11};
     TextView txtRecoveredCount;
     TextView txtActiveount;
     TextView txtDeceasedCount;
@@ -62,7 +63,7 @@ public class HomeActivity extends AppCompatActivity {
     Handler handler = new Handler();
     Runnable runnable;
     int delay = 10000;
-    int notdelay=300000;
+    int notdelay=500000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

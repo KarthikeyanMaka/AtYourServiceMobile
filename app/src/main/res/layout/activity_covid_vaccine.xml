@@ -18,11 +18,13 @@
             <TextView
                 android:id="@+id/appName"
                 android:layout_width="wrap_content"
-                android:layout_height="31dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
-                android:text="@string/app_name"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:text="@string/app_chooselang"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="#214f75"  />
 
             <Spinner
                 android:id="@+id/dpvaclangu"
@@ -39,48 +41,53 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="593dp">
+            android:layout_height="593dp"
+            android:gravity="center">
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="63dp"
-                android:layout_marginTop="40dp">
+                android:layout_height="49dp"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/txtlblvacname"
-                    android:layout_width="106dp"
+                    android:layout_width="80dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/textborder"
+                    android:background="@color/recoverheadcolor"
+                    android:gravity="center"
                     android:text="@string/app_vaccinename"
                     android:textAlignment="center"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white" />
 
                 <TextView
                     android:id="@+id/txtlblorg"
-                    android:layout_width="143dp"
+                    android:layout_width="110dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/textborder"
+                    android:gravity="center"
                     android:text="@string/app_vacorg"
                     android:textAlignment="center"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white" />
 
                 <TextView
                     android:id="@+id/txtlblcurrphase"
-                    android:layout_width="73dp"
+                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/textborder"
+                    android:gravity="center"
                     android:text="@string/app_curphase"
                     android:textAlignment="center"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white" />
 
                 <TextView
                     android:id="@+id/txtlbldate"
-                    android:layout_width="88dp"
+                    android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:background="@drawable/textborder"
+                    android:gravity="center"
                     android:text="@string/app_Lstdate"
                     android:textAlignment="center"
-                    android:textColor="@color/black" />
+                    android:textColor="@android:color/white" />
 
 
             </TableRow>
@@ -88,8 +95,8 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="441dp"
-
-                android:layout_marginTop="110dp"
+                android:gravity="center"
+                android:layout_marginTop="49dp"
                 android:orientation="horizontal">
 
 
@@ -97,8 +104,7 @@
                     android:id="@+id/gvcovidvaccine"
                     android:layout_width="wrap_content"
                     android:layout_height="437dp"
-                    android:layout_marginStart="4dp"
-                    android:background="@color/grey"
+                    android:background="@android:color/transparent"
                     android:gravity="center"
                     android:numColumns="1"
                     android:stretchMode="columnWidth" />
@@ -110,6 +116,5 @@
             android:layout_width="wrap_content"/>
 
     </LinearLayout>
-
 
 </ScrollView>
