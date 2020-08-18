@@ -1,5 +1,8 @@
 package appcommon;
 
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -7,6 +10,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.core.app.NotificationCompat;
 
@@ -78,5 +82,21 @@ public class Common {
         catch (Exception ex){
             ErrorHandling.ErrorDialog(ex.getMessage(),mcontext);
         }
+    }
+    public static void TextBlink(TextView btn)
+    {
+        try{
+            final ObjectAnimator colorAnim = ObjectAnimator.ofInt(btn,"textColor", Color.BLACK,Color.GRAY,Color.BLUE);
+            colorAnim.setDuration(1000);
+            colorAnim.setEvaluator(new ArgbEvaluator());
+            colorAnim.setRepeatCount(ValueAnimator.INFINITE);
+            colorAnim.setRepeatMode(ValueAnimator.REVERSE);
+            colorAnim.start();
+
+        }
+        catch (Exception ex){
+            throw ex;
+        }
+
     }
 }

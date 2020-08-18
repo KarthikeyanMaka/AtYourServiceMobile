@@ -5,12 +5,16 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,6 +28,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import org.json.JSONException;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -119,6 +124,7 @@ public class HomeActivity extends AppCompatActivity {
                 }, 8000);
 
             }
+
 
         } catch (Exception e){
             ErrorHandling.ErrorDialog(e.getMessage(),this);
@@ -230,6 +236,10 @@ public class HomeActivity extends AppCompatActivity {
                 GotoVaccine(view);
             }
         });
+
+        //link blink
+        Common.TextBlink(txthomehealth);
+        Common.TextBlink(txthomeemer);
 
 
 //        Button home = (Button) findViewById(R.id.btn_home);
@@ -354,6 +364,8 @@ public class HomeActivity extends AppCompatActivity {
     public void SendNotification(){
         Common.sendNotification(this);
     }
+
+
 
 }
 
