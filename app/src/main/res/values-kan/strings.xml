@@ -56,4 +56,9 @@
     <string name="app_Lstdate">ನವೀಕರಿಸಿದ ದಿನಾಂಕ</string>
     <string name="app_vaclink">ದೇಶಾದ್ಯಂತ ಇತ್ತೀಚಿನ ಲಸಿಕೆ ಸ್ಥಿತಿಯನ್ನು ಪಡೆಯಿರಿ</string>
     <string name="app_chooselang">ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
+    <string name="app_settings">Settings</string>
+    <string name="app_userage">Age</string>
+    <string name="app_notsettings">"Notification Settings "</string>
+    <string name="app_requirednot">Notification</string>
+    <string name="app_notimins">Notification Interval (in Mins)</string>
 </resources>

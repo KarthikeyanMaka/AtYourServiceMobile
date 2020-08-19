@@ -56,4 +56,9 @@
     <string name="app_Lstdate">నవీకరించబడిన తేదీ</string>
     <string name="app_vaclink">దేశవ్యాప్తంగా తాజా వ్యాక్సిన్ స్థితిని పొందండి</string>
     <string name="app_chooselang">భాషను ఎంచుకోండి</string>
+    <string name="app_settings">Settings</string>
+    <string name="app_userage">Age</string>
+    <string name="app_notsettings">"Notification Settings "</string>
+    <string name="app_requirednot">Notification</string>
+    <string name="app_notimins">Notification Interval (in Mins)</string>
 </resources>

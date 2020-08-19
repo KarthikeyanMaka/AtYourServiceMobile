@@ -56,4 +56,9 @@
     <string name="app_Lstdate">അപ്‌ഡേറ്റുചെയ്‌ത തീയതി</string>
     <string name="app_vaclink">രാജ്യത്തുടനീളം ഏറ്റവും പുതിയ വാക്സിൻ നില നേടുക</string>
     <string name="app_chooselang">ഭാഷ തിരഞ്ഞെടുക്കുക</string>
+    <string name="app_settings">Settings</string>
+    <string name="app_userage">Age</string>
+    <string name="app_notsettings">"Notification Settings "</string>
+    <string name="app_requirednot">Notification</string>
+    <string name="app_notimins">Notification Interval (in Mins)</string>
 </resources>

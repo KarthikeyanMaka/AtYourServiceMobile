@@ -56,4 +56,9 @@
     <string name="app_Lstdate">आजकीतारीख</string>
     <string name="app_vaclink">देश भर में नवीनतम वैक्सीन स्थिति प्राप्त करें</string>
     <string name="app_chooselang">भाषा का चयन करें</string>
+    <string name="app_settings">Settings</string>
+    <string name="app_userage">Age</string>
+    <string name="app_notsettings">"Notification Settings "</string>
+    <string name="app_requirednot">Notification</string>
+    <string name="app_notimins">Notification Interval (in Mins)</string>
 </resources>

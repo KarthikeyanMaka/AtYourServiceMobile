@@ -56,4 +56,9 @@
     <string name="app_Lstdate">புதுப்பிக்கப்பட்ட தேதி</string>
     <string name="app_vaclink">நாடு முழுவதும் சமீபத்திய தடுப்பூசி நிலையைப் பெறுங்கள்</string>
     <string name="app_chooselang">மொழியை தேர்ந்தெடுங்கள்</string>
+    <string name="app_settings">Settings</string>
+    <string name="app_userage">Age</string>
+    <string name="app_notsettings">"Notification Settings "</string>
+    <string name="app_requirednot">Notification</string>
+    <string name="app_notimins">Notification Interval (in Mins)</string>
 </resources>

@@ -20,7 +20,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="UnusedAttribute">
-        <activity android:name=".CovidVaccine"></activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeActivity"/>
+        </activity>
+        <activity android:name=".CovidVaccine" />
         <activity android:name=".Disclaimer" />
         <activity android:name=".AmbulanceServices" />
         <activity android:name=".CovidLabs" />

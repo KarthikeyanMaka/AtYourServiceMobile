@@ -18,6 +18,9 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -32,6 +35,7 @@ import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.Locale;
+import java.util.concurrent.ThreadPoolExecutor;
 
 import appcommon.AppNotification;
 import appcommon.Common;
@@ -245,6 +249,35 @@ public class HomeActivity extends AppCompatActivity {
 //        Button home = (Button) findViewById(R.id.btn_home);
 //        home.setBackgroundColor(Color.GREEN);
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        try {
+            MenuInflater menuInflater = getMenuInflater();
+            menuInflater.inflate(R.menu.settings_menu, menu);
+        }
+        catch (Exception ex){
+            ErrorHandling.ErrorDialog(ex.getMessage(),this);
+        }
+        return true;
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        try{
+            int id= item.getItemId();
+            if(id ==R.id.action_settings){
+                Intent intent= new Intent(HomeActivity.this,SettingsActivity.class);
+                startActivity(intent);
+                return true;
+            }
+
+        }
+        catch (Exception ex){
+            ErrorHandling.ErrorDialog(ex.getMessage(),this);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     public void delayprocess()
     {
 
