@@ -55,16 +55,21 @@ public class LocationFinder{
             String lat= df2.format(latitude);
             String longit= df2.format(longitude);
 
-            /*Geocoder geocoder= new Geocoder(currentScreen, java.util.Locale.getDefault());
+            Geocoder geocoder= new Geocoder(currentScreen, java.util.Locale.getDefault());
 
             List<Address> addresses = geocoder.getFromLocation(latitude,longitude,1);
 
-            ErrorHandling.ErrorDialog(addresses.get(0).getAddressLine(0)+","+
-                    addresses.get(0).getAddressLine(1),currentScreen);
-*/
+            String postalCode =addresses.get(0).getPostalCode().trim();
 
+            String locationURL="";
 
-            String locationURL =Common.API_SERVER+"GetStateCitybyLoc/"+String.valueOf(latitude)+"/"+String.valueOf(longitude);
+            if(postalCode != "") {
+                locationURL = Common.API_SERVER + "GetStateCitybyPin/" + postalCode;
+            }
+            else{
+                locationURL = Common.API_SERVER + "GetStateCitybyLoc/" + String.valueOf(latitude) + "/" + String.valueOf(longitude);
+            }
+
 
            // ErrorHandling.ErrorDialog(String.valueOf(latitude)+String.valueOf(longitude)+"test:"+lat+longit,currentScreen);
 

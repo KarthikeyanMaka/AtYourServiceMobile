@@ -62,6 +62,7 @@
     <string name="app_notsettings">"Notification Settings "</string>
     <string name="app_requirednot">Notification</string>
     <string name="app_notimins">Notification Interval (in Mins)</string>
+    <string name="app_contact">Contact us</string>
 
 
 </resources>
